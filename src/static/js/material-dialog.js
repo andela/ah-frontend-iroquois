@@ -15,7 +15,7 @@
 MaterialDialog.templates = {
 	alert:
 		"<div class='modal material-alert'>" +
-			"<div class='modal-content'><h4 class='modal-title'></h4></div>" +
+			"<div class='modal-content'><h5 class='modal-title'></h5></div>" +
 			"<div class='modal-footer'><div>" +
 		'</div>',
 	/* modal clases:
@@ -24,7 +24,7 @@ MaterialDialog.templates = {
 	*/
 	dialog:
 		"<div class='modal material-dialog class_here' style='width: 35%'>" +
-			"<div class='modal-content'><h4 class='modal-title'>title_here</h4></div>" +
+			"<div class='modal-content'><h5 class='modal-title'>title_here</h5></div>" +
 			"<div class='modal-footer'>" +
 				"<button class='btn modal-close confirm confirm_button_class'>confirm_button_text</button>" +
 				"<button class='btn modal-close close close_button_class'>close_button_text</button>" +

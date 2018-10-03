@@ -47,6 +47,9 @@ const articlesReducer = (state = articlesState, action) => {
 	switch (action.type) {
 
 		case ACTION_TYPE.ADD_MANY_FROM_SERVER:
+			if (!Array.isArray(action.payload.results)) {
+				action.payload.results = [action.payload.results || {}];
+			}
 			return {...state, ...action.payload};
 
 		case ACTION_TYPE.ADD_ONE_ARTICLE:

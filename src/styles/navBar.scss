@@ -3,10 +3,10 @@
 .navigation {
 
   &.white {
-    background-color: color(white);
+    background-color: color(secondary);
   }
   * {
-    color: color(secondary);
+    color: color(white);
     height: 100%;
   }
   .title {
@@ -83,7 +83,11 @@
       display: flex;
       justify-items: center;
       align-items: center;
+		color: color(black);
+		font-weight: bold;
       i {
+		  font-weight: bold;
+		  color: color(black);
         margin-right: 1em;
       }
     }
@@ -113,13 +117,13 @@
 
   .signup {
     margin-right: 1em;
-    border-right: 1px solid green;
+    border-right: 1px solid color(white);
     padding-right: 1em;
   }
   .signup, .login {
-    color: #00544a;
+    color: color(white);
     &:hover {
-      color: dodgerblue;
+      color: color(light);
     }
   }
 

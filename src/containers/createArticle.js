@@ -102,17 +102,21 @@ class CreateArticle extends React.Component {
 
 			<div className="valign-wrapper">
 				<div className={styles.container}>
-					<Header {...this.state} handleChange={this.handleChange} refObj={this} />
+					<div className='card black-text z-depth-1'>
+						<div className="card-content" style={{padding: '12px'}}>
+							<Header {...this.state} handleChange={this.handleChange} refObj={this} />
 
-					<div className={styles['bottom-space']}>
-						<EditorCreate
-							handleEditorChange={this.handleEditorChange}
-							body={this.state.body}
-							bodyError={this.state.bodyError}
-						/>
+							<div className={styles['bottom-space']}>
+								<EditorCreate
+									handleEditorChange={this.handleEditorChange}
+									body={this.state.body}
+									bodyError={this.state.bodyError}
+								/>
+							</div>
+
+							<Bottom {...this.state} clearForm={this.clearForm} handleSubmit={this.handleSubmit} />
+						</div>
 					</div>
-
-					<Bottom {...this.state} clearForm={this.clearForm} handleSubmit={this.handleSubmit} />
 				</div>
 			</div>
 		);
