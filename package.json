@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "eslint-cli": "^1.1.1",
-    "node-sass": "^4.9.3",
+    "coveralls": "^3.0.2",
+    "dotenv-webpack": "^1.5.7",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
@@ -13,9 +13,11 @@
     "react-scripts": "1.1.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "start": "webpack-dev-server --config webpack.config.js --mode development --open --hot",
+    "build": "webpack --config webpack.config.js --mode production",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "test:watch": "jest --watch",
     "eject": "react-scripts eject"
   },
   "jest": {
@@ -24,10 +26,42 @@
       "!/node_modules/",
       "!src/index.js",
       "!src/registerServiceWorker.js"
-    ]
+    ],
+    "verbose": true,
+    "clearMocks": true,
+    "collectCoverage": true,
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/setupTests.js"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.0",
+    "css-loader": "^1.0.0",
     "enzyme": "^3.6.0",
-    "enzyme-adapter-react-16": "^1.5.0"
+    "enzyme-adapter-react-16": "^1.5.0",
+    "eslint-cli": "^1.1.1",
+    "jest": "^23.6.0",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "serviceworker-webpack-plugin": "^1.0.1",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9",
+    "html-webpack-plugin": "latest"
   }
 }
