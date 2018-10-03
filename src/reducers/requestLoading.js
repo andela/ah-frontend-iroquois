@@ -1,4 +1,4 @@
-import ACTION_TYPE from '../actions/authActions/actionTypes';
+import ACTION_TYPE from '../actions/actionTypes';
 
 const requestLoadingReducer = (state = {isRequestLoading: false}, action) => {
 	switch (action.type) {

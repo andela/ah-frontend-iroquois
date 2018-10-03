@@ -7,11 +7,12 @@ import styles from '../../styles/navBar.scss';
 import DropDown from './generateDropdownItems';
 import userLoginRequest from '../../actions/authActions/loginAction';
 import style from '../../styles/authStyles/signup.scss';
+import userSignUpRequest from '../../actions/authActions/signUpActions';
 import {field, generateModal} from '../../utils/index';
 import LoginForm from '../Auth/Login/loginForm';
 import SignUpForm from '../Auth/signup/signUpForm';
 import Logo from '../logo/logo';
-import userSignUpRequest from '../../actions/authActions/signUpActions';
+import generateNavLinks from './generateNavbarLinks';
 
 const authorsHavenClassNames = classNames(styles.title, 'right', 'hide-on-small-and-down');
 const loggedInNavClassNames = classNames('hide-on-med-and-up', styles.dropdown);
@@ -21,7 +22,7 @@ const logoWrapper = classNames('left', styles.logo);
 const linkClassnames = classNames('brand-logo', 'left');
 
 const LogoContainer = () => (
-	<Link to='/' className={linkClassnames}>
+	<Link to='/articles' className={linkClassnames}>
 		<div className={logoWrapper}>
 			<Logo />
 		</div>
@@ -29,14 +30,23 @@ const LogoContainer = () => (
 	</Link>
 );
 
-const LoggedInNav = () => (
-	<ul className='right'>
+const LoggedInNav = (prop) => (
+	<ul className='right' style={{marginRight: '1em'}}>
+		<li>
+			<Link to='/articles' replace style={{display: prop.history.location.pathname === '/articles' ? 'none' : 'block'}}>
+				<i className='fa fa-chevron-left' />
+			</Link>
+		</li>
+
+		{generateNavLinks()}
+
 		<DropDown />
 		<li className={loggedInNavClassNames}>
-			<Link to="/">
+			<Link to="/" replace>
 				<i className="material-icons">more_vert</i>
 			</Link>
 		</li>
+
 	</ul>
 );
 
@@ -65,7 +75,7 @@ const NavBar = (props) => (
 
 				{
 					props.isLoggedIn
-						? <LoggedInNav />
+						? <LoggedInNav history={props.history} />
 						: <NotLoggedInNav {...props} />
 				}
 

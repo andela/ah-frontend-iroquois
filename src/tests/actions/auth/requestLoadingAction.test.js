@@ -1,5 +1,5 @@
 import configureStore from 'redux-mock-store';
-import ACTION_TYPE from '../../../actions/authActions/actionTypes';
+import ACTION_TYPE from '../../../actions/actionTypes';
 import ACTIONS from '../../../actions/authActions/action';
 
 const mockStore = configureStore();

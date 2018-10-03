@@ -3,12 +3,10 @@ import * as PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import styles from '../../styles/navBar.scss';
+import {generateNavName} from './generateNavbarLinks';
 
 const items = [
-	{ route: 'new-articles', icon: 'fa-edit', text: 'New Article' },
-	{ route: 'articles', icon: 'fa-list-alt', text: 'Articles' },
 	{ route: 'profile', icon: 'fa-user-edit', text: 'Edit Profile' },
-	{ route: 'favourites', icon: 'fa-star', text: 'Favourites' },
 	{ route: 'logout', icon: 'fa-sign-out-alt', text: 'Logout' }
 ];
 
@@ -28,13 +26,8 @@ const DropDownButton = () => (
 );
 
 const GenerateDropItem = (props) => (
-	<Link to={`/${props.route}`}>
-		<span>
-			<i className={`fa fa-1x ${props.icon}`} />
-			<span>
-				{props.text}
-			</span>
-		</span>
+	<Link to={`/${props.route}`} replace>
+		{generateNavName({...props})}
 	</Link>
 );
 

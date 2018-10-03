@@ -1,5 +1,5 @@
 import {Authenticate} from '../../components/ProtectedRoute/privateRoute';
-import ACTION_TYPE from '../../actions/authActions/actionTypes';
+import ACTION_TYPE from '../../actions/actionTypes';
 
 const loginReducer = (state = {loggedIn: Authenticate.isAuthenticated()}, action) => {
 	switch (action.type) {

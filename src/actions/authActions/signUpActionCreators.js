@@ -1,4 +1,4 @@
-import ACTION_TYPE from './actionTypes';
+import ACTION_TYPE from '../actionTypes';
 
 const SignupActionCreator = (response) => ({
 	'type': ACTION_TYPE.SIGNUP_SUCCESS,

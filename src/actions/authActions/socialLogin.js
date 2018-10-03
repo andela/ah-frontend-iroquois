@@ -4,15 +4,7 @@ import {notify} from 'react-notify-toast';
 import Login from './loginActionCreator';
 import requestLoadingAction from './requestLoading';
 import {API_URLS, AUTH_TOKEN, USERNAME_KEY} from '../../constants';
-
-const addToken = () => {
-	const TOKEN = localStorage.getItem(AUTH_TOKEN);
-
-	if (TOKEN !== null) {
-		// noinspection JSUnresolvedVariable
-		axios.defaults.headers.common.Authorization = `Token ${TOKEN}`;
-	}
-};
+import {addToken} from '../../utils';
 
 export const fetchUser = async(dispatch, history) => {
 
@@ -24,14 +16,11 @@ export const fetchUser = async(dispatch, history) => {
 		.then(response => {
 			if (response && typeof response === 'object' && response.user) {
 
-				const username = response.user.username.split('_')[0];
-				localStorage.setItem(USERNAME_KEY, username);
-
-				response.user.username = username;
+				localStorage.setItem(USERNAME_KEY, response.user.username);
 
 				dispatch(Login({data: response}));
 
-				history.push('/login');
+				history.push('/articles');
 			}
 		})
 		.catch(error => {
