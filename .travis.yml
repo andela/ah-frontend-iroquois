@@ -1,18 +1,15 @@
-
 language: node_js
-
 node_js:
-  - "stable"
-
+- stable
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 script:
-  - npm test
-  - npm run build
-  - npm install coveralls
-  - npm test -- -u --coverage
-
+- npm test
+- npm run build
+- npm install coveralls
+- npm test -- -u --coverage
 after_success:
 - coveralls < coverage/lcov.info
+notification:
+  secure: tOzJ4/3ZWb7puCyjN0yXQfAoNxo1Zm7XBkknC/Tx+CIgJwJZ0XvsuVern/nu72Ey9LY0gsq+PmMy0LDJEp/qzrW9BXN10SBjlVhDdbeMsDn9ad4u4iN6VOgKgF4Gmr7VvTcOPHhSvKTClZmKFaIxwE0ryA7Woo5J0nZoPlhqCHfXZZT2ktZA8BJ2V6YOR7+tgWSMQ9bjg1TF2sEz0fPWA2xe4tXn0Zuzb33Nini0+rcUJW8xhuYr+Rf8i4y+uxmxyWkrDMMtwmUxA6wRVzNoqYWNq+vJaPBQmGXoG9fVPU65EJx/o8mBOHlHbCzWcDhWCO6utv9RUmB+M23ivE9EXkLxVnaTYSU6tZq9KcQoCarSEHHmgd2fHyfc6WiJRvHx3uNuKtUtF0Iy0STf8uKjhVBEnb4U6TQWZY23FHoxEKPuTGYza48nUTZZQCzcmUL1V1oCgYRFZiZdMByYQgmCM4qI9oo2ZGTzhS2+NTinsrsTzg4lGRPBtOxOronCfIZSfwfS4lUeKSwp3LIrXwRn0x/pPD+fU9LpFWYmgv4VrxNMPItpW6j+nGKFgbxz1ovqHDA2kob7V8LiN41/GeFX7BFLd8Bb6eyMgnr7OvigCoPwezVqir2ySdcl9LXg4G73fd4ohc2w+e7HnYsfxD34tx1QjN97kO3YyZhNJoFlcns=
