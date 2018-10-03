@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import styles from '../styles/articleStyles/NewArticle.scss';
 import {createArticleAction, editArticle} from '../actions/articleActions/articleActions';
 import {editOneArticleActionCreator} from '../actions/articleActions/articleActionCreators';
-import {Bottom, EditorCreate, Header} from '../components/articles/editorCreate';
+import {Bottom, BodyEditor, Header} from '../components/articles/bodyEditor';
 
 class CreateArticle extends React.Component {
 
@@ -21,18 +21,17 @@ class CreateArticle extends React.Component {
 
 		// noinspection JSUnusedLocalSymbols
 		onbeforeunload = this.onLoad;
-
-		this.setState({
-			body: this.props.article.body || '',
-			slug: this.props.article.slug || '',
-			title: this.props.article.title || '',
-			description: this.props.article.description || ''
-		});
+		this.destruct(this.props.article);
 	}
 
 	componentWillUnmount() {
 		onbeforeunload = null;
 	}
+
+	destruct = attrs => {
+		const { body = '', slug = '', title = '', tagList = [], description = ''} = attrs;
+		this.setState({body, slug, title, tags: tagList, description});
+	};
 
 	// noinspection JSUnusedLocalSymbols
 	onLoad = e => "Don't leave";
@@ -45,10 +44,13 @@ class CreateArticle extends React.Component {
 
 	// noinspection JSUnusedLocalSymbols
 	clearForm = (e) => {
-		this.setState({
-			body: '', slug: '', title: '', description: ''
-		});
+
+		this.destruct({});
 		this.props.dispatch(editOneArticleActionCreator(''));
+	};
+
+	tagsHandleChange = tags => {
+		this.setState({ tags });
 	};
 
 	handleEditorChange = (event, editor) => {
@@ -105,14 +107,14 @@ class CreateArticle extends React.Component {
 					<Header {...this.state} handleChange={this.handleChange} refObj={this} />
 
 					<div className={styles['bottom-space']}>
-						<EditorCreate
+						<BodyEditor
 							handleEditorChange={this.handleEditorChange}
 							body={this.state.body}
 							bodyError={this.state.bodyError}
 						/>
 					</div>
 
-					<Bottom {...this.state} clearForm={this.clearForm} handleSubmit={this.handleSubmit} />
+					<Bottom {...this.state} tagsHandleChange={this.tagsHandleChange} clearForm={this.clearForm} handleSubmit={this.handleSubmit} />
 				</div>
 			</div>
 		);
@@ -121,10 +123,14 @@ class CreateArticle extends React.Component {
 
 CreateArticle.propTypes = {
 	dispatch: PropTypes.func.isRequired,
-	article: PropTypes.object.isRequired,
+	article: PropTypes.object,
 	location: PropTypes.shape({
 		state: PropTypes.shape({slug: PropTypes.string})
 	}).isRequired
+};
+
+CreateArticle.defaultProps = {
+	article: {}
 };
 
 export { CreateArticle as CreateArticleTest };

@@ -6,31 +6,37 @@ import ViewArticleHeader from './viewArticleHeader';
 import ViewArticleBody from './viewArticleBody';
 import ViewArticleFooter from './viewArticleFooter';
 
-const ViewArticlePage = props => (
-	<div className={styles['article-page']}>
-		<div className='row'>
-			<div className="col s12 m3 l3">
-				<ViewArticleSides article={props.state.article} />
-			</div>
-			<div className="col s12 m9 l9">
+const ViewArticlePage = props => {
 
-				<ViewArticleHeader article={props.state.article} />
+	const { article, editorMode } = props.data;
+	const { tagList, author } = article;
 
-				<ViewArticleBody editorMode={props.state.editorMode} article={props.state.article} />
+	return (
+		<div className={styles['article-page']}>
+			<div className='row'>
+				<div className="col s12 m3 l3">
+					<ViewArticleSides article={article} />
+				</div>
+				<div className="col s12 m9 l9">
 
-				<ViewArticleFooter
-					authorName={props.state.article.author.username}
-					tagList={props.state.article.tagList}
-					setEditorMode={props.setEditorMode}
-					deleteHandler={props.deleteHandler}
-				/>
+					<ViewArticleHeader article={article} />
+
+					<ViewArticleBody editorMode={editorMode} article={article} />
+
+					<ViewArticleFooter
+						authorName={author.username}
+						tagList={tagList}
+						setEditorMode={props.setEditorMode}
+						deleteHandler={props.deleteHandler}
+					/>
+				</div>
 			</div>
 		</div>
-	</div>
-);
+	);
+};
 
 ViewArticlePage.propTypes = {
-	state: PropTypes.object.isRequired,
+	data: PropTypes.object.isRequired,
 	setEditorMode: PropTypes.func.isRequired,
 	deleteHandler: PropTypes.func.isRequired
 

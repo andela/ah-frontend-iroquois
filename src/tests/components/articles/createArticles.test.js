@@ -5,7 +5,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import {MemoryRouter} from 'react-router-dom';
 import CreateArticle, { CreateArticleTest } from '../../../containers/createArticle';
-import {EditorCreate} from '../../../components/articles/editorCreate';
+import {BodyEditor} from '../../../components/articles/bodyEditor';
 
 let wrapper;
 const mockStore = configureStore([thunk]);
@@ -40,12 +40,12 @@ describe('Create Articles', () => {
 	});
 
 	it('should test creating article', () => {
-		wrapper = mount(<EditorCreate handleEditorChange={jest.fn} />);
+		wrapper = mount(<BodyEditor body='' bodyError='' handleEditorChange={jest.fn} />);
 		wrapper.instance().func({ui: {view: {toolbar: {element: {}}, editable: {element: {parentElement: {insertBefore: jest.fn()}}}}}});
 	});
 
 	it('should test create methods', () => {
-		wrapper = mount(<CreateArticleTest dispatch={store.dispatch} article={{title: '', description: ''}} />);
+		wrapper = mount(<CreateArticleTest location={{}} dispatch={store.dispatch} article={{title: '', description: ''}} />);
 		wrapper.instance().handleSubmit({preventDefault: jest.fn});
 
 		wrapper.setState({title: 'sfyrtdfgfsg', tags: [], body: 'kjhgfrertyuilkjhgfdsdfghjuklkjhgfdsdfg', description: 'sdfg'});
@@ -54,35 +54,36 @@ describe('Create Articles', () => {
 	});
 
 	it('should test no length descr', () => {
-		wrapper = mount(<CreateArticleTest dispatch={store.dispatch} article={{title: '', description: ''}} />);
+		wrapper = mount(<CreateArticleTest location={{}} dispatch={store.dispatch} article={{title: '', description: ''}} />);
 		wrapper.setState({title: 'ghy', tags: ['jgft'], description: 'hfjgk', slug: 'erth'});
 		wrapper.instance().handleSubmit({preventDefault: jest.fn});
 	});
 
 	it('should test no length', () => {
-		wrapper = mount(<CreateArticleTest dispatch={store.dispatch} article={{title: '', description: ''}} />);
+		wrapper = mount(<CreateArticleTest location={{}} dispatch={store.dispatch} article={{title: '', description: ''}} />);
 		wrapper.setState({title: 'ghyughy', tags: ['jgft'], description: '', slug: 'erth'});
 		wrapper.instance().handleSubmit({preventDefault: jest.fn});
 	});
 
 	it('should test no length', () => {
-		wrapper = mount(<CreateArticleTest dispatch={store.dispatch} article={{title: '', description: ''}} />);
+		wrapper = mount(<CreateArticleTest location={{}} dispatch={store.dispatch} article={{title: '', description: ''}} />);
 		wrapper.setState({title: 'ghyughy', tags: ['jgft'], description: 'sdfgtdrfg', slug: 'erth', body: 'esdjhgsdh bvcxSDFz gvcHBXCjnxzb'});
 		wrapper.instance().handleSubmit({preventDefault: jest.fn});
 	});
 
 	it('should test all valid', () => {
-		wrapper = mount(<CreateArticleTest dispatch={store.dispatch} article={{title: '', description: ''}} />);
+		wrapper = mount(<CreateArticleTest location={{}} dispatch={store.dispatch} article={{title: '', description: ''}} />);
 		wrapper.setState({title: 'ghyughy', tags: ['jgft'], description: 'sdfgtdrfg', body: 'esdjhgsdh bvcxSDFz gvcHBXCjnxzb'});
 		wrapper.instance().handleSubmit({preventDefault: jest.fn});
 	});
 
 	it('should test methods', () => {
-		wrapper = mount(<CreateArticleTest dispatch={store.dispatch} article={{title: '', description: ''}} />);
+		wrapper = mount(<CreateArticleTest location={{}} dispatch={store.dispatch} article={{title: '', description: ''}} />);
 		wrapper.instance().handleEditorChange({}, {getData: jest.fn});
 		wrapper.instance().clearForm({});
 		wrapper.instance().handleChange({target: {name: 'email', value: 'fkj'}});
 		wrapper.instance().componentWillUnmount();
 		wrapper.instance().onLoad({});
+		wrapper.instance().tagsHandleChange([]);
 	});
 });

@@ -2,6 +2,7 @@
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 import moxios from 'moxios';
+import {EnhancerOptions as undefined} from 'redux-devtools-extension';
 import {API_URLS, AUTH_TOKEN} from '../../../constants';
 import {
 	createArticleAction,
@@ -9,7 +10,6 @@ import {
 	editArticle,
 	fetchAllArticles
 } from '../../../actions/articleActions/articleActions';
-import {EnhancerOptions as undefined} from 'redux-devtools-extension';
 
 const mockStore = configureStore([thunk]);
 let store = {};
@@ -54,6 +54,21 @@ describe('Articles Actions', () => {
 			{'isRequestLoading': false, 'type': 'REQUEST_LOADING'}
 		];
 		store.dispatch(fetchAllArticles()).then(() => {
+			expect(store.getActions()).toEqual(expectedActions);
+		});
+	});
+
+	it('should test fetch articles while it is not loading', () => {
+		moxios.stubRequest(API_URLS.FETCH_ALL_ARTICLES, {
+			status: 404,
+			response: { articles: {}}
+		});
+		const expectedActions = [
+			{'isRequestLoading': false, 'type': 'REQUEST_LOADING'},
+			{'isRequestLoading': false, 'type': 'REQUEST_LOADING'}
+		];
+
+		store.dispatch(fetchAllArticles(false)).then(() => {
 			expect(store.getActions()).toEqual(expectedActions);
 		});
 	});

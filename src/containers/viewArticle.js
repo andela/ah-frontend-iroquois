@@ -25,20 +25,14 @@ class ViewArticle extends React.Component {
 
 	componentWillMount() {
 		this.slug = this.props.match.params.slug || '';
+		this.loadArticles();
 		this.loadOneArticle();
-		this.timer = setInterval(this.loadOneArticle, 1000);
-		this.timerAll = setInterval(this.loadArticles, 10000);
 		this.setState({article: this.props.article});
 	}
 
 	// noinspection JSUnusedLocalSymbols
 	componentWillReceiveProps(nextProps, nextContext) {
 		this.setState({article: nextProps.article});
-	}
-
-	componentWillUnmount() {
-		clearInterval(this.timer);
-		clearInterval(this.timerAll);
 	}
 
 	loadArticles = () => this.props.dispatch(fetchAllArticles(false));
@@ -83,7 +77,7 @@ class ViewArticle extends React.Component {
 				? ''
 				: (
 					<ViewArticlePage
-						state={{...this.state}}
+						data={{...this.state}}
 						setEditorMode={this.setEditorMode}
 						deleteHandler={this.deleteHandler}
 					/>

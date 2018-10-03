@@ -62,7 +62,7 @@ describe('View Articles', () => {
 		localStorage.setItem(USERNAME_KEY, 'san');
 		mount(<ViewArticleFooter authorName="san" deleteHandler={jest.fn} setEditorMode={jest.fn} tagList={['one']} />);
 		mount(<ViewArticleSides article={{author: {}}} />);
-		shallow(<ViewArticlePage setEditorMode={jest.fn} deleteHandler={jest.fn} state={{article: {author: {}}, editorMode: false}} />);
+		shallow(<ViewArticlePage setEditorMode={jest.fn} deleteHandler={jest.fn} data={{article: {author: {}}, editorMode: false}} />);
 
 		const editor = mount(<ViewArticleBody article={{author: {}}} editorMode={false} />);
 		editor.instance().onChange({}, jest.fn);

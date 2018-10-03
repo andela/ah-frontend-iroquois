@@ -3,8 +3,9 @@ import React from 'react';
 import CKEditor from '@ckeditor/ckeditor5-react';
 import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import * as PropTypes from 'prop-types';
+import Chips from 'react-chips';
 import styles from '../../styles/articleStyles/NewArticle.scss';
-import {generateButton} from '../../utils';
+import {generateButton, predictionTags} from '../../utils';
 
 const CreateArticleInputs = (props) => (
 
@@ -35,6 +36,28 @@ CreateArticleInputs.propTypes = {
 	description: PropTypes.string.isRequired,
 	descriptionError: PropTypes.string.isRequired,
 	handleChange: PropTypes.func.isRequired
+};
+
+const TagsEditor = (props) => (
+	<div>
+		<Chips
+			value={props.tags}
+			onChange={props.tagsHandleChange}
+			placeholder="Enter tags, end each tag with a `comma(,)`"
+			suggestions={predictionTags}
+		/>
+		<div className={styles['error-text-article']}>{props.tagsError}</div>
+	</div>
+);
+
+TagsEditor.propTypes = {
+	tagsError: PropTypes.string,
+	tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+	tagsHandleChange: PropTypes.func.isRequired
+};
+
+TagsEditor.defaultProps = {
+	tagsError: null
 };
 
 export const Header = (props) => (
@@ -75,6 +98,13 @@ export const Bottom = (props) => {
 
 	return (
 		<div>
+			<div className={styles['bottom-space']}>
+				<TagsEditor
+					tags={props.tags}
+					tagsHandleChange={props.tagsHandleChange}
+					tagsError={props.tagsError}
+				/>
+			</div>
 			<div className="right-align">
 				{generateButton(publishButton)}
 				{generateButton(cancelButton)}
@@ -84,16 +114,20 @@ export const Bottom = (props) => {
 };
 
 Bottom.propTypes = {
+	tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+	tagsError: PropTypes.string,
+	tagsHandleChange: PropTypes.func.isRequired,
 	handleSubmit: PropTypes.func.isRequired,
 	clearForm: PropTypes.func.isRequired,
 	slug: PropTypes.string
 };
 
 Bottom.defaultProps = {
-	slug: null
+	slug: null,
+	tagsError: null
 };
 
-export class EditorCreate extends React.Component {
+export class BodyEditor extends React.Component {
 
 	func = editor => {
 		// Insert the toolbar before the editable area.
@@ -119,7 +153,7 @@ export class EditorCreate extends React.Component {
 	}
 }
 
-EditorCreate.propTypes = {
+BodyEditor.propTypes = {
 	bodyError: PropTypes.string.isRequired,
 	body: PropTypes.string.isRequired,
 	handleEditorChange: PropTypes.func.isRequired
