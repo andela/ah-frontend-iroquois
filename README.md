@@ -1,1 +1,2 @@
 ## Authors Haven Frontend app
+[![Build Status](https://travis-ci.org/andela/ah-frontend-iroquois.svg?branch=develop)](https://travis-ci.org/andela/ah-frontend-iroquois) [![Maintainability](https://api.codeclimate.com/v1/badges/ba0f021bfdf860ca16ff/maintainability)](https://codeclimate.com/github/andela/ah-frontend-iroquois/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/ba0f021bfdf860ca16ff/test_coverage)](https://codeclimate.com/github/andela/ah-frontend-iroquois/test_coverage)
