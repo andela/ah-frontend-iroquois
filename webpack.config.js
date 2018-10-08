@@ -1,13 +1,13 @@
 /* webpack.config.js */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const DotEnv = require('dotenv-webpack');
 
 module.exports = {
 	// Tell webpack to begin building its
 	// dependency graph from this file.
 	entry: [
+		'regenerator-runtime/runtime',
 		path.join(__dirname, 'src', 'index.js')
 	],
 	// And to place the output in the `build` directory
@@ -69,10 +69,6 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: path.join(__dirname, 'public', 'index.html'),
 			favicon: 'public/favicon.ico'
-		}),
-		new ServiceWorkerWebpackPlugin({
-			entry: path.join(__dirname, 'src', 'registerServiceWorker.js'),
-			filename: 'service-worker.js'
 		}),
 		new DotEnv()
 	],

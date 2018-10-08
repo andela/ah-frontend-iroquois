@@ -6,6 +6,10 @@ import * as PropTypes from 'prop-types';
 import { Logo } from '../logo/Logo';
 import styles from '../../styles/navigation/NavBar.scss';
 import DropDown from './GenerateDropdownItems';
+import {userLoginRequest} from '../../redux-js/actions/LoginAction';
+import LoginForm from '../Auth/Login/LoginForm';
+import Notifications from 'react-notify-toast';
+import {Modal} from 'react-materialize';
 
 const authorsHavenClassNames = classNames(styles.title, 'right', 'hide-on-small-and-down');
 const loggedInNavClassNames = classNames('hide-on-med-and-up', styles.dropdown);
@@ -39,10 +43,17 @@ class LoggedInNav extends React.Component {
 	}
 }
 
-const NotLoggedInNav = () => (
-	<div className="right" style={{marginRight: '3em'}}>
-		<a href='#' className={styles.signup}>Signup</a>
-		<a href='#' className={styles.login}>Login</a>
+const NotLoggedInNav = (props) => (
+	<div className="right" style={{marginRight: '3em', display: 'flex'}}>
+		<div className={'signupModal'}><a href='#' className={styles.signup}>Signup</a></div>
+		<div className={'loginModal'}><Modal
+              className={styles["Modal"]}
+              actions={''}
+              trigger={<a href='#' className={styles.login} >Login</a>}>
+            <LoginForm userLoginRequest={props.userLoginRequest} user={props.user} error={props.errors}/>
+            <Notifications />
+          </Modal></div>
+
 	</div>
 );
 
@@ -56,7 +67,7 @@ const NavBar = (props) => (
 				{
 					props.isLoggedIn
 						? <LoggedInNav />
-						: <NotLoggedInNav />
+						: <NotLoggedInNav {...props} />
 				}
 
 			</div>
@@ -66,7 +77,8 @@ const NavBar = (props) => (
 );
 
 NavBar.propTypes = {
-	isLoggedIn: PropTypes.bool
+	isLoggedIn: PropTypes.bool,
+	userLoginRequest: PropTypes.func.isRequired
 };
 
 NavBar.defaultProps = {
@@ -75,4 +87,4 @@ NavBar.defaultProps = {
 
 const mapStateToProps = state => ({...state});
 
-export default withRouter(connect(mapStateToProps)(NavBar));
+export default withRouter(connect(mapStateToProps, {userLoginRequest})(NavBar));
