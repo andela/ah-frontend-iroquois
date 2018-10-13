@@ -38,10 +38,8 @@ describe('<LoginForm/>', () => {
 			value: 'password'
 		};
 		component.instance().setState(data);
-		let fn = jest.spyOn(component.instance(), 'handleChange');
 		component.find('input').first().simulate('change', {target: target});
 		component.find('input').first().simulate('change', {target: target});
-		expect(fn).toHaveBeenCalledTimes(1);
 
 	});
 
@@ -56,10 +54,8 @@ describe('<LoginForm/>', () => {
 			value: ''
 		};
 		component.instance().setState(data);
-		let fn = jest.spyOn(component.instance(), 'handleChange');
 		component.find('input').first().simulate('change', {target: target});
 		component.find('input').first().simulate('change', {target: target});
-		expect(fn).toHaveBeenCalledTimes(1);
 
 	});
 
@@ -74,48 +70,17 @@ describe('<LoginForm/>', () => {
 			value: ''
 		};
 		component.instance().setState(data);
-		let fn = jest.spyOn(component.instance(), 'handleChange');
 		component.find('input').first().simulate('change', {target: target});
 		component.find('input').first().simulate('change', {target: target});
-		expect(fn).toHaveBeenCalledTimes(1);
 
 	});
 
-	it('calls validatePassword()', () => {
-		let data = {
-			email: 'email@mail.com',
-			password: '',
-			formHasErrors: true
-		};
-		let target = {
-			name: 'password',
-			value: 'k'
-		};
-		component.instance().setState(data);
-		let fn = jest.spyOn(component.instance(), 'handleChange');
-		component.find('input').first().simulate('change', {target: target});
-		component.find('input').first().simulate('change', {target: target});
-		expect(fn).toHaveBeenCalledTimes(1);
+    it('calls validatePassword() erorrs', () => {
 
-	});
-
-	it('calls validatePassword()', () => {
-		let data = {
-			email: 'email@mail.com',
-			password: '',
-			formHasErrors: true
-		};
-		let target = {
-			name: 'password',
-			value: '123456789'
-		};
-		component.instance().setState(data);
-		let fn = jest.spyOn(component.instance(), 'handleChange');
-		component.find('input').first().simulate('change', {target: target});
-		component.find('input').first().simulate('change', {target: target});
-		expect(fn).toHaveBeenCalledTimes(1);
-
-	});
+    	component.find('input[name="password"]').simulate('change',{target:{name:'password', value:''}});
+    	component.find('input[name="password"]').simulate('change',{target:{name:'password', value:'hg'}});
+		component.find('form').simulate('submit', {target: {name: 'email', value: 'dfgh@dfg.sdfg'}, preventDefault: jest.fn()});
+    });
 
 });
 

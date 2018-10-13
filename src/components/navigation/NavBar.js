@@ -10,6 +10,10 @@ import {userLoginRequest} from '../../redux-js/actions/LoginAction';
 import LoginForm from '../Auth/Login/LoginForm';
 import Notifications from 'react-notify-toast';
 import {Modal} from 'react-materialize';
+import SignUpForm from "../signup/subcomponents/SignUpForm";
+import style from '../../styles/signup.scss';
+import {userSignUpRequest} from "../../redux-js/actions/signUpActions";
+import {generateModal} from "../../utils/utils";
 
 const authorsHavenClassNames = classNames(styles.title, 'right', 'hide-on-small-and-down');
 const loggedInNavClassNames = classNames('hide-on-med-and-up', styles.dropdown);
@@ -29,6 +33,7 @@ const LogoContainer = () => (
 
 class LoggedInNav extends React.Component {
 
+
 	render() {
 		return (
 			<ul className='right'>
@@ -43,19 +48,20 @@ class LoggedInNav extends React.Component {
 	}
 }
 
-const NotLoggedInNav = (props) => (
-	<div className="right" style={{marginRight: '3em', display: 'flex'}}>
-		<div className={'signupModal'}><a href='#' className={styles.signup}>Signup</a></div>
-		<div className={'loginModal'}><Modal
-              className={styles["Modal"]}
-              actions={''}
-              trigger={<a href='#' className={styles.login} >Login</a>}>
-            <LoginForm userLoginRequest={props.userLoginRequest} user={props.user} error={props.errors}/>
-            <Notifications />
-          </Modal></div>
+const NotLoggedInNav = (props) => {
 
-	</div>
-);
+    const attrs = [
+        {divClass: 'signupModal', modalClass: style["modal-effects"], triggerClass: styles.signup, triggerText: 'Signup', props: props, component: SignUpForm},
+        {divClass: 'loginModal', modalClass: styles["Modal"], triggerClass: styles.login, triggerText: 'Login', props: props, component: LoginForm}
+    ];
+
+
+    return (
+    	<div className="right" style={{marginRight: '3em', display: 'flex'}}>
+			{attrs.map(attrs => generateModal(attrs))}
+    	</div>
+
+	)};
 
 const NavBar = (props) => (
 	<div className={navWrapperClassNames}>
@@ -76,15 +82,20 @@ const NavBar = (props) => (
 
 );
 
+
+
 NavBar.propTypes = {
 	isLoggedIn: PropTypes.bool,
-	userLoginRequest: PropTypes.func.isRequired
+	userLoginRequest: PropTypes.func.isRequired,
+    userSignUpRequest: PropTypes.func.isRequired
 };
 
 NavBar.defaultProps = {
-	isLoggedIn: false
+	isLoggedIn: false,
+    visible: true,
 };
 
-const mapStateToProps = state => ({...state});
+const mapStateToProps = state => ({...state, visible: state.users.visible});
 
-export default withRouter(connect(mapStateToProps, {userLoginRequest})(NavBar));
+
+export default withRouter(connect(mapStateToProps,{userSignUpRequest,userLoginRequest})(NavBar));
