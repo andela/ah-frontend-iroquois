@@ -11,8 +11,6 @@ it('should allow Login action start', () => {
         "0":{},
         loggedIn:true,
         user_data:action.user
-
-
     };
 
     const newState = loginReducer(initialState, action);
@@ -29,7 +27,6 @@ it('should allow Login action start', () => {
         "0":{},
         loggedIn:false,
         error:action.error
-
 
     };
 

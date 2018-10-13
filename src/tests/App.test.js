@@ -11,4 +11,5 @@ it('renders without crashing', () => {
 	window.store = store;
 
 	expect(mount(<Provider store={store}><App /></Provider>).find(App)).toHaveLength(1);
+
 });

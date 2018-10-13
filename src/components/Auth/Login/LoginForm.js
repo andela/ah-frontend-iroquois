@@ -1,20 +1,11 @@
 import React, {Component} from 'react';
 import styles from './css/login.scss';
 import {Link} from 'react-router-dom';
-import {emailValidation, validateEmail} from '../../Utils/utils';
 import SocialButtons from '../../social-login/SocialButtons';
+import {emailValidation, field, generateInput} from "../../../utils/utils";
 
 class LoginForm extends Component {
 
-	field = (obj) => ({
-			type: obj[0],
-			name: obj[1],
-			value: obj[2],
-			htmlFor: obj[3],
-			label: obj[4],
-			icon: obj[5],
-			error: obj[6]
-		});
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -22,52 +13,29 @@ class LoginForm extends Component {
 			password: '',
 			emailHasError: true,
 			passwordHasError: true
-		};
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-	}
+		}
+        this.handleSubmit = this.handleSubmit.bind(this);
+	};
 
-	handleChange(e) {
-		this.setState({[e.target.name]: e.target.value});
-		e.target.name === 'email'
-			? validateEmail(e.target.value, this)
-			: this.validatePassword(e.target.value);
-	}
+	validate_email = (email) => {
+		this.setState({emailError: '', emailHasError: false});
+		this.setState(emailValidation(email.target.value, 'emailError','emailHasError'));
+	};
 
-	validatePassword = (password) => {
-		this.setState({passwordError: '',  passwordHasError: false});
+	validate_password = (pass) => {
+		const password = pass.target.value;
+		this.setState({passwordError: '',  passwordHasError: false });
 
 		if (password.length === 0) {
 			this.setState({passwordError: 'Password is required', passwordHasError: true});
-		} else if (password.length < 8) {
-			this.setState({passwordError: 'Weak password, must be at least 8 characters', passwordHasError: true});
-		} else if (password.search(/[a-zA-Z]/) === -1) {
-			this.setState({passwordError: 'Weak password, must be alphanumeric', passwordHasError: true});
 		}
 	};
 
 	handleSubmit(e) {
 		e.preventDefault();
-		this.props.userLoginRequest(this.state);
-	}
+		this.props.userLoginRequest({email: this.refs.email.value, password: this.refs.password.value});
 
-	generateInput = (field, index) => {
-		return (
-			<div className={`input-field col s12 ${field.error ? styles.fieldError : ''}`} key={field.name + index}>
-				<i className={`material-icons prefix ${field.error ? styles.prefix : ''} ${field.error ? styles.active : ''}`}>{field.icon}</i>
-				<input
-					className="validate"
-					type={field.type}
-					name={field.name}
-					value={this.state[field.value]}
-					onChange={this.handleChange}
-					ref={field.htmlFor}
-				/>
-				<label htmlFor={field.htmlFor}>{field.label}</label>
-				<div className={styles['errors']}>{field.error}</div>
-			</div>
-		);
-	};
+	}
 
 	loginForm = (inputs) => {
 		return <form className={styles['form-login']} onSubmit={this.handleSubmit}>
@@ -76,7 +44,7 @@ class LoginForm extends Component {
 			</div>
 			<div className="row">
 				<div className={'input-field col s12'}>
-					{inputs.map((field, index) => this.generateInput(field, index))}
+					{inputs.map((field, index) => generateInput(field, index,this))}
 				</div>
 				<div className="input-field col s12">
 					<button disabled={this.state.emailHasError || this.state.passwordHasError}
@@ -96,8 +64,10 @@ class LoginForm extends Component {
 	};
 
 	render() {
+
 		const inputs = [['email', 'email', this.state.email, 'email', 'Email', 'email', this.state.emailError], ['password', 'password', this.state.password, 'password', 'Password', 'vpn_key', this.state.passwordError]
-		].map(fld => this.field(fld));
+		].map(fld => field(fld));
+
 		return (
 			<div>
 				{this.loginForm(inputs)}
@@ -107,4 +77,3 @@ class LoginForm extends Component {
 }
 
 export default LoginForm;
-

@@ -79,7 +79,6 @@ describe('login component', () => {
 				"type": "loginUser"}];
 
 
-
         return store.dispatch(userLoginRequest(mockData)
         ).then(() => {
             expect(store.getActions()).toEqual(expectedActions);
@@ -108,13 +107,10 @@ describe('login component', () => {
 			}
 			];
 
-
-
 		let data = await store.dispatch(userLoginRequest(mockData)
 			).then(() => {
 				expect(store.getActions()).toEqual(expectedActions);
 			});
 
-		console.log(data)
 	});
 });

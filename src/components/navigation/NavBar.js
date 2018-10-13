@@ -8,9 +8,10 @@ import styles from '../../styles/navigation/NavBar.scss';
 import DropDown from './GenerateDropdownItems';
 import {userLoginRequest} from '../../redux-js/actions/LoginAction';
 import LoginForm from '../Auth/Login/LoginForm';
-import Notifications from 'react-notify-toast';
-import {Modal} from 'react-materialize';
-
+import SignUpForm from "../signup/subcomponents/SignUpForm";
+import style from '../../styles/signup.scss';
+import {userSignUpRequest} from "../../redux-js/actions/signUpActions";
+import {field, generateModal, modalfields} from "../../utils/utils";
 const authorsHavenClassNames = classNames(styles.title, 'right', 'hide-on-small-and-down');
 const loggedInNavClassNames = classNames('hide-on-med-and-up', styles.dropdown);
 const navWrapperClassNames = classNames('navbar-fixed', styles['navbar-fixed']);
@@ -29,6 +30,7 @@ const LogoContainer = () => (
 
 class LoggedInNav extends React.Component {
 
+
 	render() {
 		return (
 			<ul className='right'>
@@ -43,20 +45,23 @@ class LoggedInNav extends React.Component {
 	}
 }
 
-const NotLoggedInNav = (props) => (
-	<div className="right" style={{marginRight: '3em', display: 'flex'}}>
-		<div className={'signupModal'}><a href='#' className={styles.signup}>Signup</a></div>
-		<div className={'loginModal'}>
-			<Modal id={'loginModal'}
-              className={styles["Modal"]}
-              actions={''}
-              trigger={<a href='#' className={styles.login} >Login</a>}>
-            <LoginForm userLoginRequest={props.userLoginRequest} user={props.user} error={props.errors}/>
-            <Notifications />
-          </Modal>
-		</div>
-	</div>
-);
+
+const NotLoggedInNav = (props) => {
+
+    const attrs = [
+        ['','','','','','','','signupModal','signupModal',style["modal-effects"],
+			styles.signup,'Signup', props,SignUpForm],
+        ['','','','','','','','loginModal', 'loginModal', styles["Modal"],
+			 styles.login, 'Login', props,LoginForm]
+    ].map(fld => field(fld));
+
+
+    return (
+    	<div className="right" style={{marginRight: '3em', display: 'flex'}}>
+			{attrs.map(attrs => generateModal(attrs))}
+    	</div>
+
+	)};
 
 const NavBar = (props) => (
 	<div className={navWrapperClassNames}>
@@ -77,15 +82,20 @@ const NavBar = (props) => (
 
 );
 
+
+
 NavBar.propTypes = {
 	isLoggedIn: PropTypes.bool,
-	userLoginRequest: PropTypes.func.isRequired
+	userLoginRequest: PropTypes.func.isRequired,
+    userSignUpRequest: PropTypes.func.isRequired
 };
 
 NavBar.defaultProps = {
-	isLoggedIn: false
+	isLoggedIn: false,
+    visible: true,
 };
 
-const mapStateToProps = state => ({...state});
+const mapStateToProps = state => ({...state, visible: state.users.visible});
 
-export default withRouter(connect(mapStateToProps, {userLoginRequest})(NavBar));
+
+export default withRouter(connect(mapStateToProps,{userSignUpRequest,userLoginRequest})(NavBar));
