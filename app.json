@@ -1,0 +1,15 @@
+{
+  "name": "ah-frontend-iroquois",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
