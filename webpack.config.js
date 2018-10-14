@@ -43,6 +43,11 @@ module.exports = {
 				use: 'file-loader'
 			},
 			{
+				test: /\.(png|jpg)$/,
+				include: path.join(__dirname, 'static/images'),
+				loader: 'file-loader'
+			},
+			{
 				test: /\.(scss|css|sass)$/,
 				exclude: /node_modules/,
 				use: [
