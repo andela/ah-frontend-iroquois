@@ -1,9 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from '../App';
+import { mount } from 'enzyme';
+import { store } from '../redux-js/stores';
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
+
+window.store = store;
+const mockStore = configureStore();
 
 it('renders without crashing', () => {
-	const div = document.createElement('div');
-	ReactDOM.render(<App/>, div);
-	ReactDOM.unmountComponentAtNode(div);
+
+	const store = mockStore({requestLoadingReducer: {isRequestLoading: true}});
+
+	expect(mount(<Provider store={store}><App/></Provider>).find(App)).toHaveLength(1);
 });

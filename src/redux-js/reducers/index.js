@@ -1,8 +1,7 @@
 import {combineReducers} from 'redux';
-
-const initialReducer = (state = {}) => state;
+import requestLoadingReducer from './request-loading';
 
 const reducers = combineReducers({
-	initialReducer
+	requestLoadingReducer
 });
 export default reducers;

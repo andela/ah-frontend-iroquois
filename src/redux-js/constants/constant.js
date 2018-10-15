@@ -1,0 +1,5 @@
+const ACTION_TYPE = {
+	REQUEST_LOADING: 'REQUEST_LOADING'
+};
+
+export default ACTION_TYPE;
