@@ -10,7 +10,8 @@
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5"
+    "react-scripts": "1.1.5",
+    "prop-types": "latest"
   },
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js --mode development --open --hot",
@@ -54,14 +55,15 @@
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "eslint-cli": "^1.1.1",
+    "html-webpack-plugin": "latest",
     "jest": "^23.6.0",
     "node-sass": "^4.9.3",
+    "redux-mock-store": "^1.5.3",
     "sass-loader": "^7.1.0",
     "serviceworker-webpack-plugin": "^1.0.1",
     "style-loader": "^0.23.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9",
-    "html-webpack-plugin": "latest"
+    "webpack-dev-server": "^3.1.9"
   }
 }

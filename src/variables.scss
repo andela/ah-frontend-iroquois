@@ -1,0 +1,16 @@
+
+$colors: (
+		base: #000000,
+		white: #ffffff,
+		facebook: #3B5998,
+		twitter: #1DA1F2,
+		google: #DB4437,
+		fb-messenger: #0084FF,
+		primary: #00544a,
+		secondary: #002a23,
+		light: #3c8176
+);
+
+@function color($color) {
+	@return map-get($colors, $color);
+}
