@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "coveralls": "^3.0.2",
+    "classnames": "^2.2.6",
     "dotenv-webpack": "^1.5.7",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
