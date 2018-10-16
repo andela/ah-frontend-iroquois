@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check loader has class renders correctly 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="col s12 m6 offset-m3 l4 offset-l4"
+  >
+    <div
+      className="card white"
+    >
+      <div
+        className="card-content black-text"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col m10 offset-m1"
+          >
+            <span
+              className="card-title teal-text"
+            >
+              <h5>
+                Get password reset link
+              </h5>
+            </span>
+            <p
+              className="grey-text"
+            >
+              Forgotten your password? Enter your email address below, and we’ll send instructions for setting a new one.
+            </p>
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col s12 m10 offset-m1"
+          >
+            <form
+              onSubmit={[Function]}
+            >
+              <div
+                className="row"
+              >
+                <div
+                  className="input-field col s12 m12"
+                >
+                  <i
+                    className="material-icons prefix"
+                  >
+                    email
+                  </i>
+                  <input
+                    className="validate"
+                    id="email"
+                    name="email"
+                    onChange={[Function]}
+                    type="email"
+                  />
+                  <label
+                    htmlFor="email"
+                  >
+                    Email
+                  </label>
+                  <span
+                    className="red-text"
+                  >
+                    
+                  </span>
+                </div>
+              </div>
+              <div
+                className="row"
+              >
+                <div
+                  className="input-field col s4 m6 l6"
+                >
+                  <button
+                    className="btn btn-small"
+                    disabled={true}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>
+                <div
+                  className="input-field col s8 m6 l6"
+                >
+                  <button
+                    className="btn btn-small white black-text"
+                  >
+                    <a
+                      href="/"
+                      onClick={[Function]}
+                    >
+                      Cancel
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

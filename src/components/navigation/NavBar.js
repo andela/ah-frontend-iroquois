@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 import * as PropTypes from 'prop-types';
@@ -46,14 +46,15 @@ class LoggedInNav extends React.Component {
 const NotLoggedInNav = (props) => (
 	<div className="right" style={{marginRight: '3em', display: 'flex'}}>
 		<div className={'signupModal'}><a href='#' className={styles.signup}>Signup</a></div>
-		<div className={'loginModal'}><Modal
+		<div className={'loginModal'}>
+			<Modal id={'loginModal'}
               className={styles["Modal"]}
               actions={''}
               trigger={<a href='#' className={styles.login} >Login</a>}>
             <LoginForm userLoginRequest={props.userLoginRequest} user={props.user} error={props.errors}/>
             <Notifications />
-          </Modal></div>
-
+          </Modal>
+		</div>
 	</div>
 );
 
