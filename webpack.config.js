@@ -2,6 +2,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DotEnv = require('dotenv-webpack');
+const webpack = require('webpack');
 
 module.exports = {
 	// Tell webpack to begin building its
@@ -31,11 +32,12 @@ module.exports = {
 
 			},
 			{
-				test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+				test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
 				loader: require.resolve('url-loader'),
 				options: {
 					limit: 10000,
-					name: 'static/media/[name].[hash:8].[ext]'
+					name: 'static/media/[name].[hash:8].[ext]',
+					fallback: 'responsive-loader'
 				}
 			},
 			{
@@ -75,7 +77,15 @@ module.exports = {
 			template: path.join(__dirname, 'public', 'index.html'),
 			favicon: 'public/favicon.ico'
 		}),
-		new DotEnv()
+		new DotEnv(),
+		new webpack.DefinePlugin({
+			'process.env': {
+				GOOGLE_API_KEY: JSON.stringify(process.env.GOOGLE_API_KEY),
+				FACEBOOK_API_KEY: JSON.stringify(process.env.FACEBOOK_API_KEY),
+				API_URL: JSON.stringify(process.env.API_URL),
+				PUBLIC_URL: JSON.stringify(process.env.PUBLIC_URL)
+			}
+		})
 	],
 	devServer: {
 		host: 'localhost',

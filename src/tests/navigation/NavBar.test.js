@@ -1,8 +1,8 @@
 import React from 'react';
 import {mount} from 'enzyme';
-import NavBar from '../../components/navigation/NavBar';
 import {MemoryRouter} from 'react-router-dom';
 import { Provider } from 'react-redux';
+import NavBar from '../../components/navigation/NavBar';
 import { store } from '../../redux-js/stores/index';
 
 describe('NavBar', () => {
@@ -24,7 +24,7 @@ describe('Logged in user', () => {
 		const nav = mount(
 			<MemoryRouter>
 				<Provider store={store}>
-					<NavBar isLoggedIn={true}/>
+					<NavBar isLoggedIn />
 				</Provider>
 
 			</MemoryRouter>

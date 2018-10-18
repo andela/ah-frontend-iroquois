@@ -1,7 +1,9 @@
 import requestLoadingAction from './request-loading';
+import socialLoginServiceAction from './social-login';
 
 const ACTIONS = {
-	requestLoadingAction
+	requestLoadingAction,
+	socialLoginServiceAction
 };
 
 export default ACTIONS;

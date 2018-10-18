@@ -7,7 +7,7 @@ import PageLoader from '../PageLoader';
 
 const mockStore = configureStore();
 
-describe('should display loader.', () => {
+describe('should display loader', () => {
 
 	it('should render loader', () => {
 		const store = mockStore({});

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styles from './css/login.scss';
 import {Link} from 'react-router-dom';
 import {emailValidation, validateEmail} from '../../Utils/utils';
+import SocialButtons from '../../social-login/SocialButtons';
 
 class LoginForm extends Component {
 
@@ -87,6 +88,8 @@ class LoginForm extends Component {
 					<Link to={'/invoke/password-reset'} onClick={() => {
 						$('#loginModal').modal('close')
 					}}>Forgot password?</Link>
+
+					<SocialButtons/>
 				</div>
 			</div>
 		</form>
