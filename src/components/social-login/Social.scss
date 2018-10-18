@@ -6,25 +6,23 @@
 	box-sizing: border-box;
 	text-transform: none;
 	color: color(white);
-
 	.buttons-social{
 		margin: 2em auto auto;
-		justify-content: space-around;
-		display: flex;
-		flex-direction: column;
 		Button {
-			width: 100%;
+			width: 45%;
+			float: right;
 			height: auto;
 			border-radius: 5px;
-			margin: .5em .5em .5em .3em;
+			margin: .2em .5em .2em .3em;
 			text-align: center;
+
 		}
 	}
 	.button-icon {
-		justify-content: center;
 		display: flex;
 		flex-direction: row;
 		text-transform: none;
+		justify-content: space-around;
 		svg {
 			margin-right: .2em;
 			width: auto;
@@ -32,7 +30,9 @@
 		}
 
 		span {
+			width: 100%;
 			text-align: center;
+			white-space: nowrap;
 			margin: auto auto auto .2em;
 			border-left: 1px solid #fff;
 			padding: auto;
@@ -41,16 +41,37 @@
 	}
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 1000px){
 
 	.social-container {
 		.buttons-social{
-			display: block;
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+			justify-items: stretch;
 			Button {
+				float: none;
 				width: 100%;
 				span{
 					width: 100%;
-					text-align: right;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 620px){
+
+	.social-container {
+		.buttons-social{
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+			justify-items: stretch;
+			Button {
+				float: none;
+				span{
+					display: none;
 				}
 			}
 		}

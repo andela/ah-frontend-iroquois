@@ -88,9 +88,11 @@ class LoginForm extends Component {
 					<Link to={'/invoke/password-reset'} onClick={() => {
 						$('#loginModal').modal('close')
 					}}>Forgot password?</Link>
-
-					<SocialButtons/>
 				</div>
+			</div>
+
+			<div className='row s12'>
+				<SocialButtons />
 			</div>
 		</form>
 	};

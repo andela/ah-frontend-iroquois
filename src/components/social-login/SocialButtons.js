@@ -32,7 +32,7 @@ class SocialButtons extends React.Component {
 	handleSocialFailure = (errorResponse, provider) => {
 		this.props.updateRequestLoading(false);
 
-		notify.show(`An Error occurred when trying to log-in with ${provider}. ${errorResponse}`, 'error', 5000);
+		notify.show(`An error occurred when trying to log-in with ${provider}. ${errorResponse}`, 'error', 5000);
 	};
 
 	onSocialSuccess = (response, provider) => {
@@ -62,8 +62,8 @@ class SocialButtons extends React.Component {
 
 	render() {
 		const options = {
-			GOOGLE: {text: 'Login with Google', icon: ICON.GOOGLE, iconColor: ICON_COLOR.WHITE},
-			FACEBOOK: {text: 'Login with Facebook', icon: ICON.FACEBOOK, iconColor: ICON_COLOR.WHITE}
+			GOOGLE: {text: 'Google Login', icon: ICON.GOOGLE, iconColor: ICON_COLOR.WHITE},
+			FACEBOOK: {text: 'Facebook Login', icon: ICON.FACEBOOK, iconColor: ICON_COLOR.WHITE}
 		};
 
 		return (

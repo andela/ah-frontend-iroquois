@@ -80,10 +80,10 @@ module.exports = {
 		new DotEnv(),
 		new webpack.DefinePlugin({
 			'process.env': {
-				GOOGLE_API_KEY: JSON.stringify(process.env.GOOGLE_API_KEY),
-				FACEBOOK_API_KEY: JSON.stringify(process.env.FACEBOOK_API_KEY),
-				API_URL: JSON.stringify(process.env.API_URL),
-				PUBLIC_URL: JSON.stringify(process.env.PUBLIC_URL)
+				GOOGLE_API_KEY: JSON.stringify(process.env.REACT_APP_GOOGLE_API_KEY),
+				FACEBOOK_API_KEY: JSON.stringify(process.env.REACT_APP_FACEBOOK_API_KEY),
+				API_URL: JSON.stringify(process.env.REACT_APP_API_URL),
+				PUBLIC_URL: JSON.stringify(process.env.REACT_APP_PUBLIC_URL)
 			}
 		})
 	],
