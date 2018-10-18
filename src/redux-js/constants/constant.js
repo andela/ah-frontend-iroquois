@@ -7,6 +7,7 @@ const ACTION_TYPE = {
 };
 export const resetPasswordUrl = `https://ah-backend-staging.herokuapp.com/api/user/`;
 export const invokeResetPasswordUrl = `https://ah-backend-staging.herokuapp.com/api/users/reset/password/`;
-export const passwordRedirectUrl = `https://ah-frontend-staging-pr-15.herokuapp.com/#/reset/password`;
+let myLink = window.location.host;
+export const passwordRedirectUrl = `https://${myLink}/#/reset/password`;
 
 export default ACTION_TYPE;
