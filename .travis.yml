@@ -13,6 +13,8 @@ script:
 - npm run build
 - npm install coveralls
 - npm run test -- --coverage --no-cache
+- npm test -- -u
+
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 notifications:
