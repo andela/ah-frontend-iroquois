@@ -46,20 +46,21 @@ class LoginForm extends Component {
 				<div className={'input-field col s12'}>
 					{inputs.map((field, index) => generateInput(field, index,this))}
 				</div>
-				<div className="input-field col s12">
-					<button disabled={this.state.emailHasError || this.state.passwordHasError}
-							className={`btn ${styles['button-effects']}`}
-							type="submit" name="action">Login
+			</div>
+			<div className='row'>
+				<div className="input-field col s12 m6 l6">
+					<button style={{width: '100%', textTransform: 'none'}} disabled={this.state.emailHasError || this.state.passwordHasError}
+							className={`btn ${styles['button-effects']}`} type="submit" name="action">Login
 					</button>
 				</div>
-				<div className="input-field col s12">
-					<Link to={'/invoke/password-reset'} onClick={() => {
-						$('#loginModal').modal('close')
-					}}>Forgot password?</Link>
-
-					<SocialButtons/>
+			</div>
+			<div className='row'>
+				<div className="input-field col s12 m6 l6 center-align">
+					<Link style={{height: '16px', lineHeight: '16px', display: 'inline-block', float: 'none'}}
+						  to={'/invoke/password-reset'} onClick={() => {$('#loginModal').modal('close')}}>Forgot password?</Link>
 				</div>
 			</div>
+			<SocialButtons />
 		</form>
 	};
 

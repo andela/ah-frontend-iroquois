@@ -32,7 +32,7 @@ class SocialButtons extends React.Component {
 	handleSocialFailure = (errorResponse, provider) => {
 		this.props.updateRequestLoading(false);
 
-		notify.show(`An Error occurred when trying to log-in with ${provider}. ${errorResponse}`, 'error', 5000);
+		notify.show(`An error occurred when trying to log-in with ${provider}. ${errorResponse}`, 'error', 5000);
 	};
 
 	onSocialSuccess = (response, provider) => {
@@ -62,20 +62,24 @@ class SocialButtons extends React.Component {
 
 	render() {
 		const options = {
-			GOOGLE: {text: 'Login with Google', icon: ICON.GOOGLE, iconColor: ICON_COLOR.WHITE},
-			FACEBOOK: {text: 'Login with Facebook', icon: ICON.FACEBOOK, iconColor: ICON_COLOR.WHITE}
+			GOOGLE: {text: 'Google', icon: ICON.GOOGLE, iconColor: ICON_COLOR.WHITE},
+			FACEBOOK: {text: 'Facebook', icon: ICON.FACEBOOK, iconColor: ICON_COLOR.WHITE}
 		};
 
 		return (
-			<div className={styles['social-container']}>
+			<div className={`row ${styles['social-container']}`}>
 
-				<div className={styles['buttons-social']}>
+				<div className='row' style={{color: '#000000', fontWeight: 'bolder'}}>
+					<div className='col s12 l6 m6 center-align' style={{color: '#00544a'}}>OR -- Login With --</div>
+				</div>
+				<div className={`col s12 m6 l6 input-field ${styles['buttons-social']}`}>
 					<Google
 						googleOnFailure={this.googleOnFailure}
 						onSocialSuccess={this.onSocialSuccess}
 						iconDiv={this.generateIconDiv(options.GOOGLE)}
 					/>
-
+				</div>
+				<div className={`col s12 m6 l6  ${styles['buttons-social']}`}>
 					<Facebook iconDiv={this.generateIconDiv(options.FACEBOOK)} onSocialSuccess={this.onSocialSuccess} />
 				</div>
 			</div>

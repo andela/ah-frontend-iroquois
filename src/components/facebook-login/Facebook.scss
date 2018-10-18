@@ -3,6 +3,9 @@
 
 .facebook {
 	background-color: color(facebook);
+	&:hover, &:active, &:focus {
+		background-color: lighten(color(facebook), 10%);
+	}
 }
 
 .button-icon {

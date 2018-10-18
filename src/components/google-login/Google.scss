@@ -3,6 +3,9 @@
 
 .google {
 	background-color: color(google);
+	&:hover, &:active, &:focus {
+		background-color: lighten(color(google), 10%);
+	}
 }
 
 .button-icon {

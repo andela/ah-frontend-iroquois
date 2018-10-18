@@ -4,55 +4,40 @@
 .social-container {
 
 	box-sizing: border-box;
-	text-transform: none;
 	color: color(white);
-
+	margin-top: 20px !important;
 	.buttons-social{
-		margin: 2em auto auto;
-		justify-content: space-around;
-		display: flex;
-		flex-direction: column;
+		margin: .6em auto auto;
 		Button {
 			width: 100%;
-			height: auto;
-			border-radius: 5px;
-			margin: .5em .5em .5em .3em;
+			height: 36px;
+			line-height: 36px;
+			margin: .2em 0;
 			text-align: center;
 		}
 	}
 	.button-icon {
-		justify-content: center;
 		display: flex;
 		flex-direction: row;
 		text-transform: none;
+		justify-content: space-around;
 		svg {
-			margin-right: .2em;
-			width: auto;
-			height: auto;
+			margin: auto;
+			margin-right: .5em;
+			min-width: 1.5em;
+			min-height: 1.5em;
 		}
 
 		span {
-			text-align: center;
-			margin: auto auto auto .2em;
+			width: 100%;
+			font-weight: normal;
+			white-space: nowrap;
+			font-size: 10pt;
+			text-transform: none;
+			margin: auto;
 			border-left: 1px solid #fff;
-			padding: auto;
-			padding-left: 1em;
+			padding-left: .6em;
 		}
 	}
 }
 
-@media screen and (max-width: 320px){
-
-	.social-container {
-		.buttons-social{
-			display: block;
-			Button {
-				width: 100%;
-				span{
-					width: 100%;
-					text-align: right;
-				}
-			}
-		}
-	}
-}
