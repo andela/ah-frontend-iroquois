@@ -61,8 +61,6 @@ class InvokePasswordResetEmail extends React.Component{
 				</div>
 
 			</div>
-
-
         </div>
     }
 }

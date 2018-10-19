@@ -5,6 +5,7 @@ import './components/Auth/Login/css/login.scss';
 import {Provider} from 'react-redux';
 import App from './App';
 
+
 ReactDOM.render(
 
 	<Provider store={window.store}>

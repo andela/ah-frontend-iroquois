@@ -44,7 +44,13 @@
       "src/**/*.{js,jsx}",
       "!/node_modules/",
       "!src/index.js",
-      "!src/redux-js/stores/index.js"
+      "!src/redux-js/stores/index.js",
+      "!src/App.js",
+      "!src/redux-js/stores/index.js",
+      "!src/views/Home.js",
+      "!src/views/Login.js",
+      "!src/views/Navigation.js",
+      "!src/redux-js/reducers/index.js"
     ],
     "verbose": true,
     "clearMocks": true,

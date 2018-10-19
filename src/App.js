@@ -7,7 +7,6 @@ import InvokePasswordResetEmail from './components/Password/InvokePasswordResetE
 import ResetPassword from './components/Password/ResetPassword';
 import Notification from 'react-notify-toast';
 
-
 const App = () => {
 	return (
 		<Router>
