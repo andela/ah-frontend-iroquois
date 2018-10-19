@@ -3,9 +3,8 @@
     "browser": true,
     "es6": true,
     "node": true,
-    "mocha": true
+    "jest": true
   },
-
   "globals": {
     "document": false,
     "navigator": false,
@@ -14,7 +13,12 @@
   "parser": "babel-eslint",
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
   ],
   "parserOptions": {
     "sourceType": "module",
@@ -72,7 +76,7 @@
     "no-label-var": 2,
     "no-labels": 2,
     "no-lone-blocks": 2,
-    "no-mixed-spaces-and-tabs": 2,
+    "no-mixed-spaces-and-tabs": ["warn", "smart-tabs"],
     "no-multi-spaces": 2,
     "no-multi-str": 2,
     "no-multiple-empty-lines": [2, { "max": 1 }],
@@ -124,6 +128,19 @@
     "wrap-iife": [2, "any"],
     "yoda": [2, "never"],
     "no-console": "off",
-    "no-alert": "off"
+    "no-alert": "off",
+    "import/default": 0,
+    "import/no-duplicates": 2,
+    "import/named": 0,
+    "import/namespace": 0,
+    "import/no-unresolved": 0,
+    "import/no-named-as-default": 2,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/destructuring-assignment": [0, "always"],
+    "react/forbid-prop-types": [0, { "forbid": ["object"], "checkContextTypes": true, "checkChildContextTypes": true }],
+    "react/require-default-props": [0, { "forbidDefaultForRequired": true }],
+    "react/jsx-indent-props": [2, "tab"],
+    "react/jsx-indent": [2, "tab"],
+    "no-param-reassign": "off"
   }
 }
