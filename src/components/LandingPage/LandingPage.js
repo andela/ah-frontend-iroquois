@@ -1,12 +1,10 @@
 import React from 'react';
 import Footer from '../Footer/Footer';
 import styles from '../../styles/LandingPage/LandingPage.scss';
-import Notifications from "react-notify-toast";
 
 const LandingPage = () => {
 	return (
 		<main>
-            <Notifications/>
 			<div className={styles.landing_page}>
 				<div className={styles.landing_page_text}>
 					<div className={styles.sloganStyle}>

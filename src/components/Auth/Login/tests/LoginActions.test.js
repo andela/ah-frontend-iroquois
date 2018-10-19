@@ -65,27 +65,6 @@ describe('login component', () => {
 
 	});
 
-    it('should login a user 201', () => {
-        moxios.stubRequest(API_URLS.LOGIN_URL, {
-            status: 201,
-            response: mockData
-
-        });
-
-        const expectedActions = [{"isRequestLoading": true,
-			"type": "REQUEST_LOADING"},
-			{"payload": {"user": {"email": "essa1@andela.com",
-						"password": "essa1@andela"}},
-				"type": "loginUser"}];
-
-
-
-        return store.dispatch(userLoginRequest(mockData)
-        ).then(() => {
-            expect(store.getActions()).toEqual(expectedActions);
-        });
-
-    });
 	it('should fail on invalid login', async () => {
 		moxios.stubRequest(API_URLS.LOGIN_URL, {
 			status: 400,

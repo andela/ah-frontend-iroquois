@@ -9,8 +9,6 @@ window.store = store;
 const mockStore = configureStore();
 
 it('renders without crashing', () => {
-
-	const store = mockStore({requestLoadingReducer: {isRequestLoading: true}, users: {visible: false}});
-
+	const store = mockStore({requestLoadingReducer: {isRequestLoading: true}});
 	expect(mount(<Provider store={store}><App/></Provider>).find(App)).toHaveLength(1);
 });
