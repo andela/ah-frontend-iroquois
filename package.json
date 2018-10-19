@@ -2,11 +2,24 @@
   "name": "ah-frontend-iroquois",
   "version": "0.1.0",
   "private": true,
+  "heroku config": "set NPM_CONFIG_PRODUCTION=false",
   "dependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "axios": "^0.18.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.0",
     "classnames": "^2.2.6",
+    "css-loader": "^1.0.0",
     "dotenv-webpack": "^1.5.7",
-    "moxios": "^0.4.0",
+    "expect": "latest",
+    "html-webpack-plugin": "latest",
+    "react-social-icons": "^3.0.0",
+    "regenerator-runtime": "^0.12.1",
+    "jest": "^23.6.0",
+    "jquery": "^3.3.1",
     "node-sass": "^4.9.3",
     "prop-types": "latest",
     "react": "^16.5.2",
@@ -14,14 +27,18 @@
     "react-materialize": "^2.4.6",
     "react-notify-toast": "^0.5.0",
     "react-redux": "^5.0.7",
-    "redux": "^4.0.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
-    "react-router-redux": "^4.0.8",
-    "react-social-icons": "^3.0.0",
+    "react-test-renderer": "^16.2.0",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5",
     "redux-mock-store": "^1.5.3",
     "redux-thunk": "^2.3.0",
-    "regenerator-runtime": "^0.12.1"
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
   },
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js --mode development --open --hot",
@@ -29,7 +46,8 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "test:watch": "jest --watch",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postinstall": "npm run build"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -73,9 +91,13 @@
     "node-sass": "^4.9.3",
     "redux-mock-store": "^1.5.3",
     "sass-loader": "^7.1.0",
+    "serviceworker-webpack-plugin": "^1.0.1",
     "style-loader": "^0.23.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-dev-server": "^3.1.9",
+    "moxios": "^0.4.0",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5"
   }
 }

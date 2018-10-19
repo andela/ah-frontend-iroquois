@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import styles from './css/login.scss';
+import {Link} from 'react-router-dom';
+import {emailValidation, validateEmail} from '../../Utils/utils';
 
 class LoginForm extends Component {
 
@@ -27,19 +29,9 @@ class LoginForm extends Component {
 	handleChange(e) {
 		this.setState({[e.target.name]: e.target.value});
 		e.target.name === 'email'
-			? this.validateEmail(e.target.value)
+			? validateEmail(e.target.value, this)
 			: this.validatePassword(e.target.value);
 	}
-
-	validateEmail = (email) => {
-		this.setState({emailError: '', emailHasError: false});
-
-		if (email.length === 0) {
-			this.setState({emailError: 'Email is required', emailHasError: true});
-		} else if (email.indexOf('@') === -1) {
-			this.setState({emailError: 'Email should be in the format johndoe@mail.com', emailHasError: true});
-		}
-	};
 
 	validatePassword = (password) => {
 		this.setState({passwordError: '',  passwordHasError: false});
@@ -76,30 +68,36 @@ class LoginForm extends Component {
 		);
 	};
 
+	loginForm = (inputs) => {
+		return <form className={styles['form-login']} onSubmit={this.handleSubmit}>
+			<div className={'row'} style={{textAlign: 'center'}}>
+				<span className={styles['login-headers']}><b>Login</b></span>
+			</div>
+			<div className="row">
+				<div className={'input-field col s12'}>
+					{inputs.map((field, index) => this.generateInput(field, index))}
+				</div>
+				<div className="input-field col s12">
+					<button disabled={this.state.emailHasError || this.state.passwordHasError}
+							className={`btn ${styles['button-effects']}`}
+							type="submit" name="action">Login
+					</button>
+				</div>
+				<div className="input-field col s12">
+					<Link to={'/invoke/password-reset'} onClick={() => {
+						$('#loginModal').modal('close')
+					}}>Forgot password?</Link>
+				</div>
+			</div>
+		</form>
+	};
+
 	render() {
 		const inputs = [['email', 'email', this.state.email, 'email', 'Email', 'email', this.state.emailError], ['password', 'password', this.state.password, 'password', 'Password', 'vpn_key', this.state.passwordError]
 		].map(fld => this.field(fld));
 		return (
 			<div>
-				<form className={styles['form-login']} onSubmit={this.handleSubmit}>
-					<div className={'row'} style={{textAlign: 'center'}}>
-						<span className={styles['login-headers']}><b>Login</b></span>
-					</div>
-					<div className="row">
-						<div className={'input-field col s12'}>
-							{inputs.map((field, index) => this.generateInput(field, index))}
-						</div>
-						<div className="input-field col s12">
-							<button disabled={this.state.emailHasError || this.state.passwordHasError}
-							        className={`btn ${styles['button-effects']}`}
-							        type="submit" name="action">Login
-							</button>
-						</div>
-						<div className="input-field col s12">
-							<a href="#" className="password-reset-link">Forgot Password?</a>
-						</div>
-					</div>
-				</form>
+				{this.loginForm(inputs)}
 			</div>
 		);
 	}

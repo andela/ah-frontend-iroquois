@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginForm from '../LoginForm';
 import {shallow} from 'enzyme';
+import $ from 'jquery';
 
 describe('<LoginForm/>', () => {
 	const mockFn = jest.fn();
@@ -99,6 +100,7 @@ describe('<LoginForm/>', () => {
 
 	});
 
+
 	it('calls validatePassword()', () => {
 		let data = {
 			email: 'email@mail.com',
@@ -113,7 +115,11 @@ describe('<LoginForm/>', () => {
 		let fn = jest.spyOn(component.instance(), 'handleChange');
 		component.find('input').first().simulate('change', {target: target});
 		component.find('input').first().simulate('change', {target: target});
+
+		$.fn.modal = jest.fn();
+		component.find('Link').simulate('click');
 		expect(fn).toHaveBeenCalledTimes(1);
+		expect($.fn.modal).toBeCalledWith('close')
 
 	});
 
