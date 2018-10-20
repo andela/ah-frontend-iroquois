@@ -1,0 +1,56 @@
+.login-headers {
+  color: #00544a;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  font-style: revert;
+  font-size: 30px;
+}
+
+.form-login {
+  width: 100%;
+  > div{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.button-effects {
+  background-color: #00544a;
+}
+
+.icon-styles {
+  color: #085439;
+}
+
+.card-effects {
+  padding: 100px;
+  width: 50%;
+  height: 60%;
+  margin-top: 20px;
+  margin-right: 30px;
+}
+
+.icon-styles {
+  color: #00544a;
+}
+
+$errorColor: #bf3f2b;
+
+.errors {
+  color: $errorColor;
+}
+
+.fieldError {
+  color: $errorColor;
+  input:focus:not([readonly]) {
+    color: $errorColor;
+    -webkit-box-shadow: 0 1px 0 0 $errorColor;
+    -moz-box-shadow: 0 1px 0 0 $errorColor;
+    box-shadow: 0 1px 0 0 $errorColor;
+    border-bottom: 1px solid $errorColor;
+  }
+  .prefix.active, input:focus:not([readonly]) + label {
+    color: $errorColor;
+  }
+}
