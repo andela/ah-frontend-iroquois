@@ -9,6 +9,10 @@
 
 .form-login {
     width: 100%;
+    > div {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 }
 
 .button-effects {

@@ -21,7 +21,7 @@ export default class Facebook extends React.Component {
 				size="medium"
 				fields="name,email,picture"
 				callback={this.loginWithFacebook}
-				cssClass={`${styles['material-button-raised']} ${styles.facebook}`}
+				cssClass={`btn ${styles['material-button-raised']} ${styles.facebook}`}
 				textButton=""
 				icon={this.props.iconDiv}
 			/>

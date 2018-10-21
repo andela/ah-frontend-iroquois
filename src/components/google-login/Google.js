@@ -16,7 +16,7 @@ export default class Google extends React.Component {
 	render() {
 		return (
 			<GoogleLogin
-				className={`${styles['material-button-raised']} ${styles.google}`}
+				className={`btn ${styles['material-button-raised']} ${styles.google}`}
 				buttonText=" Google"
 				prompt="consent"
 				redirectUri="/"
