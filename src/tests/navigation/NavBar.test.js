@@ -3,9 +3,9 @@ import {mount} from 'enzyme';
 import {MemoryRouter} from 'react-router-dom';
 import { Provider } from 'react-redux';
 import NavBar from '../../components/navigation/NavBar';
-import { store } from '../../redux-js/stores/index';
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
+import store  from '../../redux-js/stores';
 
 describe('NavBar', () => {
 	it('renders without crashing', () => {

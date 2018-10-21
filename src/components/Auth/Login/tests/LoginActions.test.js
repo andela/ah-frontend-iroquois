@@ -26,8 +26,7 @@ describe('login component', () => {
 
 	beforeEach(() => {
 		moxios.install();
-		store = mockStore();
-		window.store = store;
+		store = mockStore({});
 	});
 	afterEach(() => {
 		moxios.uninstall();

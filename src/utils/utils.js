@@ -1,8 +1,6 @@
 import {Modal} from "react-materialize";
 import React from "react";
 import styles from "../components/Auth/Login/css/login.scss";
-import style from "../styles/signup.scss";
-import SignUpForm from "../components/signup/subcomponents/SignUpForm";
 
 export const emailValidation = (email, err, bol) =>{
 

@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {PasswordInvokeThunk} from "../../redux-js/actions";
 import SubmitContent from './common';
-import {emailValidation, validateEmail} from '../Utils/utils';
+import {validateEmail} from '../Utils/utils';
 
 class InvokePasswordResetEmail extends React.Component{
 	constructor(props){

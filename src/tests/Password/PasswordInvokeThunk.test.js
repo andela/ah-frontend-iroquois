@@ -23,7 +23,7 @@ describe ('Email invoke component',()=> {
     beforeEach(() => {
         moxios.install();
 		store = mockStore();
-		window.store = store;
+
     });
 
     afterEach(() => {

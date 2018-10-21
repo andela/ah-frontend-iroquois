@@ -5,7 +5,7 @@ import * as moxios from "moxios";
 import {userSignUpRequest} from "../../../redux-js/actions/signUpActions";
 import {SIGNUP_URL} from "../../../constants/constants";
 
-const middlewares = [reduxThunk]
+const middlewares = [reduxThunk];
 const mockStore = configurestore(middlewares);
 
 jest.mock('react-notify-toast');
@@ -46,7 +46,7 @@ describe ('signup component',()=> {
        });
 
        const expectedActions =   [{"isRequestLoading": true, "type": "REQUEST_LOADING"},
-           {"message": undefined, "type": "MESSAGE"}, {"isRequestLoading": false, "type": "REQUEST_LOADING"}]
+           {"message": undefined, "type": "MESSAGE"}, {"isRequestLoading": false, "type": "REQUEST_LOADING"}];
 
         return store.dispatch(userSignUpRequest(mockData)).then(()=> {
            expect(store.getActions()).toEqual(expectedActions)
@@ -63,7 +63,7 @@ describe ('signup component',()=> {
         });
 
         const expectedActions =  [{"isRequestLoading": true, "type": "REQUEST_LOADING"}, 
-            {"isRequestLoading": false, "type": "REQUEST_LOADING"}]
+            {"isRequestLoading": false, "type": "REQUEST_LOADING"}];
 
         store.dispatch(userSignUpRequest(mockData)).then(()=> {
             expect(store.getActions()).toEqual(expectedActions)

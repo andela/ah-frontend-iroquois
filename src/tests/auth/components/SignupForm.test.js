@@ -1,10 +1,13 @@
 import React from 'react'
 import {mount, shallow} from 'enzyme'
 import SignUpForm from "../../../components/signup/subcomponents/SignUpForm";
+import store from '../../../redux-js/stores';
+import {Provider} from 'react-redux';
+import {MemoryRouter} from 'react-router-dom';
 
     const props = {
         userSignUpRequest: jest.fn()
-    }
+    };
 
     jest.mock('react-notify-toast');
 
@@ -15,7 +18,7 @@ describe ('signup component',()=> {
 
     it('should click sign up button ',() => {
       expect(enzymeWrapper.find('form').length).toBe(1);
-      expect(enzymeWrapper.find('form').simulate('submit', {preventDefault}))
+      expect(enzymeWrapper.find('form').simulate('submit', {preventDefault}));
         expect(preventDefault).toBeCalled();
 
     });
@@ -35,7 +38,7 @@ describe ('signup component',()=> {
             confirm_password:'',
             confirm_passwordError:'',
             visible: false,
-        }
+        };
 
         enzymeWrapper.setState({...currState});
 
@@ -52,7 +55,7 @@ describe ('signup component',()=> {
             confirm_password:'',
             confirm_passwordError:'',
             visible: false,
-        }
+        };
 
         enzymeWrapper.setState({...currState});
     });
@@ -121,7 +124,10 @@ describe ('signup component',()=> {
 
     it('calls validate methods', () => {
 
-        const enzymeWrapper = mount(<SignUpForm {...props}/>);
+        const enzymeWrapper = mount(<MemoryRouter><Provider store={store}><SignUpForm {...props}/>
+			</Provider>
+			</MemoryRouter>
+			);
         enzymeWrapper.find('input[name="password"]').simulate('change',{target:{name:'password', value:''}});
         enzymeWrapper.find('input[name="password"]').simulate('change',{target:{name:'password', value:'hg'}});
         enzymeWrapper.find('input[name="password"]').simulate('change',{target:{name:'password', value:'hgdasfd2345fvdfg'}});

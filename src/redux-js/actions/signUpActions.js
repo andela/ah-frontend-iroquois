@@ -10,16 +10,14 @@ import {SIGNUP_URL} from "../../constants/constants";
 
 export function userSignUpRequest(user){
 
-    window.store.dispatch(requestLoadingAction(true));
-
     return async dispatch => {
-
+		dispatch(requestLoadingAction(true));
         return  await axios.post(SIGNUP_URL,
             {user},
 
             ).then(response => {
                 dispatch(messageRegistration(response.data.user.message));
-                window.store.dispatch(requestLoadingAction(false));
+                dispatch(requestLoadingAction(false));
                 notify.show(response.data.user.message, 'success',6000);
 
         }).catch(error => {
@@ -32,7 +30,7 @@ export function userSignUpRequest(user){
                 message = dictionary[key];
                 message_key = key;
             }
-            window.store.dispatch(requestLoadingAction(false));
+            dispatch(requestLoadingAction(false));
             notify.show(message.toString().replace('this',message_key), 'error',4000);
         });
     }
