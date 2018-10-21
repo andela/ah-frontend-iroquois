@@ -3,8 +3,8 @@ import requestLoadingAction from './request-loading';
 
 export const getSocialLoginService =
 	(dispatch) =>
-		(URL, data, method) =>
-			dispatch(socialLoginServiceAction(URL, data, method));
+		(URL, data, method, history = {}) =>
+			dispatch(socialLoginServiceAction(URL, data, method, history));
 
 export const getUpdateRequestLoading =
 	(dispatch) =>

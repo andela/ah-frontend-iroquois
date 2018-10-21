@@ -2,6 +2,7 @@ import axios from 'axios';
 import { notify } from 'react-notify-toast';
 import API_URLS, { AUTH_TOKEN, USERNAME_KEY } from '../../constants';
 import requestLoadingAction from './request-loading';
+import Login from './LoginActionCreator';
 
 const addToken = () => {
 	const TOKEN = localStorage.getItem(AUTH_TOKEN);
@@ -12,7 +13,7 @@ const addToken = () => {
 	}
 };
 
-export const fetchUser = async() => {
+export const fetchUser = async(dispatch, history) => {
 
 	addToken();
 
@@ -25,7 +26,11 @@ export const fetchUser = async() => {
 				const username = response.user.username.split('_')[0];
 				localStorage.setItem(USERNAME_KEY, username);
 
-				window.location.assign('/');
+				response.user.username = username;
+
+				dispatch(Login({data: response}));
+
+				history.push('/login');
 			}
 		})
 		.catch(error => {
@@ -33,11 +38,9 @@ export const fetchUser = async() => {
 		});
 };
 
-const socialLoginServiceAction = (URL, data = {}, method = 'post') => dispatch => {
+const socialLoginServiceAction = (URL, data = {}, method = 'post', history) => dispatch => {
 
 	dispatch(requestLoadingAction(true));
-
-	addToken();
 
 	// noinspection JSUnresolvedFunction
 	return axios({ method, url: URL, data }).then(resp => resp.data)
@@ -49,7 +52,7 @@ const socialLoginServiceAction = (URL, data = {}, method = 'post') => dispatch =
 
 				localStorage.setItem(AUTH_TOKEN, token);
 
-				await fetchUser();
+				await fetchUser(dispatch, history);
 			}
 			// return resp;
 			dispatch(requestLoadingAction(false));

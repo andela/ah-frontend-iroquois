@@ -11,6 +11,7 @@
     "history": "latest",
     "jimp": "^0.5.4",
     "jquery": "^3.3.1",
+    "jwt-decode": "^2.2.0",
     "prop-types": "latest",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",

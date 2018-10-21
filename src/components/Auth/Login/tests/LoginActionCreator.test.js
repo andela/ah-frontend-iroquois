@@ -1,5 +1,5 @@
 import ACTION_TYPE from '../../../../redux-js/constants/constant';
-import LoginActionCreator from '../../../../redux-js/actions/LoginActionCreator';
+import LoginActionCreator, { userLogout } from '../../../../redux-js/actions/LoginActionCreator';
 
 describe('login action creator.', () => {
 	const response = {
@@ -13,6 +13,13 @@ describe('login action creator.', () => {
 
 	it('should return action type and payload', () => {
 		expect(LoginActionCreator(response)).toEqual(responseData);
+	});
+
+	it('should test for logout action', () => {
+		const expected = {
+			type: ACTION_TYPE.LOGOUT
+		};
+		expect(userLogout()).toEqual(expected);
 	});
 
 });

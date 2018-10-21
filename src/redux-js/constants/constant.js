@@ -3,7 +3,8 @@ const ACTION_TYPE = {
 	SOCIAL_LOGIN_SUCCESS: 'ADD_SOCIAL_SUCCESS',
 	SOCIAL_LOGIN_REDIRECT: 'ADD_SOCIAL_REDIRECT',
 	LOGIN_SUCCESSFUL: 'loginUser',
-	LOGIN_FAILED: 'userLoginFail'
+	LOGIN_FAILED: 'userLoginFail',
+	LOGOUT: 'logout_user'
 };
 export const resetPasswordUrl = `https://ah-backend-staging.herokuapp.com/api/user/`;
 export const invokeResetPasswordUrl = `https://ah-backend-staging.herokuapp.com/api/users/reset/password/`;
