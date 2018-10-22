@@ -33,3 +33,18 @@ it('should allow Login action start', () => {
     const newState = loginReducer(initialState, action);
     expect(newState).toEqual(expected);
 });
+
+it('should allow Logout', () => {
+	const initialState = [{}];
+
+	const action = {
+		type: ACTION_TYPE.LOGOUT
+	};
+	const expected = {
+		'0': {},
+		loggedIn: false,
+		user_data: {}
+	};
+	const newState = loginReducer(initialState, action);
+	expect(newState).toEqual(expected);
+});

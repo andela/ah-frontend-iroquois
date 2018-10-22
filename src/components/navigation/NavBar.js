@@ -90,12 +90,7 @@ NavBar.propTypes = {
     userSignUpRequest: PropTypes.func.isRequired
 };
 
-NavBar.defaultProps = {
-	isLoggedIn: false,
-    visible: true,
-};
-
-const mapStateToProps = state => ({...state, visible: state.users.visible});
+const mapStateToProps = state => ({...state, visible: state.users.visible, isLoggedIn: state.user.loggedIn});
 
 
 export default withRouter(connect(mapStateToProps,{userSignUpRequest,userLoginRequest})(NavBar));

@@ -85,7 +85,7 @@ describe('Social Actions', () => {
 
 	it('should return 404', async() => {
 
-		localStorage.setItem(AUTH_TOKEN, 'rtygjkhgfxgchvjbgcx');
+		localStorage.clear();
 
 		moxios.stubRequest(API_URLS.CURRENT_USER, {
 			status: 400,
@@ -104,7 +104,7 @@ describe('Social Actions', () => {
 			status: 200,
 			response: {user: {username: 'santos'}}
 		});
-		await fetchUser().then(() => {
+		await fetchUser(store.dispatch, {push: jest.fn()}).then(() => {
 			expect(localStorage.getItem(USERNAME_KEY)).toEqual('santos');
 		});
 	});

@@ -25,7 +25,7 @@ class SocialButtons extends React.Component {
 			? API_URLS.GOOGLE_AUTH
 			: API_URLS.FACEBOOK_AUTH;
 
-		this.props.socialLoginService(URL, { user: { auth_token: token } }, 'post');
+		this.props.socialLoginService(URL, { user: { auth_token: token } }, 'post', this.props.history);
 
 	};
 
@@ -89,7 +89,8 @@ class SocialButtons extends React.Component {
 
 SocialButtons.propTypes = {
 	updateRequestLoading: PropTypes.func.isRequired,
-	socialLoginService: PropTypes.func.isRequired
+	socialLoginService: PropTypes.func.isRequired,
+	history: PropTypes.any
 };
 
 const mapStateToProps = state => ({state: state.socialLoginReducer});
