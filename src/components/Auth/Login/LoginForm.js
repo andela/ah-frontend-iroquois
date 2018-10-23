@@ -48,15 +48,15 @@ class LoginForm extends Component {
 				</div>
 			</div>
 			<div className='row'>
-				<div className="input-field col s12 m6 l6">
-					<button style={{width: '100%', textTransform: 'none'}} disabled={this.state.emailHasError || this.state.passwordHasError}
+				<div className="input-field col s12 m12 l12 center-align">
+					<button style={{width: '50%', textTransform: 'none'}} disabled={this.state.emailHasError || this.state.passwordHasError}
 							className={`btn ${styles['button-effects']}`} type="submit" name="action">Login
 					</button>
 				</div>
 			</div>
 			<div className='row'>
-				<div className="input-field col s12 m6 l6 center-align">
-					<Link style={{height: '16px', lineHeight: '16px', display: 'inline-block', float: 'none'}}
+				<div className="input-field col s12 m12 l12 center-align">
+					<Link style={{height: '16px', fontSize: '9pt', lineHeight: '16px', display: 'inline-block', float: 'none'}}
 						  to={'/invoke/password-reset'} onClick={() => {$('#loginModal').modal('close')}}>Forgot password?</Link>
 				</div>
 			</div>

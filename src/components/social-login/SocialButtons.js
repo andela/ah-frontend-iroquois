@@ -68,10 +68,6 @@ class SocialButtons extends React.Component {
 
 		return (
 			<div className={`row ${styles['social-container']}`}>
-
-				<div className='row' style={{color: '#000000', fontWeight: 'bolder'}}>
-					<div className='col s12 l6 m6 center-align' style={{color: '#00544a'}}>OR -- Login With --</div>
-				</div>
 				<div className={`col s12 m6 l6 input-field ${styles['buttons-social']}`}>
 					<Google
 						googleOnFailure={this.googleOnFailure}
