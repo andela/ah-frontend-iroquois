@@ -54,8 +54,6 @@ const NotLoggedInNav = (props) => {
         ['','','','','','','','loginModal', 'loginModal', styles["Modal"],
 			 styles.login, 'Login', props,LoginForm]
     ].map(fld => field(fld));
-
-
     return (
     	<div className="right" style={{marginRight: '3em', display: 'flex'}}>
 			{attrs.map(attrs => generateModal(attrs))}
@@ -90,7 +88,12 @@ NavBar.propTypes = {
     userSignUpRequest: PropTypes.func.isRequired
 };
 
+
 const mapStateToProps = state => ({...state, visible: state.users.visible, isLoggedIn: state.user.loggedIn});
 
+NavBar.defaultProps = {
+	isLoggedIn: false,
+    visible: true
+};
 
 export default withRouter(connect(mapStateToProps,{userSignUpRequest,userLoginRequest})(NavBar));

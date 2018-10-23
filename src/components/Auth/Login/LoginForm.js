@@ -13,7 +13,7 @@ class LoginForm extends Component {
 			password: '',
 			emailHasError: true,
 			passwordHasError: true
-		}
+		};
         this.handleSubmit = this.handleSubmit.bind(this);
 	};
 

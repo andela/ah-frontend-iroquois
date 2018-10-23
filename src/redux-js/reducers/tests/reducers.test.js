@@ -3,7 +3,6 @@ import ACTION_TYPE from '../../constants/constant';
 import requestLoadingReducer from '../request-loading';
 import '../index';
 import '../../stores/index';
-import '../../index';
 import socialLoginReducer from '../social-login'; // redux-js index file
 
 const mockStore = configureStore();

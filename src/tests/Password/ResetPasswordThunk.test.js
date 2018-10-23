@@ -22,7 +22,6 @@ describe ('Reset password component',()=> {
 	beforeEach(() => {
 		moxios.install();
 		store = mockStore();
-		window.store = store;
 	});
 
 	afterEach(() => {

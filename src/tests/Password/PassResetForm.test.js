@@ -9,7 +9,7 @@ import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 
 let store = configureStore([thunk])({});
-window.store = store;
+
 jest.mock('react-notify-toast');
 
 describe('should render password reset form', () => {

@@ -7,12 +7,11 @@ import App from '../App';
 const mockStore = configureStore();
 
 it('renders without crashing', () => {
+
 	const store = mockStore({
 		requestLoadingReducer: {isRequestLoading: true}, users: {visible: false},
 		user: {loggedIn: false}
 	});
-	window.store = store;
-
 	expect(mount(<Provider store={store}><App /></Provider>).find(App)).toHaveLength(1);
 
 });

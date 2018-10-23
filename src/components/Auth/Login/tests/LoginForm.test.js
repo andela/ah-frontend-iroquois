@@ -4,8 +4,10 @@ import {mount, shallow} from 'enzyme';
 import $ from 'jquery';
 import {MemoryRouter} from "react-router-dom";
 import {Provider} from "react-redux";
-import {store} from "../../../../redux-js/stores";
+import thunk from 'redux-thunk';
+import conf from 'redux-mock-store';
 
+const store = conf([thunk])({});
 
 describe('<LoginForm/>', () => {
     const mockFn = jest.fn();

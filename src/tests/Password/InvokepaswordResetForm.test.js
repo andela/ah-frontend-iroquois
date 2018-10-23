@@ -18,8 +18,7 @@ const props = {
 	}
 };
 
-let store = conf([thunk])({...props});
-window.store = store;
+const store = conf([thunk])({});
 
 describe("Check loader has class", () => {
 

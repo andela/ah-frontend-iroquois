@@ -142,6 +142,6 @@ class SignUpForm extends Component {
 
 SignUpForm.propTypes = {
     userSignUpRequest: PropTypes.func.isRequired
-}
+};
 
 export default SignUpForm;

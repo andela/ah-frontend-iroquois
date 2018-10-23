@@ -33,4 +33,4 @@ describe('sign up action create.',() =>  {
         expect(userRegistrationFail(errors)).toEqual(failResponse)
 
     });
-})
+});
