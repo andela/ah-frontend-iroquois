@@ -7,7 +7,7 @@ const initialState = {
 
 };
 
-export const PasswordReducer = (state = initialState, action) => {
+const PasswordReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case 'INVOKE_RESET_PASSWORD_ERROR':
 			return {
@@ -20,14 +20,14 @@ export const PasswordReducer = (state = initialState, action) => {
 				invokePasswordSuccessMessage: action.payload.success, invokePasswordErrorMessage: ''
 			};
 		case 'RESET_PASSWORD_SUCCESS':
-			return { ...state, passResetMessageSuccess: action.payload.resetSuccess, passResetMessageError: '' };
+			return {...state, passResetMessageSuccess: action.payload.resetSuccess, passResetMessageError: ''};
 
 		case 'RESET_PASSWORD_ERROR':
-			return { ...state, passResetMessageError: action.payload.resetError, passResetMessageSuccess: '' };
+			return {...state, passResetMessageError: action.payload.resetError, passResetMessageSuccess: ''};
 
 		default:
 			return state;
 	}
 
 };
-
+export default PasswordReducer;

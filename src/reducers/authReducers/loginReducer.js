@@ -1,16 +1,17 @@
+import {Authenticate} from '../../components/ProtectedRoute/privateRoute';
+import ACTION_TYPE from '../../actions/authActions/actionTypes';
 
-import { Authenticate } from '../../components/ProtectedRoute/privateRoute';
-import {ACTION_TYPE} from '../../actions/authActions/actionTypes';
-
-export const loginReducer = (state = {loggedIn: Authenticate.isAuthenticated()}, action) => {
+const loginReducer = (state = {loggedIn: Authenticate.isAuthenticated()}, action) => {
 	switch (action.type) {
 		case ACTION_TYPE.LOGIN_SUCCESSFUL:
-			return {...state,
+			return {
+				...state,
 				loggedIn: true,
 				user_data: action.user
 			};
 		case ACTION_TYPE.LOGIN_FAILED:
-			return {...state,
+			return {
+				...state,
 				loggedIn: false,
 				error: action.error
 			};
@@ -20,3 +21,4 @@ export const loginReducer = (state = {loggedIn: Authenticate.isAuthenticated()},
 			return state;
 	}
 };
+export default loginReducer;

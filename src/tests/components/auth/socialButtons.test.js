@@ -48,7 +48,7 @@ describe('Social auth Buttons', () => {
 		wrapper = mount(
 			<MemoryRouter initialEntries={['/']}>
 				<Provider store={store}>
-					<SocialRender/>
+					<SocialRender />
 				</Provider>
 			</MemoryRouter>);
 	});

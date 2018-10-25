@@ -32,7 +32,8 @@ exports[`should render password reset form should render password reset form 1`]
               <p
                 className="grey-text"
               >
-                Create new password. It should be a strong password with at least 8 characters long with mixed letters and numbers
+                Create new password. It should be a strong password with at least 8 characters long
+						with mixed letters and numbers
               </p>
             </div>
           </div>
@@ -123,6 +124,7 @@ exports[`should render password reset form should render password reset form 1`]
                 >
                   <button
                     className="btn btn-small white black-text"
+                    type="button"
                   >
                     <a
                       href="/"

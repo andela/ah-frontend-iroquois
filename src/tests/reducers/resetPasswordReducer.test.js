@@ -1,7 +1,7 @@
 // Testing reducers
 // A reducer should return the new state after applying the action to the previous state
 
-import { PasswordReducer } from '../../reducers/authReducers/passwordReducers';
+import PasswordReducer from '../../reducers/authReducers/passwordReducers';
 
 const initialState = {
 	passResetMessageSuccess: '',

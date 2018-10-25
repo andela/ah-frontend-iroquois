@@ -1,12 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import {mount} from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
 import { Authenticate, PrivateRoute } from '../../components/ProtectedRoute/privateRoute';
 import { AUTH_TOKEN } from '../../constants/index';
 import LandingPage from '../../components/landingPage/landingPage';
-import configureStore from 'redux-mock-store';
-
-const store = configureStore()();
 
 it('should render without crashing logout', () => {
 

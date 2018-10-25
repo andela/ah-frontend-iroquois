@@ -2,13 +2,13 @@ import renderer from 'react-test-renderer';
 import {BrowserRouter, MemoryRouter} from 'react-router-dom';
 import {mount} from 'enzyme';
 import React from 'react';
-import ResetPassword from '../../../components/Auth/resetPassword/resetPassword';
-import {ResetPasswordThunk} from '../../../actions/authActions/resetPasswordAction';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
+import {ResetPasswordThunk} from '../../../actions/authActions/resetPasswordAction';
+import ResetPassword from '../../../components/Auth/resetPassword/resetPassword';
 
-let store = configureStore([thunk])({});
+const store = configureStore([thunk])({});
 
 jest.mock('react-notify-toast');
 
@@ -17,23 +17,22 @@ describe('should render password reset form', () => {
 		const tree = renderer.create(
 			<BrowserRouter>
 				<Provider store={store}>
-			<ResetPassword />
-					</Provider>
-		</BrowserRouter>).toJSON();
+					<ResetPassword />
+				</Provider>
+			</BrowserRouter>).toJSON();
 		expect(tree).toMatchSnapshot();
 
-	})
+	});
 });
 
-
 describe('handle Invoke email for password reset', () => {
-	let mockFunc = jest.fn();
+	const mockFunc = jest.fn();
 	let component;
 	beforeEach(() => {
-			component = mount(<MemoryRouter>
+		component = mount(
+			<MemoryRouter>
 				<Provider store={store}>
-				<ResetPassword
-					dispatch={ResetPasswordThunk("newPassword", "confirmPassword", "Token")}/>
+					<ResetPassword dispatch={ResetPasswordThunk('newPassword', 'confirmPassword', 'Token')} />
 				</Provider>
 			</MemoryRouter>);
 
@@ -47,7 +46,6 @@ describe('handle Invoke email for password reset', () => {
 		component.find('input#newPassword').simulate('change', {target: {name: 'newPassword', value: '23456uytrews'}});
 		component.find('input#newPassword').simulate('change', {target: {name: 'newPassword', value: '23456uytre234de'}});
 
-
 		component.find('input#confirmPassword').simulate('change', {target: {name: 'confirmPassword', value: ''}});
 		component.find('input#confirmPassword').simulate('change', {target: {name: 'confirmPassword', value: '23456uytrews'}});
 
@@ -56,7 +54,7 @@ describe('handle Invoke email for password reset', () => {
 
 		component.find('form').simulate('submit');
 
-	})
+	});
 
 });
 

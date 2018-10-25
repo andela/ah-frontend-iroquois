@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/label-has-for */
 import React from 'react';
 import { connect } from 'react-redux';
+import * as PropTypes from 'prop-types';
 import { ResetPasswordThunk } from '../../../actions/authActions/resetPasswordAction';
 import SubmitContent from './common';
 import { handleChanging } from '../../../utils/index';
@@ -54,8 +56,7 @@ class ResetPassword extends React.Component {
 
 		const myToken = window.location.href;
 		const Token = myToken.toString().substring(myToken.lastIndexOf('?') + 1);
-		const newPassword = this.state.newPassword;
-		const confirmPassword = this.state.confirmPassword;
+		const { confirmPassword, newPassword } = this.state;
 		this.props.dispatch(ResetPasswordThunk(newPassword, confirmPassword, Token));
 
 	};
@@ -84,11 +85,9 @@ class ResetPassword extends React.Component {
 				<div className="col m10 offset-m1">
 					<span className="card-title teal-text"><h5>Reset Password</h5></span>
 					<p className="grey-text">
-Create new password. It should be a strong password with at least 8 characters long
-						with mixed letters and numbers
-					
-					
-</p>
+						{`Create new password. It should be a strong password with at least 8 characters long
+						with mixed letters and numbers`}
+					</p>
 				</div>
 			</div>
 			<div className="col s12 m10 offset-m1">
@@ -126,4 +125,8 @@ Create new password. It should be a strong password with at least 8 characters l
 const mapStateToProps = state => ({
 	data: state
 });
+
+ResetPassword.propTypes = {
+	dispatch: PropTypes.func.isRequired
+};
 export default connect(mapStateToProps)(ResetPassword);

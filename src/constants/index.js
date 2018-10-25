@@ -1,7 +1,7 @@
 export const AUTH_TOKEN = 'auth_token';
 export const USERNAME_KEY = 'username';
 const BASE_URL = process.env.API_URL;
-let myLink = window.location.host;
+const myLink = window.location.host;
 export const API_URLS = {
 	GOOGLE_AUTH: `${BASE_URL}/social/auth/google/`,
 	FACEBOOK_AUTH: `${BASE_URL}/social/auth/facebook/`,

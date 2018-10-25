@@ -3,7 +3,7 @@ import {mount, shallow} from 'enzyme';
 import {Provider} from 'react-redux';
 import {MemoryRouter} from 'react-router-dom';
 import SignUpForm from '../../../components/Auth/signup/signUpForm';
-import {store} from '../../../store';
+import store from '../../../store';
 
 const props = {
 	userSignUpRequest: jest.fn()
@@ -35,8 +35,8 @@ describe('signup component', () => {
 			emailError: '',
 			password: 'test',
 			passwordError: '',
-			confirm_password: '',
-			confirm_passwordError: '',
+			confirmPass: '',
+			confirmPassError: '',
 			visible: false
 		};
 
@@ -52,8 +52,8 @@ describe('signup component', () => {
 			emailError: '',
 			password: '',
 			passwordError: '',
-			confirm_password: '',
-			confirm_passwordError: '',
+			confirmPass: '',
+			confirmPassError: '',
 			visible: false
 		};
 
@@ -65,7 +65,7 @@ describe('signup component', () => {
 			username: `huzaifah2001${Math.random()}`,
 			email: `hcch@gmail.com${Math.random()}`,
 			password: '@LMnnnnnnnnn',
-			confirm_password: '@LMnnnnnnnnn'
+			confirmPass: '@LMnnnnnnnnn'
 		};
 		const target = {
 			name: 'password',
@@ -86,8 +86,8 @@ describe('signup component', () => {
 			emailError: '',
 			password: '',
 			passwordError: '',
-			confirm_password: 'hddcgdc78cjrj',
-			confirm_passwordError: '',
+			confirmPass: 'hddcgdc78cjrj',
+			confirmPassError: '',
 			formHasErrors: true
 		};
 		const target = {
@@ -108,8 +108,8 @@ describe('signup component', () => {
 			emailError: '',
 			password: '',
 			passwordError: 'hddcgdc78cjrj',
-			confirm_password: 'hddcgdc78cjrj',
-			confirm_passwordError: '',
+			confirmPass: 'hddcgdc78cjrj',
+			confirmPassError: '',
 			formHasErrors: true
 		};
 		const target = {
@@ -124,22 +124,23 @@ describe('signup component', () => {
 
 	it('calls validate methods', () => {
 
-		const enzymeWrapper = mount(<MemoryRouter>
-			<Provider store={store}>
-				<SignUpForm {...props} />
-			</Provider>
-		</MemoryRouter>
+		const component = mount(
+			<MemoryRouter>
+				<Provider store={store}>
+					<SignUpForm {...props} />
+				</Provider>
+			</MemoryRouter>
 		);
-		enzymeWrapper.find('input[name="password"]').simulate('change', {target: {name: 'password', value: ''}});
-		enzymeWrapper.find('input[name="password"]').simulate('change', {target: {name: 'password', value: 'hg'}});
-		enzymeWrapper.find('input[name="password"]').simulate('change', {target: {name: 'password', value: 'hgdasfd2345fvdfg'}});
-		enzymeWrapper.find('input[name="password"]').simulate('change', {target: {name: 'password', value: 'hgdasfdfvdfg'}});
+		component.find('input[name="password"]').simulate('change', {target: {name: 'password', value: ''}});
+		component.find('input[name="password"]').simulate('change', {target: {name: 'password', value: 'hg'}});
+		component.find('input[name="password"]').simulate('change', {target: {name: 'password', value: 'hgdasfd2345fvdfg'}});
+		component.find('input[name="password"]').simulate('change', {target: {name: 'password', value: 'hgdasfdfvdfg'}});
 
-		enzymeWrapper.find('input[name="password"]').simulate('change', {target: {name: 'password', value: '234567890876'}});
-		enzymeWrapper.find('input[name="confirm_password"]').simulate('change', {target: {name: 'confirm_password', value: 'dfg'}});
-		enzymeWrapper.find('input[name="email"]').simulate('change', {target: {name: 'email', value: 'hgdasfd2345fvdfg'}});
-		enzymeWrapper.find('input[name="username"]').simulate('change', {target: {name: 'username', value: 'hgdasfd2345fvdfg'}});
-		enzymeWrapper.find('form').simulate('submit', {target: {name: 'email', value: 'dfgh@dfg.sdfg'}, preventDefault: jest.fn()});
+		component.find('input[name="password"]').simulate('change', {target: {name: 'password', value: '234567890876'}});
+		component.find('input[name="confirmPass"]').simulate('change', {target: {name: 'confirmPass', value: 'dfg'}});
+		component.find('input[name="email"]').simulate('change', {target: {name: 'email', value: 'hgdasfd2345fvdfg'}});
+		component.find('input[name="username"]').simulate('change', {target: {name: 'username', value: 'hgdasfd2345fvdfg'}});
+		component.find('form').simulate('submit', {target: {name: 'email', value: 'dfgh@dfg.sdfg'}, preventDefault: jest.fn()});
 	});
 
 });

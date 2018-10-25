@@ -1,10 +1,9 @@
 import reduxThunk from 'redux-thunk';
 import configurestore from 'redux-mock-store';
 import * as moxios from 'moxios';
-import {userLoginRequest} from '../../../actions/authActions/loginAction';
 import {notify} from 'react-notify-toast';
+import userLoginRequest from '../../../actions/authActions/loginAction';
 import {API_URLS} from '../../../constants';
-
 
 const middlewares = [reduxThunk];
 const mockStore = configurestore(middlewares);
@@ -12,13 +11,13 @@ notify.show = jest.fn();
 const mockData = {
 	user: {
 		email: 'essa1@andela.com',
-		password: 'essa1@andela',
+		password: 'essa1@andela'
 
 	}
 };
 
 const errorMockData = {
-	errors: {"name": "is Required"}
+	errors: {'name': 'is Required'}
 };
 
 let store;
@@ -41,21 +40,21 @@ describe('login component', () => {
 
 		const expectedActions = [
 			{
-				"type": "REQUEST_LOADING",
-				"isRequestLoading": true
+				'type': 'REQUEST_LOADING',
+				'isRequestLoading': true
 			},
 			{
-				"type": "REQUEST_LOADING",
-				"isRequestLoading": false
+				'type': 'REQUEST_LOADING',
+				'isRequestLoading': false
 			},
-			{"payload": {
-				"user": {
-					"email": "essa1@andela.com", "password": "essa1@andela"
+			{'payload': {
+				'user': {
+					'email': 'essa1@andela.com', 'password': 'essa1@andela'
 				}
-				},
-				"type": "LOGIN_USER"
+			},
+			'type': 'LOGIN_USER'
 			}
-				];
+		];
 
 		return store.dispatch(userLoginRequest(mockData)
 		).then(() => {
@@ -64,52 +63,52 @@ describe('login component', () => {
 
 	});
 
-    it('should login a user 201', () => {
-        moxios.stubRequest(API_URLS.LOGIN_URL, {
-            status: 201,
-            response: mockData
+	it('should login a user 201', () => {
+		moxios.stubRequest(API_URLS.LOGIN_URL, {
+			status: 201,
+			response: mockData
 
-        });
+		});
 
-        const expectedActions = [{"isRequestLoading": true,
-			"type": "REQUEST_LOADING"},
-			{"payload": {"user": {"email": "essa1@andela.com",
-						"password": "essa1@andela"}},
-				"type": "LOGIN_USER"}];
+		const expectedActions = [{'isRequestLoading': true,
+			'type': 'REQUEST_LOADING'},
+		{'payload': {'user': {'email': 'essa1@andela.com',
+			'password': 'essa1@andela'}},
+		'type': 'LOGIN_USER'}];
 
+		return store.dispatch(userLoginRequest(mockData)
+		).then(() => {
+			expect(store.getActions()).toEqual(expectedActions);
+		});
 
-        return store.dispatch(userLoginRequest(mockData)
-        ).then(() => {
-            expect(store.getActions()).toEqual(expectedActions);
-        });
-
-    });
-	it('should fail on invalid login', async () => {
+	});
+	it('should fail on invalid login', async() => {
 		moxios.stubRequest(API_URLS.LOGIN_URL, {
 			status: 400,
 			response: errorMockData
 
 		});
 
-		const expectedActions =[
+		const expectedActions = [
 			{
-				"type": "REQUEST_LOADING",
-				"isRequestLoading": true
+				'type': 'REQUEST_LOADING',
+				'isRequestLoading': true
 			},
 			{
-				"type": "USER_LOGIN_FAIL",
-				"payload": {"name": "is Required"}
+				'type': 'USER_LOGIN_FAIL',
+				'payload': {'name': 'is Required'}
 			},
 			{
-				"type": "REQUEST_LOADING",
-				"isRequestLoading": false
+				'type': 'REQUEST_LOADING',
+				'isRequestLoading': false
 			}
-			];
+		];
 
-		let data = await store.dispatch(userLoginRequest(mockData)
-			).then(() => {
-				expect(store.getActions()).toEqual(expectedActions);
-			});
+		// eslint-disable-next-line no-unused-vars
+		const data = await store.dispatch(userLoginRequest(mockData)
+		).then(() => {
+			expect(store.getActions()).toEqual(expectedActions);
+		});
 
 	});
 });
