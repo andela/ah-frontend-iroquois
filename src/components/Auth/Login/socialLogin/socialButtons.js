@@ -5,10 +5,10 @@ import { withRouter } from 'react-router-dom';
 import { notify } from 'react-notify-toast';
 import styles from '../../../../styles/authStyles/Social.scss';
 import { getSocialLoginService, getUpdateRequestLoading } from '../../../../actions/authActions/socialLoginCreators';
-import Google from './google-login/google';
-import Facebook from './facebook-login/facebook';
-import CustomSvgIcon from '../../../svg-images/generateSvg';
-import { ICON, ICON_COLOR } from '../../../svg-images/icons';
+import Google from './googleLogin/google';
+import Facebook from './facebookLogin/facebook';
+import CustomSvgIcon from '../../../svgImages/generateSvg';
+import { ICON, ICON_COLOR } from '../../../svgImages/icons';
 import { API_URLS } from '../../../../constants/index';
 
 class SocialButtons extends React.Component {

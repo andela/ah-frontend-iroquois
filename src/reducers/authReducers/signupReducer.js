@@ -1,4 +1,4 @@
-import {ACTION_TYPE} from '../../actions/authActions/actionTypes';
+import ACTION_TYPE from '../../actions/authActions/actionTypes';
 
 const initialState = {
 	visible: false,
@@ -22,9 +22,9 @@ const reducer = (state = initialState, action) => {
 				payload: action.payload
 			};
 		case ACTION_TYPE.SIGNUP_FAIL:
-			return { ...state, visible: false };
+			return {...state, visible: false};
 		case ACTION_TYPE.MESSAGE:
-			return { ...state, message: action.message };
+			return {...state, message: action.message};
 		default:
 			return state;
 	}

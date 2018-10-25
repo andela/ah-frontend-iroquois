@@ -9,7 +9,7 @@ describe('Footer', () => {
 	});
 
 	it('renders without crashing', () => {
-		shallow(<Footer/>);
+		shallow(<Footer />);
 	});
 
 	it('renders a footer', () => {

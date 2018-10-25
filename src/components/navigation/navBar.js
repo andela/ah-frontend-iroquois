@@ -5,13 +5,13 @@ import classNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import styles from '../../styles/navBar.scss';
 import DropDown from './generateDropdownItems';
-import {userLoginRequest} from '../../actions/authActions/loginAction';
+import userLoginRequest from '../../actions/authActions/loginAction';
 import style from '../../styles/authStyles/signup.scss';
-import {userSignUpRequest} from '../../actions/authActions/signUpActions';
-import {field, generateModal, modalfields} from '../../utils/index';
+import {field, generateModal} from '../../utils/index';
 import LoginForm from '../Auth/Login/loginForm';
 import SignUpForm from '../Auth/signup/signUpForm';
-import {Logo} from '../logo/logo';
+import Logo from '../logo/logo';
+import userSignUpRequest from '../../actions/authActions/signUpActions';
 
 const authorsHavenClassNames = classNames(styles.title, 'right', 'hide-on-small-and-down');
 const loggedInNavClassNames = classNames('hide-on-med-and-up', styles.dropdown);
@@ -29,21 +29,16 @@ const LogoContainer = () => (
 	</Link>
 );
 
-class LoggedInNav extends React.Component {
-
-	render() {
-		return (
-			<ul className='right'>
-				<DropDown />
-				<li className={loggedInNavClassNames}>
-					<Link to="/">
-						<i className="material-icons">more_vert</i>
-					</Link>
-				</li>
-			</ul>
-		);
-	}
-}
+const LoggedInNav = () => (
+	<ul className='right'>
+		<DropDown />
+		<li className={loggedInNavClassNames}>
+			<Link to="/">
+				<i className="material-icons">more_vert</i>
+			</Link>
+		</li>
+	</ul>
+);
 
 const NotLoggedInNav = (props) => {
 
@@ -55,7 +50,7 @@ const NotLoggedInNav = (props) => {
 	].map(fld => field(fld));
 	return (
 		<div className="right" style={{marginRight: '3em', display: 'flex'}}>
-			{attrs.map(attrs => generateModal(attrs))}
+			{attrs.map(attr => generateModal(attr))}
 		</div>
 
 	);

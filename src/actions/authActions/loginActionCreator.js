@@ -1,4 +1,4 @@
-import {ACTION_TYPE} from './actionTypes';
+import ACTION_TYPE from './actionTypes';
 
 const Login = (response) => ({
 	'type': ACTION_TYPE.LOGIN_SUCCESSFUL,

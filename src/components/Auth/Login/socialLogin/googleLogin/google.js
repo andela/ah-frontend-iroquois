@@ -34,5 +34,6 @@ export default class Google extends React.Component {
 
 Google.propTypes = {
 	googleOnFailure: PropTypes.func.isRequired,
-	onSocialSuccess: PropTypes.func.isRequired
+	onSocialSuccess: PropTypes.func.isRequired,
+	iconDiv: PropTypes.any
 };

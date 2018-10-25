@@ -91,6 +91,7 @@ exports[`Check loader has class renders correctly 1`] = `
                 >
                   <button
                     className="btn btn-small white black-text"
+                    type="button"
                   >
                     <a
                       href="/"

@@ -1,4 +1,4 @@
-import {ACTION_TYPE} from '../../../actions/authActions/actionTypes';
+import ACTION_TYPE from '../../../actions/authActions/actionTypes';
 import SignupActionCreator, {userRegistrationFail} from '../../../actions/authActions/signUpActionCreators';
 
 describe('sign up action create.', () => {

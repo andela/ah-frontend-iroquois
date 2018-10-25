@@ -1,7 +1,7 @@
 import configureStore from 'redux-mock-store';
 import socialLoginReducer from '../../reducers/authReducers/socialLogin';
 import requestLoadingReducer from '../../reducers/requestLoading';
-import {ACTION_TYPE} from '../../actions/authActions/actionTypes';
+import ACTION_TYPE from '../../actions/authActions/actionTypes';
 
 const mockStore = configureStore();
 

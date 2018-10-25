@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
-import { loginReducer } from './authReducers/loginReducer';
+import {combineReducers} from 'redux';
+import loginReducer from './authReducers/loginReducer';
 import requestLoadingReducer from './requestLoading';
 import signupReducer from './authReducers/signupReducer';
-import { PasswordReducer } from './authReducers/passwordReducers';
+import PasswordReducer from './authReducers/passwordReducers';
 import socialLoginReducer from './authReducers/socialLogin';
 
 const reducers = combineReducers({

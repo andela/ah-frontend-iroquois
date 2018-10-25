@@ -4,7 +4,7 @@ import { GoogleLogin } from 'react-google-login';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
-import Google from '../../../components/Auth/Login/socialLogin/google-login/google';
+import Google from '../../../components/Auth/Login/socialLogin/googleLogin/google';
 
 const mockStore = configureStore();
 

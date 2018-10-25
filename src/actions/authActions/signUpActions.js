@@ -4,30 +4,27 @@ import {API_URLS} from '../../constants';
 import requestLoadingAction from './requestLoading';
 import {messageRegistration} from './signUpActionCreators';
 
-export function userSignUpRequest(user){
+function userSignUpRequest(user) {
 
-    return async dispatch => {
+	return dispatch => {
 		dispatch(requestLoadingAction(true));
-        return  await axios.post(API_URLS.SIGNUP_URL,
-            {user},
+		return axios.post(API_URLS.SIGNUP_URL,
+			{user}
+		).then(response => {
+			dispatch(messageRegistration(response.data.user.message));
+			dispatch(requestLoadingAction(false));
+			notify.show(response.data.user.message, 'success', 6000);
 
-            ).then(response => {
-                dispatch(messageRegistration(response.data.user.message));
-                dispatch(requestLoadingAction(false));
-                notify.show(response.data.user.message, 'success',6000);
+		}).catch(error => {
 
-        }).catch(error => {
+			const dictionary = error.response.data.errors;
 
-            let dictionary =error.response.data.errors;
-            let message = '';
-            let message_key= '';
+			const errs = Object.keys(dictionary).map(key => dictionary[key]);
+			const message = errs && errs.length > 1 ? errs[0] : errs;
 
-            for (const key in dictionary) {
-                message = dictionary[key];
-                message_key = key;
-            }
-            dispatch(requestLoadingAction(false));
-            notify.show(message.toString().replace('this',message_key), 'error',4000);
-        });
-    }
+			dispatch(requestLoadingAction(false));
+			notify.show(message, 'error', 4000);
+		});
+	};
 }
+export default userSignUpRequest;

@@ -40,11 +40,12 @@ describe('handle Invoke email for password reset', () => {
 	let component;
 
 	beforeEach(() => {
-		component = mount(<MemoryRouter>
-			<Provider store={store}>
-				<InvokePasswordResetEmail dispatch={PasswordInvokeThunk('email@g.com')} />
-			</Provider>
-		</MemoryRouter>);
+		component = mount(
+			<MemoryRouter>
+				<Provider store={store}>
+					<InvokePasswordResetEmail dispatch={PasswordInvokeThunk('email@g.com')} />
+				</Provider>
+			</MemoryRouter>);
 
 	});
 

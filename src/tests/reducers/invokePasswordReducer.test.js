@@ -1,4 +1,4 @@
-import { PasswordReducer } from '../../reducers/authReducers/passwordReducers';
+import PasswordReducer from '../../reducers/authReducers/passwordReducers';
 
 const initialState = {
 	invokePasswordErrorMessage: '',

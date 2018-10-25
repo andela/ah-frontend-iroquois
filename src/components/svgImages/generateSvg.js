@@ -11,7 +11,7 @@ const CustomSvgIcon = props => (
 		viewBox="0 0 24 24"
 		fill={props.color}
 	>
-		<path d={props.icon}/>
+		<path d={props.icon} />
 	</svg>
 );
 

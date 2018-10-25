@@ -30,7 +30,7 @@ const DropDownButton = () => (
 const GenerateDropItem = (props) => (
 	<Link to={`/${props.route}`}>
 		<span>
-			<i className={`fa fa-1x ${props.icon}`}/>
+			<i className={`fa fa-1x ${props.icon}`} />
 			<span>
 				{props.text}
 			</span>
@@ -41,7 +41,7 @@ const GenerateDropItem = (props) => (
 const Dropdown = () => (
 	<li className={styles.dropdown}>
 
-		<DropDownButton/>
+		<DropDownButton />
 
 		<div className={styles['dropdown-content']}>
 			{items.map((item, index) => (<GenerateDropItem key={`${item.route}-${index * 2}`} {...item} />))}

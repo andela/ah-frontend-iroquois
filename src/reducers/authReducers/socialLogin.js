@@ -1,4 +1,4 @@
-import {ACTION_TYPE} from '../../actions/authActions/actionTypes';
+import ACTION_TYPE from '../../actions/authActions/actionTypes';
 
 const initialState = {
 	errors: null,
@@ -15,7 +15,7 @@ const socialLoginReducer = (state = initialState, action) => {
 				...state,
 				errors: null,
 				redirect: true,
-				response: { ...state.response, ...action.payload }
+				response: {...state.response, ...action.payload}
 			};
 		case ACTION_TYPE.SOCIAL_LOGIN_REDIRECT:
 			return {

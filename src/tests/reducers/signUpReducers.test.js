@@ -1,12 +1,12 @@
 // import { MESSAGE, SIGNUP_FAIL, SIGNUP_START, SIGNUP_STOP, SIGNUP_SUCCESS } from '../../constants/actionTypes';
 import signupReducer from '../../reducers/authReducers/signupReducer';
-import {ACTION_TYPE} from '../../actions/authActions/actionTypes';
+import ACTION_TYPE from '../../actions/authActions/actionTypes';
 
 it('should allow sign up action start', () => {
 	const initialState = [{}];
 
 	const action = {
-		type:  ACTION_TYPE.SIGNUP_START
+		type: ACTION_TYPE.SIGNUP_START
 	};
 	const expected = {
 		'0': {},
@@ -23,7 +23,7 @@ it('should allow sign up action stop', () => {
 	const initialState = [{}];
 
 	const action = {
-		type:  ACTION_TYPE.SIGNUP_STOP
+		type: ACTION_TYPE.SIGNUP_STOP
 	};
 	const expected = {
 		'0': {},
@@ -39,7 +39,7 @@ it('should allow sign up action success', () => {
 	const initialState = [{}];
 
 	const action = {
-		type:  ACTION_TYPE.SIGNUP_SUCCESS
+		type: ACTION_TYPE.SIGNUP_SUCCESS
 	};
 	const expected = {
 		'0': {},
@@ -55,7 +55,7 @@ it('should allow sign up action fail', () => {
 	const initialState = [{}];
 
 	const action = {
-		type:  ACTION_TYPE.SIGNUP_FAIL
+		type: ACTION_TYPE.SIGNUP_FAIL
 	};
 	const expected = {
 		'0': {},
@@ -70,7 +70,7 @@ it('should show a message', () => {
 	const initialState = [{}];
 
 	const action = {
-		type:  ACTION_TYPE.MESSAGE
+		type: ACTION_TYPE.MESSAGE
 	};
 	const expected = {
 		'0': {},

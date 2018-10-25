@@ -3,7 +3,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
-import Facebook from '../../../components/Auth/Login/socialLogin/facebook-login/facebook';
+import Facebook from '../../../components/Auth/Login/socialLogin/facebookLogin/facebook';
 
 const mockStore = configureStore();
 
@@ -39,7 +39,7 @@ describe('Social auth Buttons', () => {
 	it('should test success login', () => {
 		const fun = jest.fn();
 
-		const fb = shallow(<Facebook onSocialSuccess={fun} styles={{}}/>);
+		const fb = shallow(<Facebook onSocialSuccess={fun} styles={{}} />);
 		fb.instance().loginWithFacebook({ accessToken: 'dsfgdhfd' });
 
 		expect(fun).toHaveBeenCalledTimes(1);

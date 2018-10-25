@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Dropdown from '../../components/navigation/generateDropdownItems';
 import { MemoryRouter } from 'react-router-dom';
+import Dropdown from '../../components/navigation/generateDropdownItems';
 
 describe('GenerateDropdown', () => {
 
