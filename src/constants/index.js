@@ -11,6 +11,8 @@ export const API_URLS = {
 	SIGNUP_URL: `${BASE_URL}/users/`,
 	RESET_PASSWORD_URL: `${BASE_URL}/user/`,
 	INVOKE_PASSWORD_URL: `${BASE_URL}/users/reset/password/`,
-	PASSWORD_REDIRECT_URL: `https://${myLink}/#/reset/password`
+	PASSWORD_REDIRECT_URL: `https://${myLink}/#/reset/password`,
+	USER_PROFILE_URL: `${BASE_URL}/profile/`,
+	UPDATE_PROFILE_URL: `${BASE_URL}/user/update/profile/`
 };
 
