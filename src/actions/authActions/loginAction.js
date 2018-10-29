@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {notify} from 'react-notify-toast';
 import Login, {userLoginFail} from './loginActionCreator';
-import {API_URLS, AUTH_TOKEN, USERNAME_KEY} from '../../constants';
+import { API_URLS, AUTH_TOKEN, USERNAME_KEY } from '../../constants';
 import requestLoadingAction from './requestLoading';
 
 const userLoginRequest = (user) => dispatch => {

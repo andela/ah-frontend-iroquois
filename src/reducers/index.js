@@ -4,6 +4,7 @@ import requestLoadingReducer from './requestLoading';
 import signupReducer from './authReducers/signupReducer';
 import PasswordReducer from './authReducers/passwordReducers';
 import socialLoginReducer from './authReducers/socialLogin';
+import profileInfo from './profileReducers/profileReducer';
 import articlesReducer from './articleReducers/articlesReducers';
 
 const reducers = combineReducers({
@@ -12,6 +13,7 @@ const reducers = combineReducers({
 	socialLoginReducer,
 	users: signupReducer,
 	requestLoadingReducer,
+	profileInfo,
 	articlesReducer
 });
 

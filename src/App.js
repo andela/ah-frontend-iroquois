@@ -11,6 +11,8 @@ import { PrivateRoute } from './components/ProtectedRoute/privateRoute';
 import ViewAll from './containers/viewAllArticles';
 import ViewArticle from './containers/viewArticle';
 import CreateArticle from './containers/createArticle';
+import Profile from './containers/profile/profile';
+import EditProfile from './containers/profile/editProfile';
 
 const App = () => (
 	<Router>
@@ -23,6 +25,8 @@ const App = () => (
 				<Route path='/logout' component={Logout} />
 				<Route path='/invoke/password-reset' component={InvokePasswordResetEmail} exact />
 				<Route path='/reset/password' component={ResetPassword} exact />
+				<PrivateRoute path='/profile' component={Profile} exact />
+				<PrivateRoute path='/profile/edit' component={EditProfile} exact />
 				<PrivateRoute path='/new-articles' component={CreateArticle} />
 				<PrivateRoute path='/articles' component={ViewAll} exact />
 				<PrivateRoute path='/articles/:slug' component={ViewArticle} exact />

@@ -6,7 +6,7 @@ import styles from '../../styles/navBar.scss';
 import {generateNavName} from './generateNavbarLinks';
 
 const items = [
-	{ route: 'profile', icon: 'fa-user-edit', text: 'Edit Profile' },
+	{ route: 'profile', icon: 'fa-user', text: 'Profile' },
 	{ route: 'logout', icon: 'fa-sign-out-alt', text: 'Logout' }
 ];
 
