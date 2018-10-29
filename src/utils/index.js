@@ -1,7 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import {Modal} from 'react-materialize';
 import React from 'react';
+import axios from 'axios';
+import moment from 'moment';
 import styles from '../styles/authStyles/login.scss';
+import {AUTH_TOKEN} from '../constants';
+import {IMG} from '../components/articles/viewCard';
 
 export const emailValidation = (email, err, bol) => {
 
@@ -84,3 +88,45 @@ export const validateEmail = (email, obj) => {
 
 	obj.setState(emailValidation(email, 'emailError', 'emailHasError'));
 };
+
+export const predictionTags = [
+	'Java',
+	'Life',
+	'Here',
+	'C#',
+	'Authors Haven',
+	'Transportation'
+];
+export const formatName = (name) => name
+	? name.split('_')[0]
+	: name;
+
+export const formatDate = (dateStr) => {
+	moment.updateLocale('en', {
+		weekdaysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+	});
+	const date = new Date(dateStr);
+	return moment(date).format('ddd, MMM Do YYYY');
+};
+
+export const addToken = () => {
+	const TOKEN = localStorage.getItem(AUTH_TOKEN);
+
+	if (TOKEN !== null) {
+		// noinspection JSUnresolvedVariable
+		axios.defaults.headers.common.Authorization = `Token ${TOKEN}`;
+	}
+};
+
+export const image = (attrs) => (
+	<div className={attrs.className}>
+		<img width={attrs.width} height={attrs.height} src={attrs.article.author.avatar || IMG} alt="" className="circle responsive-img" />
+	</div>
+);
+
+export const generateButton = (opts) => (
+	<button key={opts.icon + opts.className} type='button' onClick={opts.handler} className={opts.className}>
+		{opts.icon ? <i className={opts.icon} /> : ''}
+		{opts.text}
+	</button>
+);

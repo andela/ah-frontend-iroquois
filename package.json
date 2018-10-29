@@ -4,20 +4,26 @@
   "private": true,
   "heroku config": "set NPM_CONFIG_PRODUCTION=false",
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^11.1.1",
+    "@ckeditor/ckeditor5-build-decoupled-document": "^11.1.1",
+    "@ckeditor/ckeditor5-build-inline": "^11.1.1",
+    "@ckeditor/ckeditor5-react": "^1.0.0",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "dotenv-webpack": "^1.5.7",
     "file-loader": "^2.0.0",
+    "font-awesome": "^4.7.0",
     "history": "latest",
     "jimp": "^0.5.4",
     "jquery": "^3.3.1",
     "jwt-decode": "^2.2.0",
+    "moment": "^2.22.2",
     "prop-types": "latest",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-facebook-login": "^4.1.1",
     "react-google-login": "^3.2.1",
-    "react-materialize": "^2.4.6",
+    "react-materialize": "^2.4.7",
     "react-notify-toast": "^0.5.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
@@ -51,7 +57,8 @@
       "!src/views/Home.js",
       "!src/views/Login.js",
       "!src/views/Navigation.js",
-      "!src/redux-js/reducers/index.js"
+      "!src/redux-js/reducers/index.js",
+      "!src/static/js/material-dialog.js"
     ],
     "verbose": true,
     "clearMocks": true,
@@ -60,6 +67,9 @@
     "coveragePathIgnorePatterns": [
       "<rootDir>/src/setupTests.js"
     ],
+    "globals": {
+      "onbeforeunload": true
+    },
     "transform": {
       "^.+\\.js$": "babel-jest"
     },

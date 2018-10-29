@@ -138,7 +138,7 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/destructuring-assignment": [0, "always"],
     "react/forbid-prop-types": [0, { "forbid": ["object"], "checkContextTypes": true, "checkChildContextTypes": true }],
-    "react/require-default-props": [0, { "forbidDefaultForRequired": true }],
+    "react/require-default-props": [2, { "forbidDefaultForRequired": true }],
     "react/jsx-indent-props": [2, "tab"],
     "react/jsx-indent": [2, "tab"],
     "no-param-reassign": "off"

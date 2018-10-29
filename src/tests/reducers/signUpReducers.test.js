@@ -1,6 +1,6 @@
 // import { MESSAGE, SIGNUP_FAIL, SIGNUP_START, SIGNUP_STOP, SIGNUP_SUCCESS } from '../../constants/actionTypes';
 import signupReducer from '../../reducers/authReducers/signupReducer';
-import ACTION_TYPE from '../../actions/authActions/actionTypes';
+import ACTION_TYPE from '../../actions/actionTypes';
 
 it('should allow sign up action start', () => {
 	const initialState = [{}];

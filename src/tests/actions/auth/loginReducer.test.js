@@ -1,5 +1,5 @@
 import loginReducer from '../../../reducers/authReducers/loginReducer';
-import ACTION_TYPE from '../../../actions/authActions/actionTypes';
+import ACTION_TYPE from '../../../actions/actionTypes';
 
 it('should allow Login action start', () => {
 	const initialState = [{}];

@@ -7,6 +7,10 @@ import Logout from './components/Logout/logout';
 import LandingPage from './components/landingPage/landingPage';
 import NavBar from './components/navigation/navBar';
 import PageLoader from './components/pageLoader/pageLoader';
+import { PrivateRoute } from './components/ProtectedRoute/privateRoute';
+import ViewAll from './containers/viewAllArticles';
+import ViewArticle from './containers/viewArticle';
+import CreateArticle from './containers/createArticle';
 
 const App = () => (
 	<Router>
@@ -19,6 +23,9 @@ const App = () => (
 				<Route path='/logout' component={Logout} />
 				<Route path='/invoke/password-reset' component={InvokePasswordResetEmail} exact />
 				<Route path='/reset/password' component={ResetPassword} exact />
+				<PrivateRoute path='/new-articles' component={CreateArticle} />
+				<PrivateRoute path='/articles' component={ViewAll} exact />
+				<PrivateRoute path='/articles/:slug' component={ViewArticle} exact />
 				<Route path='*' component={LandingPage} />
 			</Switch>
 		</div>

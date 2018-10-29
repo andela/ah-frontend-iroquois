@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {notify} from 'react-notify-toast';
 import Login, {userLoginFail} from './loginActionCreator';
-import {API_URLS, AUTH_TOKEN} from '../../constants';
+import {API_URLS, AUTH_TOKEN, USERNAME_KEY} from '../../constants';
 import requestLoadingAction from './requestLoading';
 
 const userLoginRequest = (user) => dispatch => {
@@ -11,9 +11,9 @@ const userLoginRequest = (user) => dispatch => {
 		if (response.status === 200) {
 			const token = response.data.user.token ? response.data.user.token : null;
 			localStorage.setItem(AUTH_TOKEN, token);
+			localStorage.setItem(USERNAME_KEY, response.data.user.username);
 			dispatch(requestLoadingAction(false));
-			notify.show('You have successfully logged in.', 'success', 4000);
-			window.location.assign('/');
+			window.location.hash = 'articles';
 		}
 		dispatch(Login(response));
 

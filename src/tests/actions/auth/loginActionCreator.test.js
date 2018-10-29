@@ -1,4 +1,4 @@
-import ACTION_TYPE from '../../../actions/authActions/actionTypes';
+import ACTION_TYPE from '../../../actions/actionTypes';
 import LoginActionCreator, {userLogout} from '../../../actions/authActions/loginActionCreator';
 
 describe('login action creator.', () => {
