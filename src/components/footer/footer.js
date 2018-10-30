@@ -6,11 +6,11 @@ const DisplayCard = (props) => {
 	const cardDetails = props.card;
 	return (
 		<div className="col s3">
-			<div className={`card small ${styles.card}`}>
+			<div className={`card small ${styles.cards}`}>
 				<div className="card-content">
 					<p>
-						<i style={{ color: '#3c8176' }} className={cardDetails.icon1} />
-						<i style={{ color: '#3c8176' }} className={cardDetails.icon2} />
+						<i className={cardDetails.icon1} />
+						<i className={cardDetails.icon2} />
 					</p>
 					<p style={{ marginTop: '1.5em' }}>{cardDetails.textDisplay}</p>
 				</div>

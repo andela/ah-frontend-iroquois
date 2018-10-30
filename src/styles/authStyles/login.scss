@@ -1,5 +1,7 @@
+@import "../variables";
+
 .login-headers {
-  color: #00544a;
+  color: color(primary);
   text-align: center;
   width: 100%;
   margin: auto;
@@ -16,11 +18,11 @@
 }
 
 .button-effects {
-  background-color: #00544a;
+  background-color:color(primary);
 }
 
 .icon-styles {
-  color: #085439;
+  color: color(secondary);
 }
 
 .card-effects {
@@ -32,7 +34,7 @@
 }
 
 .icon-styles {
-  color: #00544a;
+  color: color(primary);
 }
 
 $errorColor: #bf3f2b;

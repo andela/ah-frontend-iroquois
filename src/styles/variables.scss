@@ -5,9 +5,10 @@ $colors: (
 		twitter: #1DA1F2,
 		google: #DB4437,
 		fb-messenger: #0084FF,
-		primary: #00544a,
-		secondary: #002a23,
-		light: #3c8176
+		primary: #1985c1,
+		secondary: #005990,
+		light: #60b4f4,
+		black: #262626
 );
 
 @function color($color) {
@@ -16,4 +17,10 @@ $colors: (
 
 * {
 	text-transform: none !important;
+}
+
+input:focus:not([readonly]),
+input:focus:not([readonly]) {
+	border-bottom: 1px solid color(primary) !important;
+	box-shadow: 0 1px 0 0 color(primary) !important;
 }

@@ -1,3 +1,5 @@
+@import "../variables";
+
 .nav {
   background-color: #ffffff;
 }
@@ -19,14 +21,14 @@
 }
 
 .button-effects {
-  background-color: #00544a;
+  background-color: color(primary);
   margin-bottom: -1px;
 
 }
 
 .signup-header {
   font-size: 20px;
-  color: #3c8176;
+  color: color(light);
   font-style: revert;
   margin-bottom: 0;
 }
@@ -44,7 +46,7 @@
 }
 
 .text-message {
-  background-color: #3c8176;
+  background-color: color(light);
   font-size: 12px;
   margin-top: 70px;
   color: white;
@@ -56,14 +58,14 @@
 
 .text-navbar {
 
-  color: #00544a;
-  background-color: #00544a;
+  color: color(primary);
+  background-color: color(primary);
 
 }
 
 .button-nav {
   background-color: #fff;
-  color: #00544a;
+  color: color(primary);
 }
 
 .modal-effects {
@@ -118,7 +120,7 @@
 }
 
 .error {
-  color: red;
+  color: color(google);
   margin-left: 50px;
   height: 3px;
   font-size: 13px;
