@@ -109,3 +109,18 @@
 	color: gray;
 	float: right;
 }
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 4em;
+	li.active {
+		background-color: lighten(color(primary), 10%);
+	}
+	li:hover {
+		cursor: pointer;
+	}
+	.disabled {
+		display: none;
+	}
+}

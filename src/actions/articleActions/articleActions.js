@@ -18,14 +18,14 @@ const errorCallback = (error, dispatch) => {
 	}
 };
 
-export const fetchAllArticles = (shouldLoad = true) => dispatch => {
+export const fetchAllArticles = (shouldLoad = true, queryParams = '') => dispatch => {
 
 	addToken();
 
 	dispatch(requestLoadingAction(shouldLoad));
 
 	// noinspection JSUnresolvedFunction
-	return axios.get(API_URLS.FETCH_ALL_ARTICLES).then(resp => resp.data)
+	return axios.get(`${API_URLS.FETCH_ALL_ARTICLES}${queryParams}`).then(resp => resp.data)
 
 		.then(resp => {
 			// noinspection JSUnresolvedVariable

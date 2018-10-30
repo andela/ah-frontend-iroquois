@@ -161,6 +161,8 @@ describe('View Articles', () => {
 
 		wrapper.setProps({article: {author: {}, tagList: []}});
 		wrapper.instance().loadAllArticles();
+		wrapper.instance().handlePageClick({selected: 1});
+		wrapper.instance().loadViewAll();
 		wrapper.unmount();
 	});
 });
