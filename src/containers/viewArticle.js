@@ -1,11 +1,10 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import ViewArticlePage from '../components/articles/viewArticlePage';
 import {deleteArticle, fetchAllArticles} from '../actions/articleActions/articleActions';
-import {
-	editOneArticleActionCreator,
+import {editOneArticleActionCreator,
 	viewOneArticleActionCreator
 } from '../actions/articleActions/articleActionCreators';
 import '../static/js/material-dialog';

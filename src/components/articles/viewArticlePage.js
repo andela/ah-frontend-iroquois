@@ -5,6 +5,8 @@ import ViewArticleSides from './viewArticleSides';
 import ViewArticleHeader from './viewArticleHeader';
 import ViewArticleBody from './viewArticleBody';
 import ViewArticleFooter from './viewArticleFooter';
+import CreateComments from '../../containers/createComment';
+import ViewAllComments from '../../containers/viewAllComments';
 
 const ViewArticlePage = props => {
 
@@ -29,6 +31,8 @@ const ViewArticlePage = props => {
 						setEditorMode={props.setEditorMode}
 						deleteHandler={props.deleteHandler}
 					/>
+					<CreateComments slug={article.slug} />
+					<ViewAllComments article={article} slug={article.slug}  />
 				</div>
 			</div>
 		</div>

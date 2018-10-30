@@ -1,0 +1,96 @@
+@import "../variables";
+
+.comments-buttons{
+  margin-right: 10px;
+}
+
+.comments-list{
+  width: 74%;
+  padding: 10px;
+  margin-top: 70px;
+}
+
+.lists{
+  margin: 10px;
+}
+
+i.icon-red {
+  color: color(google);
+  cursor: pointer;
+}
+
+.comment-body{
+  font-size: 14px;
+
+}
+
+.comment-header{
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.error-text-comment{
+  color: color(google);
+  margin-left: 0;
+}
+
+.buttons-styles{
+  margin-right: 242px;
+  padding: 0px;
+}
+
+.button-comment{
+  margin-left: 30px;
+}
+
+.clear{
+  margin-left: -8px;
+  background-color: transparent;
+  color: black;
+  &:hover, &:focus, &:active{
+    background-color: lighten(color(google), 40%);
+  }
+}
+
+.date-font-size{
+  font-size: 8px;
+  color: color(primary);
+}
+
+.modal-no {
+  margin-right: 1em!important;
+  background-color: color(white);
+  color: black;
+  &:hover, &:active, &:focus{
+    background-color: lighten(color(white), 10%);
+  }
+
+}
+
+.modal-yes {
+  background-color: color(google);
+  &:hover, &:active, &:focus{
+    background-color: lighten(color(google), 10%);
+  }
+}
+
+.align-edit-modal{
+  padding-left: 100px;
+  width: 46%;
+}
+
+.edit-buttons-styles{
+  margin-right: 120px;
+}
+
+.submit {
+  background: color(primary);
+  &:hover, &:active, &:focus{
+    background: lighten(color(primary), 10%);
+  }
+}
+
+.icons-color-comment {
+  color: color(primary);
+  cursor: pointer;
+}

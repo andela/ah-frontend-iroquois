@@ -114,38 +114,8 @@ describe('View Articles', () => {
 	});
 
 	it('should mount view all component', () => {
-		wrapper = mount(
-			<MemoryRouter>
-				<Provider store={store}>
-					<ViewArticle />
-				</Provider>
-			</MemoryRouter>
-		);
-
-		store = mockStore({
-			articlesReducer: {
-				'links': {
-					'next': null,
-					'previous': null
-				},
-				'count': 0,
-				'article': {},
-				'articleEdit': {},
-				'results': [{author: {}, slug: 'one'}]
-			}
-		});
-		wrapper = mount(
-			<MemoryRouter>
-				<Provider store={store}>
-					<ViewArticle />
-				</Provider>
-			</MemoryRouter>
-		);
-	});
-
-	it('should mount view all component', () => {
 		const art = {author: {}, tagList: []};
-		wrapper = mount(<ViewArticleTest match={{params: {slug: 'dsfds'}}} history={{push: jest.fn()}} dispatch={jest.fn} article={art} />);
+		wrapper = shallow(<ViewArticleTest match={{params: {slug: 'dsfds'}}} history={{push: jest.fn()}} dispatch={jest.fn} article={art} />);
 
 		wrapper.setProps({article: {author: {}, tagList: []}});
 		wrapper.instance().setEditorMode({});
