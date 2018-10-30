@@ -125,7 +125,7 @@ export const image = (attrs) => (
 );
 
 export const generateButton = (opts) => (
-	<button key={opts.icon + opts.className} type='button' onClick={opts.handler} className={opts.className}>
+	<button key={opts.icon || opts.text + opts.className} type='button' onClick={opts.handler} className={opts.className}>
 		{opts.icon ? <i className={opts.icon} /> : ''}
 		{opts.text}
 	</button>

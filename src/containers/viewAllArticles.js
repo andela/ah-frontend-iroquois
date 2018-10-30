@@ -24,17 +24,9 @@ class ViewAllArticles extends React.Component {
 		this.props.dispatch(viewAllArticleActionCreator());
 	}
 
-	componentDidMount() {
-		this.timer = setInterval(this.loadAllArticles, 10000);
-	}
-
 	// noinspection JSUnusedLocalSymbols
 	componentWillReceiveProps(nextProps, nextContext) {
 		this.setState({articles: nextProps.articles.results});
-	}
-
-	componentWillUnmount() {
-		clearInterval(this.timer);
 	}
 
 	loadAllArticles = () => this.props.dispatch(fetchAllArticles(false));

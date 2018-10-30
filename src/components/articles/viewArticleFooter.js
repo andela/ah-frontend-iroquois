@@ -4,18 +4,32 @@ import styles from '../../styles/articleStyles/viewArticle.scss';
 import {USERNAME_KEY} from '../../constants/index';
 import {generateButton} from '../../utils';
 
+const CustomChips = props => (
+	<div className='chip'>
+		{props.name}
+	</div>
+);
+
+CustomChips.propTypes = {
+	name: PropTypes.string.isRequired
+};
+
 const ViewArticleFooter = props => {
+
+	const { setEditorMode, deleteHandler, tagList, authorName } = props;
+
 	const name = localStorage.getItem(USERNAME_KEY);
-	const editButton = {handler: props.setEditorMode, className: `btn btn-small ${styles.edit}`, icon: 'fa fa-edit'};
-	const deleteButton = {className: `btn btn-small ${styles.trash}`, icon: 'fa fa-trash', handler: props.deleteHandler};
+	const editButton = {handler: setEditorMode, className: `btn btn-small ${styles.edit}`, icon: 'fa fa-edit'};
+	const deleteButton = {className: `btn btn-small ${styles.trash}`, icon: 'fa fa-trash', handler: deleteHandler};
 
 	return (
 		<div className='row'>
 			<div className='col sm12 m8 l8 left-align valign-wrapper'>
 				<b style={{marginRight: '1em'}}>Tags:</b>
+				{tagList.map(chip => <CustomChips key={chip} name={chip} />)}
 			</div>
 			{
-				name === props.authorName
+				name === authorName
 					? (
 						<div className={`col sm12 m4 l4 right-align ${styles['utils-buttons']}`}>
 							{generateButton(editButton)}
@@ -28,6 +42,7 @@ const ViewArticleFooter = props => {
 };
 
 ViewArticleFooter.propTypes = {
+	tagList: PropTypes.array.isRequired,
 	setEditorMode: PropTypes.func.isRequired,
 	deleteHandler: PropTypes.func.isRequired,
 	authorName: PropTypes.string.isRequired
