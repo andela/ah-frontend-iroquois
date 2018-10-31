@@ -15,7 +15,7 @@ const main = (author, created_at, title, article) => (
 			<span className={`${styles.note} right-align`} />
 			<div className='row'>
 				<div className='col s6 m6 l6'>
-					<span style={{color: '#F18F01'}}>{formatName(author.username)}</span>
+					<Link style={{color: '#F18F01'}} to={`/profile/${author.username}`}>{formatName(author.username)}</Link>
 				</div>
 				<div className='col s6 m6 l6' style={{textAlign: 'right'}}>
 					<span style={{color: 'crimson'}}>
@@ -33,9 +33,7 @@ const ViewCard = props => {
 	return (
 		<div className={`card black-text ${styles.card}`}>
 			<div className="card-content" style={{padding: '12px'}}>
-
 				{main(author, created_at, title, article)}
-
 				<div className='row'>
 					<div className='col sm12 m2 l2' />
 					<div className='col sm12 m10 l10'>
@@ -46,7 +44,6 @@ const ViewCard = props => {
 			</div>
 		</div>
 	);
-
 };
 
 ViewCard.propTypes = {

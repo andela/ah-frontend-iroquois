@@ -12,10 +12,12 @@ const NotificationError = (message) => notify.show(message, 'error', 5000);
 
 export const fetchProfileSuccess = (userData) => {
 
-	const {username, first_name, last_name, bio, avatar} = userData.profile;
+	const {username, first_name, last_name, bio, avatar, following, followers} = userData.profile;
 
 	return {type: ACTION_TYPE.FETCH_PROFILE_SUCCESS,
 		payload: {
+			followers,
+			following,
 			username,
 			firstName: first_name,
 			lastName: last_name,
@@ -50,21 +52,19 @@ export const updateProfileFailure = (errorMessage) => ({
 
 });
 
-const handleErrors = (dispatch, props, message) => {
+const handleErrors = (dispatch, props = {}, message) => {
 
 	dispatch(requestLoadingAction(false));
 	NotificationError(message);
-	props.history.push('/logout');
 
 };
 
-export const fetchProfile = (props) => (dispatch) => {
-
+export const fetchProfile = (props, username = null) => (dispatch) => {
+	username = username || localStorage.getItem(USERNAME_KEY);
 	addToken();
 	dispatch(requestLoadingAction(true));
-	return axios.get(`${API_URLS.USER_PROFILE_URL}${localStorage.getItem(USERNAME_KEY)}`)
+	return axios.get(`${API_URLS.USER_PROFILE_URL}${username}`)
 		.then(response => {
-
 			dispatch(fetchProfileSuccess(response.data));
 			dispatch(requestLoadingAction(false));
 

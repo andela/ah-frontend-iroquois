@@ -7,6 +7,8 @@ const initialState = {
 	lastName: '',
 	bio: '',
 	avatar: '',
+	following: [],
+	followers: [],
 	errorMessage: '',
 	successMessage: ''
 };
@@ -24,14 +26,18 @@ describe('profile reducer', () => {
 				firstName: 'first name',
 				lastName: 'last name',
 				bio: 'bio',
-				avatar: 'avatar'
+				avatar: 'avatar',
+				followers: [],
+				following: []
 			}
 		})).toEqual({
 			userName: 'username',
 			firstName: 'first name',
 			lastName: 'last name',
 			bio: 'bio',
-			avatar: 'avatar'
+			avatar: 'avatar',
+			followers: [],
+			following: []
 		});
 	});
 

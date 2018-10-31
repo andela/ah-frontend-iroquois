@@ -7,6 +7,7 @@ import socialLoginReducer from './authReducers/socialLogin';
 import profileInfo from './profileReducers/profileReducer';
 import articlesReducer from './articleReducers/articlesReducers';
 import commentsReducer from './commentReducers/commentsReducers';
+import followReducer from './profileReducers/followReducers';
 
 const reducers = combineReducers({
 	user: loginReducer,
@@ -16,7 +17,8 @@ const reducers = combineReducers({
 	requestLoadingReducer,
 	profileInfo,
 	articlesReducer,
-	commentsReducer
+	commentsReducer,
+	followReducer
 });
 
 export default reducers;

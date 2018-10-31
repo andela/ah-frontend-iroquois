@@ -3,6 +3,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import * as PropTypes from 'prop-types';
 import styles from '../../styles/profile/profile.scss';
+import {USERNAME_KEY} from '../../constants';
+import FollowSwitch from './followSwitch';
+import FollowProfile from './followProfile';
 
 const ProfileInformation = (props) =>
 
@@ -24,8 +27,13 @@ const ProfileInformation = (props) =>
 						</h5>
 						<h6 className='grey-text'>{`@${props.userName}`}</h6>
 						<p>{props.bio}</p>
-						<Link className={`btn btn-small white-text teal darken-3 ${styles.edit_profile}`} to='/profile/edit'>Update Profile</Link>
+						{
+							props.userName === localStorage.getItem(USERNAME_KEY)
+								? <div><Link className={`btn btn-small white-text teal darken-3 ${styles.edit_profile}`} to='/profile/edit'>Update Profile</Link></div>
+								: <div><FollowSwitch handleChange={props.handleChange} profile={props} /></div>
+						}
 					</div>
+					<div><FollowProfile {...props} /></div>
 				</div>
 			</div>
 		</div>

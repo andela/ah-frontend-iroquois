@@ -27,6 +27,7 @@ const App = () => (
 				<Route path='/reset/password' component={ResetPassword} exact />
 				<PrivateRoute path='/profile' component={Profile} exact />
 				<PrivateRoute path='/profile/edit' component={EditProfile} exact />
+				<PrivateRoute path='/profile/:username' component={Profile} exact />
 				<PrivateRoute path='/new-articles' component={CreateArticle} />
 				<PrivateRoute path='/articles' component={ViewAll} exact />
 				<PrivateRoute path='/articles/:slug' component={ViewArticle} exact />

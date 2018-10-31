@@ -7,7 +7,9 @@ const initialState = {
 	bio: '',
 	avatar: '',
 	errorMessage: '',
-	successMessage: ''
+	successMessage: '',
+	followers: [],
+	following: []
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -19,7 +21,9 @@ const profileReducer = (state = initialState, action) => {
 				firstName: payload.firstName,
 				lastName: payload.lastName,
 				bio: payload.bio,
-				avatar: payload.avatar
+				avatar: payload.avatar,
+				followers: payload.followers,
+				following: payload.following
 			};
 
 		case ACTION_TYPE.FETCH_PROFILE_FAILURE:
