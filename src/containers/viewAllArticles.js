@@ -2,29 +2,31 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import styles from '../styles/articleStyles/viewArticle.scss';
-import ViewCard from '../components/articles/viewCard';
 import {fetchAllArticles} from '../actions/articleActions/articleActions';
 import {viewAllArticleActionCreator} from '../actions/articleActions/articleActionCreators';
-import Pagination from './pagination';
+import ViewAllBody from '../components/articles/viewAllBody';
 
 class ViewAllArticles extends React.Component {
 
 	constructor(props) {
 		super(props);
+
+		const articles = this.props.articles || this.props.article;
+
 		this.state = {
-			articles: this.props.articles,
+			initial: true,
 			pageCount: 0,
-			page: 1,
-			limit: 10,
-			offset: 0
+			page: 1, limit: 10, offset: 0,
+			tag: '', title: '', author: '',
+			articles
 		};
 	}
 
 	componentWillMount() {
 		const { articles } = this.state;
+		const { results, count } = articles;
 
-		if (!articles.results || articles.count < 1) {
+		if (!results || count < 1) {
 			this.loadAllArticles(true);
 		} else { this.loadAllArticles(false); }
 
@@ -33,7 +35,7 @@ class ViewAllArticles extends React.Component {
 
 	// noinspection JSUnusedLocalSymbols
 	componentWillReceiveProps(nextProps, nextContext) {
-		const { articles } = nextProps;
+		const articles = nextProps.articles || [nextProps.article];
 
 		this.setState(prevState => ({
 			articles,
@@ -42,9 +44,11 @@ class ViewAllArticles extends React.Component {
 	}
 
 	loadAllArticles = (load = false) => {
-		const {limit, offset, page } = this.state;
+		const {limit, offset, page, tag, title, author } = this.state;
 
-		const queryParams = `?page=${page}&limit=${limit}&offset=${offset}`;
+		const pager = author || title || tag ? 1 : page;
+
+		const queryParams = `?author=${author}&tag=${tag}&title=${title}&page=${pager}&limit=${limit}&offset=${offset}`;
 		this.props.dispatch(fetchAllArticles(load, queryParams));
 	};
 
@@ -57,27 +61,33 @@ class ViewAllArticles extends React.Component {
 		});
 	};
 
+	handleFilterSubmit = data => {
+		this.setState({...data}, () => this.loadAllArticles(true));
+	};
+
 	render() {
 		const { articles, pageCount } = this.state;
 		const { results } = articles;
 
 		return (
-			<div>
-				<div className={`row ${styles['card-row']}`}>
-					<div className={`col s12 m12 l12 ${styles['card-col']}`}>
-						{results.map(article => <ViewCard key={article.slug} article={article} />)}
-					</div>
-				</div>
-
-				<Pagination pageCount={pageCount} handlePageClick={this.handlePageClick} />
-			</div>
+			<ViewAllBody
+				results={results}
+				handleFilterSubmit={this.handleFilterSubmit}
+				pageCount={pageCount}
+				handlePageClick={this.handlePageClick}
+			/>
 		);
 	}
 }
 
 ViewAllArticles.propTypes = {
 	articles: PropTypes.object.isRequired,
+	article: PropTypes.object,
 	dispatch: PropTypes.func.isRequired
+};
+
+ViewAllArticles.defaultProps = {
+	article: {result: []}
 };
 
 export { ViewAllArticles as ViewAllTest };

@@ -1,0 +1,33 @@
+@import "../variables";
+
+.search-container {
+	margin-top: 2em;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-column-gap: 1em;
+	grid-row-gap: 1em;
+	grid-auto-flow: dense;
+
+	.input-field {
+		display: grid;
+		padding: 0;
+		justify-content: center;
+		align-items: center;
+		button {
+			*{
+				font-size: 14px;
+			}
+			background-color: color(primary);
+		}
+		input::-webkit-calendar-picker-indicator {
+			display: none;
+		}
+	}
+}
+
+.search-label{
+	padding: auto;
+	margin: auto;
+	text-align: center;
+	font-weight: bold;
+}

@@ -6,13 +6,11 @@ describe('Article reduces', () => {
 
 	it('should test add one article reducer', () => {
 		const expected = {
-			'links': {
-				'next': null,
-				'previous': null
-			},
-			'count': 0,
 			'article': {},
 			'articleEdit': {},
+			'authors': [],
+			'count': 0,
+			'links': {'next': null, 'previous': null},
 			'results': [{}]
 		};
 
@@ -24,19 +22,23 @@ describe('Article reduces', () => {
 
 	it('should test add many article reducer', () => {
 		const expected = {
-			'links': {
-				'next': null,
-				'previous': null
-			},
-			'count': 0,
 			'article': {},
 			'articleEdit': {},
-			'results': [{}]
+			'authors': [],
+			'count': 0,
+			'links': {'next': null, 'previous': null},
+			'results': []
 		};
 
-		const action = {type: ACTION_TYPE.ADD_MANY_FROM_SERVER, payload: {}};
+		let action = {type: ACTION_TYPE.ADD_MANY_FROM_SERVER, payload: {}};
 
 		expect(articlesReducer(undefined, action)).toEqual(expected);
+
+		const expectedData = {'article': {}, 'articleEdit': {}, 'authors': [undefined], 'count': 0, 'links': {'next': null, 'previous': null}, 'results': [{'author': {}}]};
+
+		action = {type: ACTION_TYPE.ADD_MANY_FROM_SERVER, payload: {results: {author: {}}}};
+
+		expect(articlesReducer(undefined, action)).toEqual(expectedData);
 	});
 
 	it('should test view one article reducer', () => {
