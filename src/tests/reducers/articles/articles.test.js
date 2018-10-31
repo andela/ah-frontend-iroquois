@@ -11,7 +11,8 @@ describe('Article reduces', () => {
 			'authors': [],
 			'count': 0,
 			'links': {'next': null, 'previous': null},
-			'results': [{}]
+			'results': [{}],
+			message: ''
 		};
 
 		const action = {type: ACTION_TYPE.ADD_ONE_ARTICLE, payload: {}};
@@ -24,6 +25,7 @@ describe('Article reduces', () => {
 		const expected = {
 			'article': {},
 			'articleEdit': {},
+			message: '',
 			'authors': [],
 			'count': 0,
 			'links': {'next': null, 'previous': null},
@@ -34,7 +36,7 @@ describe('Article reduces', () => {
 
 		expect(articlesReducer(undefined, action)).toEqual(expected);
 
-		const expectedData = {'article': {}, 'articleEdit': {}, 'authors': [undefined], 'count': 0, 'links': {'next': null, 'previous': null}, 'results': [{'author': {}}]};
+		const expectedData = {'article': {}, 'articleEdit': {}, 'authors': [undefined], 'count': 0, 'links': {'next': null, 'previous': null}, message: '', 'results': [{'author': {}}]};
 
 		action = {type: ACTION_TYPE.ADD_MANY_FROM_SERVER, payload: {results: {author: {}}}};
 
@@ -50,7 +52,8 @@ describe('Article reduces', () => {
 			'count': 0,
 			'article': undefined,
 			'articleEdit': undefined,
-			'results': []
+			'results': [],
+			message: ''
 		};
 
 		const action = {type: ACTION_TYPE.VIEW_ONE_ARTICLE, payload: {slug: ''}};
@@ -204,6 +207,26 @@ describe('Article reduces', () => {
 		const action = {type: ACTION_TYPE.DELETE_ONE_ARTICLE, payload: {slug: 'match'}};
 
 		expect(articlesReducer(initial, action)).toEqual(expected);
+	});
+
+	it('should handle REPORT_ARTICLE_SUCCESS', () => {
+		const message = 'Article updated successfully!';
+		expect(articlesReducer({}, {
+			type: ACTION_TYPE.REPORT_ARTICLE_SUCCESS,
+			payload: {
+				message
+			}
+		})).toEqual({message});
+	});
+
+	it('should handle REPORT_ARTICLE_FAILURE', () => {
+		const message = 'some thing went wrong';
+		expect(articlesReducer({}, {
+			type: ACTION_TYPE.REPORT_ARTICLE_FAILURE,
+			payload: {
+				message
+			}
+		})).toEqual({message});
 	});
 
 });

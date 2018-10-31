@@ -9,7 +9,7 @@ import ViewAll, {ViewAllTest} from '../../../containers/viewAllArticles';
 import ViewArticle, {ViewArticleTest} from '../../../containers/viewArticle';
 import {API_URLS, USERNAME_KEY} from '../../../constants';
 import ViewArticleHeader from '../../../components/articles/viewArticleHeader';
-import ViewArticleFooter from '../../../components/articles/viewArticleFooter';
+import ViewArticleFooter, { CustomChips } from '../../../components/articles/viewArticleFooter';
 import ViewArticleSides from '../../../components/articles/viewArticleSides';
 import ViewArticlePage from '../../../components/articles/viewArticlePage';
 import ViewArticleBody from '../../../components/articles/viewArticleBody';
@@ -58,10 +58,17 @@ describe('View Articles', () => {
 	});
 
 	it('should mount view article smaller component', () => {
+		wrapper = mount(
+			<MemoryRouter>
+				<Provider store={store}>
+					<ViewArticleFooter tagList={[]} authorName="sdfghj" deleteHandler={jest.fn} setEditorMode={jest.fn} />
+				</Provider>
+			</MemoryRouter>
+		);
 		mount(<ViewArticleHeader article={{author: {}}} />);
-		mount(<ViewArticleFooter authorName="san" deleteHandler={jest.fn} setEditorMode={jest.fn} tagList={['one']} />);
+		shallow(<ViewArticleFooter authorName="san" deleteHandler={jest.fn} setEditorMode={jest.fn} tagList={['one']} />);
 		localStorage.setItem(USERNAME_KEY, 'san');
-		mount(<ViewArticleFooter authorName="san" deleteHandler={jest.fn} setEditorMode={jest.fn} tagList={['one']} />);
+		shallow(<ViewArticleFooter authorName="san" deleteHandler={jest.fn} setEditorMode={jest.fn} tagList={['one']} />);
 		mount(<ViewArticleSides article={{author: {}}} />);
 		shallow(<ViewArticlePage setEditorMode={jest.fn} deleteHandler={jest.fn} data={{article: {author: {}}, editorMode: false}} />);
 
@@ -144,4 +151,9 @@ describe('View Articles', () => {
 	it('should render pagination', () => {
 		expect(shallow(<Pagination pageCount={3} handlePageClick={jest.fn} />)).toHaveLength(1);
 	});
+
+	it('should load CustomChips with crashing', () => {
+		 shallow(<CustomChips name='' />);
+	});
+
 });
