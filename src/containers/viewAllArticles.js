@@ -16,7 +16,7 @@ class ViewAllArticles extends React.Component {
 			articles: this.props.articles,
 			pageCount: 0,
 			page: 1,
-			limit: 20,
+			limit: 10,
 			offset: 0
 		};
 	}
@@ -58,9 +58,8 @@ class ViewAllArticles extends React.Component {
 	};
 
 	render() {
-		const { articles, pageCount, limit, page } = this.state;
-		const { results, count } = articles;
-		const number = limit * page;
+		const { articles, pageCount } = this.state;
+		const { results } = articles;
 
 		return (
 			<div>
@@ -69,15 +68,7 @@ class ViewAllArticles extends React.Component {
 						{results.map(article => <ViewCard key={article.slug} article={article} />)}
 					</div>
 				</div>
-				<div className='row'>
-					<div className='col s12 l12 m12 center-items' style={{textAlign: 'center'}}>
-						<h5>
-							{number > count ? count : number}
-							<span> of </span>
-							{count}
-						</h5>
-					</div>
-				</div>
+
 				<Pagination pageCount={pageCount} handlePageClick={this.handlePageClick} />
 			</div>
 		);
