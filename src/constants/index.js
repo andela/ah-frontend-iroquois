@@ -16,4 +16,3 @@ export const API_URLS = {
 	UPDATE_PROFILE_URL: `${BASE_URL}/user/update/profile/`,
 	REPORT_ARTICLE_URL: `${BASE_URL}/articles/reports/`
 };
-
