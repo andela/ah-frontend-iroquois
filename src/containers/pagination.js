@@ -10,6 +10,9 @@ const Pagination = props => (
 			<ReactPaginate
 				previousLabel="previous"
 				nextLabel="next"
+				pageClassName={styles['page-class-name']}
+				previousClassName={styles['page-class-name']}
+				nextClassName={styles['page-class-name']}
 				breakLabel={<Link to="/articles" replace>...</Link>}
 				pageCount={props.pageCount}
 				marginPagesDisplayed={2}

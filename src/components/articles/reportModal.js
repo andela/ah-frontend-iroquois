@@ -10,7 +10,10 @@ const ReportModal = () => (
 			id='reportModal'
 			className={styles['report-model']}
 			actions=''
-			trigger={<div className='col sm12 m8 l8 left-align valign-wrapper'><a href='#'>Report article</a></div>}
+			trigger={
+				<div className='col sm12 m8 l8 valign-wrapper' style={{float: 'right', width: 'auto'}}>
+					<i className={`fas fa-ellipsis-h ${styles.tooltip}`} />
+				</div>}
 		>
 			<div className='row'>
 				<h5 className='center'>Report Article</h5>
