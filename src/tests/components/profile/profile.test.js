@@ -1,11 +1,11 @@
 import React from 'react';
-import {mount} from 'enzyme';
+import {mount, shallow} from 'enzyme';
 import {Provider} from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import {MemoryRouter} from 'react-router-dom';
-import Profile from '../../../containers/profile/profile';
 import ProfileInformation from '../../../components/profile/profileInformation';
+import Profile, {ProfileTest} from '../../../containers/profile/profile';
 
 const store = configureStore([thunk])({});
 
@@ -56,6 +56,14 @@ describe('ProfileInformation', () => {
 		);
 		const userImage = mountProfileInformation.find('img').prop('src');
 		expect(userImage).toEqual(profileData.avatar);
+	});
+
+	it('should handle change', () => {
+		const wrapper = shallow(<ProfileTest data={{profileInfo: {}}} match={{params: {username: 's'}}} dispatch={jest.fn} />);
+		wrapper.setProps({match: {params: {username: ''}}});
+		wrapper.setProps({match: {params: {username: 's'}}});
+		wrapper.setProps({});
+		wrapper.instance().handleChange({target: {name: '', value: ''}}, '');
 	});
 
 });

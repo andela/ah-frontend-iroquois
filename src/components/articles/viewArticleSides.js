@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import {formatName, image} from '../../utils/index';
 import ArticlePreferenceContainer from '../../containers/articlePreference';
 
@@ -16,7 +17,7 @@ const ViewArticleSides = props => {
 			<div className='row'>
 				<div className="col s12 m12 l12">
 					<span className="black-text center-align">
-						<h4>{formatName(article.author.username)}</h4>
+						<Link style={{color: '#F18F01'}} to={`/profile/${props.article.author.username}`}>{formatName(props.article.author.username)}</Link>
 					</span>
 				</div>
 			</div>
