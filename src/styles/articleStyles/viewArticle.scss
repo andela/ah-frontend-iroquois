@@ -144,6 +144,14 @@
 	}
 }
 
+.page-class-name {
+	&:hover{
+		background-color: color(light);
+		* {
+			color: color(white);
+		}
+	}
+}
 .mousePointer {
 	cursor: pointer;
  }
@@ -158,4 +166,18 @@
 	overflow-y: auto;
 	padding: 1em;
 	min-height:100vh;
+}
+
+i.tooltip:hover:after {
+	border-radius: 5px;
+	color: #fff;
+	right: 10%;
+	z-index: 98;
+	content: 'report this article';
+	position: absolute;
+	min-width: max-content;
+	margin-top: auto;
+	margin-right: .5em;
+	padding: .5em;
+	background-color: lighten(color(light), 30%);
 }

@@ -62,7 +62,7 @@ TagsEditor.defaultProps = {
 
 export const Header = (props) => (
 	<div>
-		<h3 className={styles.header}>{props.slug ? 'edit article' : 'create article'}</h3>
+		<h3 className={styles.header}>{props.slug ? 'Edit article' : 'Create article'}</h3>
 		<CreateArticleInputs
 			title={props.title}
 			description={props.description}
