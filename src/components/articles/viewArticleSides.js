@@ -1,6 +1,7 @@
 import React from 'react';
-import * as PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {formatName, image} from '../../utils/index';
+import ArticlePreferenceContainer from '../../containers/articlePreference';
 
 const ViewArticleSides = props => {
 	const { article } = props;
@@ -18,6 +19,10 @@ const ViewArticleSides = props => {
 						<h4>{formatName(article.author.username)}</h4>
 					</span>
 				</div>
+			</div>
+			<div className='row'>
+				{/*like and dislike*/}
+				<ArticlePreferenceContainer article={article} />
 			</div>
 		</div>
 	);

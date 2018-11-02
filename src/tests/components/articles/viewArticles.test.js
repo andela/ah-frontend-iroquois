@@ -35,7 +35,7 @@ describe('View Articles', () => {
 					'previous': null
 				},
 				'count': 0,
-				'article': {author: {username: 's'}, tagList: ['one']},
+				'article': {author: {username: 's'}, tagList: ['one'], likes: [], dislikes: []},
 				'articleEdit': {},
 				'results': [{author: {}, slug: 'one'}]
 			}
@@ -69,7 +69,9 @@ describe('View Articles', () => {
 		shallow(<ViewArticleFooter authorName="san" deleteHandler={jest.fn} setEditorMode={jest.fn} tagList={['one']} />);
 		localStorage.setItem(USERNAME_KEY, 'san');
 		shallow(<ViewArticleFooter authorName="san" deleteHandler={jest.fn} setEditorMode={jest.fn} tagList={['one']} />);
-		mount(<ViewArticleSides article={{author: {}}} />);
+		mount(<Provider store={store}><ViewArticleSides article={{author: {}, likes: [], dislikes: []}} /></Provider>);
+		mount(<Provider store={store}><ViewArticleSides article={{author: {}, likes: [], dislikes: []}} /></Provider>);
+
 		shallow(<ViewArticlePage setEditorMode={jest.fn} deleteHandler={jest.fn} data={{article: {author: {}}, editorMode: false}} />);
 
 		const editor = mount(<ViewArticleBody article={{author: {}}} editorMode={false} />);
@@ -122,7 +124,7 @@ describe('View Articles', () => {
 	});
 
 	it('should mount view all component', () => {
-		const art = {author: {}, tagList: []};
+		const art = {author: {}, tagList: [], likes: [], dislikes: []};
 		wrapper = shallow(<ViewArticleTest match={{params: {slug: 'dsfds'}}} history={{push: jest.fn()}} dispatch={jest.fn} article={art} />);
 
 		wrapper.setProps({article: {author: {}, tagList: []}});
@@ -141,7 +143,7 @@ describe('View Articles', () => {
 		wrapper.instance().loadAllArticles();
 		wrapper.instance().handlePageClick({selected: 1});
 		wrapper.instance().loadViewAll();
-		wrapper = shallow(<ViewAllTest dispatch={store.dispatch} article={{results: []}} />);
+		wrapper = shallow(<ViewAllTest dispatch={store.dispatch} articles={{results: []}} />);
 		wrapper.instance().handleFilterSubmit();
 		wrapper.setProps({articles: {results: []}});
 		wrapper.setProps({article: {results: {}}});
