@@ -1,0 +1,1707 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create Comments non-empty list looks good 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ViewListComments
+    body=""
+    comments={
+      Array [
+        Object {},
+        Object {},
+      ]
+    }
+    deleteComment="Success!"
+    editComment={[Function]}
+    handleChange={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h5>
+          Comments
+        </h5>,
+        <ul
+          className="collection"
+        >
+          <li
+            className="collection-item avatar"
+          >
+            <img
+              alt=""
+              className="circle"
+              src="https://avatars0.githubusercontent.com/u/4?v=4"
+            />
+            <span
+              className="title"
+            >
+              <b />
+            </span>
+            <br />
+            <span
+              className="title undefined"
+            >
+              <i>
+                Invalid date
+              </i>
+            </span>
+            <p>
+              <br />
+            </p>
+            <div
+              className="secondary-content row"
+            >
+              <div>
+                <i
+                  className="material-icons col s1 undefined"
+                >
+                  reply
+                </i>
+              </div>
+              
+            </div>
+            <div>
+              <Modal
+                actions=""
+                bottomSheet={false}
+                fixedFooter={false}
+                header=""
+                id="foo"
+                modalOptions={Object {}}
+              >
+                <ViewComments
+                  buttonText="Edit"
+                  buttonsStyles="row  right undefined"
+                  cancelText="Clear"
+                  handleChange={[Function]}
+                  labelComment="Edit Comment"
+                  value=""
+                />
+              </Modal>
+            </div>
+          </li>
+          <li
+            className="collection-item avatar"
+          >
+            <img
+              alt=""
+              className="circle"
+              src="https://avatars0.githubusercontent.com/u/4?v=4"
+            />
+            <span
+              className="title"
+            >
+              <b />
+            </span>
+            <br />
+            <span
+              className="title undefined"
+            >
+              <i>
+                Invalid date
+              </i>
+            </span>
+            <p>
+              <br />
+            </p>
+            <div
+              className="secondary-content row"
+            >
+              <div>
+                <i
+                  className="material-icons col s1 undefined"
+                >
+                  reply
+                </i>
+              </div>
+              
+            </div>
+            <div>
+              <Modal
+                actions=""
+                bottomSheet={false}
+                fixedFooter={false}
+                header=""
+                id="foo"
+                modalOptions={Object {}}
+              >
+                <ViewComments
+                  buttonText="Edit"
+                  buttonsStyles="row  right undefined"
+                  cancelText="Clear"
+                  handleChange={[Function]}
+                  labelComment="Edit Comment"
+                  value=""
+                />
+              </Modal>
+            </div>
+          </li>
+        </ul>,
+      ],
+      "className": undefined,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Comments",
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": "Comments",
+        "type": "h5",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li
+              className="collection-item avatar"
+            >
+              <img
+                alt=""
+                className="circle"
+                src="https://avatars0.githubusercontent.com/u/4?v=4"
+              />
+              <span
+                className="title"
+              >
+                <b />
+              </span>
+              <br />
+              <span
+                className="title undefined"
+              >
+                <i>
+                  Invalid date
+                </i>
+              </span>
+              <p>
+                <br />
+              </p>
+              <div
+                className="secondary-content row"
+              >
+                <div>
+                  <i
+                    className="material-icons col s1 undefined"
+                  >
+                    reply
+                  </i>
+                </div>
+                
+              </div>
+              <div>
+                <Modal
+                  actions=""
+                  bottomSheet={false}
+                  fixedFooter={false}
+                  header=""
+                  id="foo"
+                  modalOptions={Object {}}
+                >
+                  <ViewComments
+                    buttonText="Edit"
+                    buttonsStyles="row  right undefined"
+                    cancelText="Clear"
+                    handleChange={[Function]}
+                    labelComment="Edit Comment"
+                    value=""
+                  />
+                </Modal>
+              </div>
+            </li>,
+            <li
+              className="collection-item avatar"
+            >
+              <img
+                alt=""
+                className="circle"
+                src="https://avatars0.githubusercontent.com/u/4?v=4"
+              />
+              <span
+                className="title"
+              >
+                <b />
+              </span>
+              <br />
+              <span
+                className="title undefined"
+              >
+                <i>
+                  Invalid date
+                </i>
+              </span>
+              <p>
+                <br />
+              </p>
+              <div
+                className="secondary-content row"
+              >
+                <div>
+                  <i
+                    className="material-icons col s1 undefined"
+                  >
+                    reply
+                  </i>
+                </div>
+                
+              </div>
+              <div>
+                <Modal
+                  actions=""
+                  bottomSheet={false}
+                  fixedFooter={false}
+                  header=""
+                  id="foo"
+                  modalOptions={Object {}}
+                >
+                  <ViewComments
+                    buttonText="Edit"
+                    buttonsStyles="row  right undefined"
+                    cancelText="Clear"
+                    handleChange={[Function]}
+                    labelComment="Edit Comment"
+                    value=""
+                  />
+                </Modal>
+              </div>
+            </li>,
+          ],
+          "className": "collection",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <img
+                  alt=""
+                  className="circle"
+                  src="https://avatars0.githubusercontent.com/u/4?v=4"
+                />,
+                <span
+                  className="title"
+                >
+                  <b />
+                </span>,
+                <br />,
+                <span
+                  className="title undefined"
+                >
+                  <i>
+                    Invalid date
+                  </i>
+                </span>,
+                <p>
+                  <br />
+                </p>,
+                <div
+                  className="secondary-content row"
+                >
+                  <div>
+                    <i
+                      className="material-icons col s1 undefined"
+                    >
+                      reply
+                    </i>
+                  </div>
+                  
+                </div>,
+                <div>
+                  <Modal
+                    actions=""
+                    bottomSheet={false}
+                    fixedFooter={false}
+                    header=""
+                    id="foo"
+                    modalOptions={Object {}}
+                  >
+                    <ViewComments
+                      buttonText="Edit"
+                      buttonsStyles="row  right undefined"
+                      cancelText="Clear"
+                      handleChange={[Function]}
+                      labelComment="Edit Comment"
+                      value=""
+                    />
+                  </Modal>
+                </div>,
+              ],
+              "className": "collection-item avatar",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "",
+                  "className": "circle",
+                  "src": "https://avatars0.githubusercontent.com/u/4?v=4",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <b />,
+                  "className": "title",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "b",
+                },
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <i>
+                    Invalid date
+                  </i>,
+                  "className": "title undefined",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Invalid date",
+                  },
+                  "ref": null,
+                  "rendered": "Invalid date",
+                  "type": "i",
+                },
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <br />,
+                    undefined,
+                  ],
+                  "className": undefined,
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": "br",
+                  },
+                  undefined,
+                ],
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div>
+                      <i
+                        className="material-icons col s1 undefined"
+                      >
+                        reply
+                      </i>
+                    </div>,
+                    "",
+                  ],
+                  "className": "secondary-content row",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <i
+                        className="material-icons col s1 undefined"
+                      >
+                        reply
+                      </i>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "reply",
+                        "className": "material-icons col s1 undefined",
+                      },
+                      "ref": null,
+                      "rendered": "reply",
+                      "type": "i",
+                    },
+                    "type": "div",
+                  },
+                  "",
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Modal
+                    actions=""
+                    bottomSheet={false}
+                    fixedFooter={false}
+                    header=""
+                    id="foo"
+                    modalOptions={Object {}}
+                  >
+                    <ViewComments
+                      buttonText="Edit"
+                      buttonsStyles="row  right undefined"
+                      cancelText="Clear"
+                      handleChange={[Function]}
+                      labelComment="Edit Comment"
+                      value=""
+                    />
+                  </Modal>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "actions": "",
+                    "bottomSheet": false,
+                    "children": <ViewComments
+                      buttonText="Edit"
+                      buttonsStyles="row  right undefined"
+                      cancelText="Clear"
+                      handleChange={[Function]}
+                      labelComment="Edit Comment"
+                      value=""
+                    />,
+                    "className": undefined,
+                    "fixedFooter": false,
+                    "header": "",
+                    "id": "foo",
+                    "modalOptions": Object {},
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "buttonText": "Edit",
+                      "buttonsStyles": "row  right undefined",
+                      "cancelText": "Clear",
+                      "handleCancel": undefined,
+                      "handleChange": [Function],
+                      "handleSubmit": undefined,
+                      "labelComment": "Edit Comment",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <img
+                  alt=""
+                  className="circle"
+                  src="https://avatars0.githubusercontent.com/u/4?v=4"
+                />,
+                <span
+                  className="title"
+                >
+                  <b />
+                </span>,
+                <br />,
+                <span
+                  className="title undefined"
+                >
+                  <i>
+                    Invalid date
+                  </i>
+                </span>,
+                <p>
+                  <br />
+                </p>,
+                <div
+                  className="secondary-content row"
+                >
+                  <div>
+                    <i
+                      className="material-icons col s1 undefined"
+                    >
+                      reply
+                    </i>
+                  </div>
+                  
+                </div>,
+                <div>
+                  <Modal
+                    actions=""
+                    bottomSheet={false}
+                    fixedFooter={false}
+                    header=""
+                    id="foo"
+                    modalOptions={Object {}}
+                  >
+                    <ViewComments
+                      buttonText="Edit"
+                      buttonsStyles="row  right undefined"
+                      cancelText="Clear"
+                      handleChange={[Function]}
+                      labelComment="Edit Comment"
+                      value=""
+                    />
+                  </Modal>
+                </div>,
+              ],
+              "className": "collection-item avatar",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "",
+                  "className": "circle",
+                  "src": "https://avatars0.githubusercontent.com/u/4?v=4",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <b />,
+                  "className": "title",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "b",
+                },
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <i>
+                    Invalid date
+                  </i>,
+                  "className": "title undefined",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Invalid date",
+                  },
+                  "ref": null,
+                  "rendered": "Invalid date",
+                  "type": "i",
+                },
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <br />,
+                    undefined,
+                  ],
+                  "className": undefined,
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": "br",
+                  },
+                  undefined,
+                ],
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div>
+                      <i
+                        className="material-icons col s1 undefined"
+                      >
+                        reply
+                      </i>
+                    </div>,
+                    "",
+                  ],
+                  "className": "secondary-content row",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <i
+                        className="material-icons col s1 undefined"
+                      >
+                        reply
+                      </i>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "reply",
+                        "className": "material-icons col s1 undefined",
+                      },
+                      "ref": null,
+                      "rendered": "reply",
+                      "type": "i",
+                    },
+                    "type": "div",
+                  },
+                  "",
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Modal
+                    actions=""
+                    bottomSheet={false}
+                    fixedFooter={false}
+                    header=""
+                    id="foo"
+                    modalOptions={Object {}}
+                  >
+                    <ViewComments
+                      buttonText="Edit"
+                      buttonsStyles="row  right undefined"
+                      cancelText="Clear"
+                      handleChange={[Function]}
+                      labelComment="Edit Comment"
+                      value=""
+                    />
+                  </Modal>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "actions": "",
+                    "bottomSheet": false,
+                    "children": <ViewComments
+                      buttonText="Edit"
+                      buttonsStyles="row  right undefined"
+                      cancelText="Clear"
+                      handleChange={[Function]}
+                      labelComment="Edit Comment"
+                      value=""
+                    />,
+                    "className": undefined,
+                    "fixedFooter": false,
+                    "header": "",
+                    "id": "foo",
+                    "modalOptions": Object {},
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "buttonText": "Edit",
+                      "buttonsStyles": "row  right undefined",
+                      "cancelText": "Clear",
+                      "handleCancel": undefined,
+                      "handleChange": [Function],
+                      "handleSubmit": undefined,
+                      "labelComment": "Edit Comment",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+            ],
+            "type": "li",
+          },
+        ],
+        "type": "ul",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h5>
+            Comments
+          </h5>,
+          <ul
+            className="collection"
+          >
+            <li
+              className="collection-item avatar"
+            >
+              <img
+                alt=""
+                className="circle"
+                src="https://avatars0.githubusercontent.com/u/4?v=4"
+              />
+              <span
+                className="title"
+              >
+                <b />
+              </span>
+              <br />
+              <span
+                className="title undefined"
+              >
+                <i>
+                  Invalid date
+                </i>
+              </span>
+              <p>
+                <br />
+              </p>
+              <div
+                className="secondary-content row"
+              >
+                <div>
+                  <i
+                    className="material-icons col s1 undefined"
+                  >
+                    reply
+                  </i>
+                </div>
+                
+              </div>
+              <div>
+                <Modal
+                  actions=""
+                  bottomSheet={false}
+                  fixedFooter={false}
+                  header=""
+                  id="foo"
+                  modalOptions={Object {}}
+                >
+                  <ViewComments
+                    buttonText="Edit"
+                    buttonsStyles="row  right undefined"
+                    cancelText="Clear"
+                    handleChange={[Function]}
+                    labelComment="Edit Comment"
+                    value=""
+                  />
+                </Modal>
+              </div>
+            </li>
+            <li
+              className="collection-item avatar"
+            >
+              <img
+                alt=""
+                className="circle"
+                src="https://avatars0.githubusercontent.com/u/4?v=4"
+              />
+              <span
+                className="title"
+              >
+                <b />
+              </span>
+              <br />
+              <span
+                className="title undefined"
+              >
+                <i>
+                  Invalid date
+                </i>
+              </span>
+              <p>
+                <br />
+              </p>
+              <div
+                className="secondary-content row"
+              >
+                <div>
+                  <i
+                    className="material-icons col s1 undefined"
+                  >
+                    reply
+                  </i>
+                </div>
+                
+              </div>
+              <div>
+                <Modal
+                  actions=""
+                  bottomSheet={false}
+                  fixedFooter={false}
+                  header=""
+                  id="foo"
+                  modalOptions={Object {}}
+                >
+                  <ViewComments
+                    buttonText="Edit"
+                    buttonsStyles="row  right undefined"
+                    cancelText="Clear"
+                    handleChange={[Function]}
+                    labelComment="Edit Comment"
+                    value=""
+                  />
+                </Modal>
+              </div>
+            </li>
+          </ul>,
+        ],
+        "className": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Comments",
+            "className": undefined,
+          },
+          "ref": null,
+          "rendered": "Comments",
+          "type": "h5",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li
+                className="collection-item avatar"
+              >
+                <img
+                  alt=""
+                  className="circle"
+                  src="https://avatars0.githubusercontent.com/u/4?v=4"
+                />
+                <span
+                  className="title"
+                >
+                  <b />
+                </span>
+                <br />
+                <span
+                  className="title undefined"
+                >
+                  <i>
+                    Invalid date
+                  </i>
+                </span>
+                <p>
+                  <br />
+                </p>
+                <div
+                  className="secondary-content row"
+                >
+                  <div>
+                    <i
+                      className="material-icons col s1 undefined"
+                    >
+                      reply
+                    </i>
+                  </div>
+                  
+                </div>
+                <div>
+                  <Modal
+                    actions=""
+                    bottomSheet={false}
+                    fixedFooter={false}
+                    header=""
+                    id="foo"
+                    modalOptions={Object {}}
+                  >
+                    <ViewComments
+                      buttonText="Edit"
+                      buttonsStyles="row  right undefined"
+                      cancelText="Clear"
+                      handleChange={[Function]}
+                      labelComment="Edit Comment"
+                      value=""
+                    />
+                  </Modal>
+                </div>
+              </li>,
+              <li
+                className="collection-item avatar"
+              >
+                <img
+                  alt=""
+                  className="circle"
+                  src="https://avatars0.githubusercontent.com/u/4?v=4"
+                />
+                <span
+                  className="title"
+                >
+                  <b />
+                </span>
+                <br />
+                <span
+                  className="title undefined"
+                >
+                  <i>
+                    Invalid date
+                  </i>
+                </span>
+                <p>
+                  <br />
+                </p>
+                <div
+                  className="secondary-content row"
+                >
+                  <div>
+                    <i
+                      className="material-icons col s1 undefined"
+                    >
+                      reply
+                    </i>
+                  </div>
+                  
+                </div>
+                <div>
+                  <Modal
+                    actions=""
+                    bottomSheet={false}
+                    fixedFooter={false}
+                    header=""
+                    id="foo"
+                    modalOptions={Object {}}
+                  >
+                    <ViewComments
+                      buttonText="Edit"
+                      buttonsStyles="row  right undefined"
+                      cancelText="Clear"
+                      handleChange={[Function]}
+                      labelComment="Edit Comment"
+                      value=""
+                    />
+                  </Modal>
+                </div>
+              </li>,
+            ],
+            "className": "collection",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <img
+                    alt=""
+                    className="circle"
+                    src="https://avatars0.githubusercontent.com/u/4?v=4"
+                  />,
+                  <span
+                    className="title"
+                  >
+                    <b />
+                  </span>,
+                  <br />,
+                  <span
+                    className="title undefined"
+                  >
+                    <i>
+                      Invalid date
+                    </i>
+                  </span>,
+                  <p>
+                    <br />
+                  </p>,
+                  <div
+                    className="secondary-content row"
+                  >
+                    <div>
+                      <i
+                        className="material-icons col s1 undefined"
+                      >
+                        reply
+                      </i>
+                    </div>
+                    
+                  </div>,
+                  <div>
+                    <Modal
+                      actions=""
+                      bottomSheet={false}
+                      fixedFooter={false}
+                      header=""
+                      id="foo"
+                      modalOptions={Object {}}
+                    >
+                      <ViewComments
+                        buttonText="Edit"
+                        buttonsStyles="row  right undefined"
+                        cancelText="Clear"
+                        handleChange={[Function]}
+                        labelComment="Edit Comment"
+                        value=""
+                      />
+                    </Modal>
+                  </div>,
+                ],
+                "className": "collection-item avatar",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "",
+                    "className": "circle",
+                    "src": "https://avatars0.githubusercontent.com/u/4?v=4",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <b />,
+                    "className": "title",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": undefined,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "b",
+                  },
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "br",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <i>
+                      Invalid date
+                    </i>,
+                    "className": "title undefined",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Invalid date",
+                    },
+                    "ref": null,
+                    "rendered": "Invalid date",
+                    "type": "i",
+                  },
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <br />,
+                      undefined,
+                    ],
+                    "className": undefined,
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {},
+                      "ref": null,
+                      "rendered": null,
+                      "type": "br",
+                    },
+                    undefined,
+                  ],
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div>
+                        <i
+                          className="material-icons col s1 undefined"
+                        >
+                          reply
+                        </i>
+                      </div>,
+                      "",
+                    ],
+                    "className": "secondary-content row",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <i
+                          className="material-icons col s1 undefined"
+                        >
+                          reply
+                        </i>,
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "reply",
+                          "className": "material-icons col s1 undefined",
+                        },
+                        "ref": null,
+                        "rendered": "reply",
+                        "type": "i",
+                      },
+                      "type": "div",
+                    },
+                    "",
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Modal
+                      actions=""
+                      bottomSheet={false}
+                      fixedFooter={false}
+                      header=""
+                      id="foo"
+                      modalOptions={Object {}}
+                    >
+                      <ViewComments
+                        buttonText="Edit"
+                        buttonsStyles="row  right undefined"
+                        cancelText="Clear"
+                        handleChange={[Function]}
+                        labelComment="Edit Comment"
+                        value=""
+                      />
+                    </Modal>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "actions": "",
+                      "bottomSheet": false,
+                      "children": <ViewComments
+                        buttonText="Edit"
+                        buttonsStyles="row  right undefined"
+                        cancelText="Clear"
+                        handleChange={[Function]}
+                        labelComment="Edit Comment"
+                        value=""
+                      />,
+                      "className": undefined,
+                      "fixedFooter": false,
+                      "header": "",
+                      "id": "foo",
+                      "modalOptions": Object {},
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "buttonText": "Edit",
+                        "buttonsStyles": "row  right undefined",
+                        "cancelText": "Clear",
+                        "handleCancel": undefined,
+                        "handleChange": [Function],
+                        "handleSubmit": undefined,
+                        "labelComment": "Edit Comment",
+                        "value": "",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <img
+                    alt=""
+                    className="circle"
+                    src="https://avatars0.githubusercontent.com/u/4?v=4"
+                  />,
+                  <span
+                    className="title"
+                  >
+                    <b />
+                  </span>,
+                  <br />,
+                  <span
+                    className="title undefined"
+                  >
+                    <i>
+                      Invalid date
+                    </i>
+                  </span>,
+                  <p>
+                    <br />
+                  </p>,
+                  <div
+                    className="secondary-content row"
+                  >
+                    <div>
+                      <i
+                        className="material-icons col s1 undefined"
+                      >
+                        reply
+                      </i>
+                    </div>
+                    
+                  </div>,
+                  <div>
+                    <Modal
+                      actions=""
+                      bottomSheet={false}
+                      fixedFooter={false}
+                      header=""
+                      id="foo"
+                      modalOptions={Object {}}
+                    >
+                      <ViewComments
+                        buttonText="Edit"
+                        buttonsStyles="row  right undefined"
+                        cancelText="Clear"
+                        handleChange={[Function]}
+                        labelComment="Edit Comment"
+                        value=""
+                      />
+                    </Modal>
+                  </div>,
+                ],
+                "className": "collection-item avatar",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "",
+                    "className": "circle",
+                    "src": "https://avatars0.githubusercontent.com/u/4?v=4",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <b />,
+                    "className": "title",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": undefined,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "b",
+                  },
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "br",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <i>
+                      Invalid date
+                    </i>,
+                    "className": "title undefined",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Invalid date",
+                    },
+                    "ref": null,
+                    "rendered": "Invalid date",
+                    "type": "i",
+                  },
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <br />,
+                      undefined,
+                    ],
+                    "className": undefined,
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {},
+                      "ref": null,
+                      "rendered": null,
+                      "type": "br",
+                    },
+                    undefined,
+                  ],
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div>
+                        <i
+                          className="material-icons col s1 undefined"
+                        >
+                          reply
+                        </i>
+                      </div>,
+                      "",
+                    ],
+                    "className": "secondary-content row",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <i
+                          className="material-icons col s1 undefined"
+                        >
+                          reply
+                        </i>,
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "reply",
+                          "className": "material-icons col s1 undefined",
+                        },
+                        "ref": null,
+                        "rendered": "reply",
+                        "type": "i",
+                      },
+                      "type": "div",
+                    },
+                    "",
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Modal
+                      actions=""
+                      bottomSheet={false}
+                      fixedFooter={false}
+                      header=""
+                      id="foo"
+                      modalOptions={Object {}}
+                    >
+                      <ViewComments
+                        buttonText="Edit"
+                        buttonsStyles="row  right undefined"
+                        cancelText="Clear"
+                        handleChange={[Function]}
+                        labelComment="Edit Comment"
+                        value=""
+                      />
+                    </Modal>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "actions": "",
+                      "bottomSheet": false,
+                      "children": <ViewComments
+                        buttonText="Edit"
+                        buttonsStyles="row  right undefined"
+                        cancelText="Clear"
+                        handleChange={[Function]}
+                        labelComment="Edit Comment"
+                        value=""
+                      />,
+                      "className": undefined,
+                      "fixedFooter": false,
+                      "header": "",
+                      "id": "foo",
+                      "modalOptions": Object {},
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "buttonText": "Edit",
+                        "buttonsStyles": "row  right undefined",
+                        "cancelText": "Clear",
+                        "handleCancel": undefined,
+                        "handleChange": [Function],
+                        "handleSubmit": undefined,
+                        "labelComment": "Edit Comment",
+                        "value": "",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                  "type": "div",
+                },
+              ],
+              "type": "li",
+            },
+          ],
+          "type": "ul",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Create Comments should test viewListcomments component 1`] = `
+<div>
+  <h5>
+    Comments
+  </h5>
+  <ul
+    className="collection"
+  />
+</div>
+`;

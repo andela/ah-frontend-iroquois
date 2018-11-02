@@ -1,10 +1,11 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
 import styles from '../../styles/articleStyles/viewArticle.scss';
-import {USERNAME_KEY} from '../../constants/index';
+import {USERNAME_KEY} from '../../constants';
 import {generateButton} from '../../utils';
+import ReportModal from './reportModal';
 
-const CustomChips = props => (
+export const CustomChips = props => (
 	<div className='chip'>
 		{props.name}
 	</div>
@@ -23,20 +24,23 @@ const ViewArticleFooter = props => {
 	const deleteButton = {className: `btn btn-small ${styles.trash}`, icon: 'fa fa-trash', handler: deleteHandler};
 
 	return (
-		<div className='row'>
-			<div className='col sm12 m8 l8 left-align valign-wrapper'>
-				<b style={{marginRight: '1em'}}>Tags:</b>
-				{tagList.map(chip => <CustomChips key={chip} name={chip} />)}
+		<div>
+			<div className='row'>
+				<div className='col sm12 m8 l8 left-align valign-wrapper'>
+					<b style={{marginRight: '1em'}}>Tags:</b>
+					{tagList.map(chip => <CustomChips key={chip} name={chip} />)}
+				</div>
+				{
+					name === authorName
+						? (
+							<div className={`col sm12 m4 l4 right-align ${styles['utils-buttons']}`}>
+								{generateButton(editButton)}
+								{generateButton(deleteButton)}
+							</div>)
+						: ''
+				}
 			</div>
-			{
-				name === authorName
-					? (
-						<div className={`col sm12 m4 l4 right-align ${styles['utils-buttons']}`}>
-							{generateButton(editButton)}
-							{generateButton(deleteButton)}
-						</div>)
-					: ''
-			}
+			<ReportModal />
 		</div>
 	);
 };

@@ -110,6 +110,25 @@
 	float: right;
 }
 
+.report-model {
+	@media screen and (min-width: 500px) and (max-width: 710px) {
+		width: 60%;
+	}
+
+	@media screen and (max-width: 490px) {
+		width: 95%;
+	}
+
+	@media screen and (min-width: 711px){
+		width: 455px;
+	}
+}
+
+.report-question {
+	margin: 15px;
+	font-weight: 500;
+}
+
 .pagination {
 	display: flex;
 	justify-content: center;

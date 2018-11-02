@@ -8,6 +8,7 @@ const articlesState = {
 	'count': 0,
 	'article': {},
 	'articleEdit': {},
+	message: '',
 	'authors': [],
 	'results': []
 };
@@ -36,6 +37,14 @@ const articlesReducerExtended = (state, action, allArticles) => {
 
 		case ACTION_TYPE.EDIT_ONE_ARTICLE:
 			return {...state, articleEdit: reduce(allArticles, action)};
+
+		case ACTION_TYPE.REPORT_ARTICLE_FAILURE:
+			return {...state,
+				message: action.payload.message};
+
+		case ACTION_TYPE.REPORT_ARTICLE_SUCCESS:
+			return {...state,
+				message: action.payload.message};
 
 		default:
 			return state;
