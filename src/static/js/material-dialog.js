@@ -25,7 +25,7 @@ MaterialDialog.templates = {
 	dialog:
 		"<div class='modal material-dialog class_here' style='width: 35%'>" +
 			"<div class='modal-content'><h4 class='modal-title'>title_here</h4></div>" +
-			"<div class='modal-footer'>" +
+			"<div class='modal-footer article-modal'>" +
 				"<button class='btn modal-close confirm confirm_button_class'>confirm_button_text</button>" +
 				"<button class='btn modal-close close close_button_class'>close_button_text</button>" +
 			'<div>' +
