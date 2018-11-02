@@ -33,7 +33,7 @@ const LogoContainer = () => (
 const LoggedInNav = (prop) => (
 	<ul className='right' style={{marginRight: '1em'}}>
 		<li>
-			<Link to='/articles' replace style={{display: prop.history.location.pathname === '/articles' ? 'none' : 'block'}}>
+			<Link to='/articles' replace>
 				<i className='fa fa-chevron-left' />
 			</Link>
 		</li>

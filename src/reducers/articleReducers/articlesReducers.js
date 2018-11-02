@@ -8,6 +8,7 @@ const articlesState = {
 	'count': 0,
 	'article': {},
 	'articleEdit': {},
+	'authors': [],
 	'results': []
 };
 
@@ -43,11 +44,18 @@ const articlesReducerExtended = (state, action, allArticles) => {
 
 const articlesReducer = (state = articlesState, action) => {
 	const allArticles = state.results;
+	const payload = action.payload || {};
+	let { results = [] } = payload;
 
+	let authors = [];
 	switch (action.type) {
 
 		case ACTION_TYPE.ADD_MANY_FROM_SERVER:
-			return {...state, ...action.payload};
+			if (results && !Array.isArray(results)) {
+				results = [results];
+			}
+			authors = Array.from(new Set(results.map(article => article.author.username)));
+			return {...state, ...action.payload, results, authors};
 
 		case ACTION_TYPE.ADD_ONE_ARTICLE:
 			allArticles.unshift(action.payload);

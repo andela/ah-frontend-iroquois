@@ -124,3 +124,15 @@
 		display: none;
 	}
 }
+
+.left-view {
+	background: #f7f7f7;
+	overflow: hidden;
+	padding: 1em;
+}
+
+.right-view {
+	overflow-y: auto;
+	padding: 1em;
+	min-height:100vh;
+}

@@ -13,6 +13,7 @@ import ViewArticleFooter from '../../../components/articles/viewArticleFooter';
 import ViewArticleSides from '../../../components/articles/viewArticleSides';
 import ViewArticlePage from '../../../components/articles/viewArticlePage';
 import ViewArticleBody from '../../../components/articles/viewArticleBody';
+import Pagination from '../../../containers/pagination';
 
 let wrapper;
 const mockStore = configureStore([thunk]);
@@ -127,12 +128,20 @@ describe('View Articles', () => {
 	});
 
 	it('should mount view all', () => {
-		wrapper = mount(<ViewAllTest dispatch={store.dispatch} articles={{results: []}} />);
+		wrapper = shallow(<ViewAllTest dispatch={store.dispatch} articles={{results: []}} />);
 
 		wrapper.setProps({article: {author: {}, tagList: []}});
 		wrapper.instance().loadAllArticles();
 		wrapper.instance().handlePageClick({selected: 1});
 		wrapper.instance().loadViewAll();
+		wrapper = shallow(<ViewAllTest dispatch={store.dispatch} article={{results: []}} />);
+		wrapper.instance().handleFilterSubmit();
+		wrapper.setProps({articles: {results: []}});
+		wrapper.setProps({article: {results: {}}});
 		wrapper.unmount();
+	});
+
+	it('should render pagination', () => {
+		expect(shallow(<Pagination pageCount={3} handlePageClick={jest.fn} />)).toHaveLength(1);
 	});
 });
