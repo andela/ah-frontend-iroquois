@@ -3,6 +3,7 @@ import {mount, shallow} from 'enzyme';
 import {Provider} from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import $ from 'jquery';
 import {MemoryRouter} from 'react-router-dom';
 import ProfileInformation from '../../../components/profile/profileInformation';
 import Profile, {ProfileTest} from '../../../containers/profile/profile';
@@ -25,6 +26,7 @@ describe('Profile', () => {
 });
 
 describe('ProfileInformation', () => {
+	$.fn.tabs = jest.fn();
 	it('loads user profile information', () => {
 		const mountProfileInformation = mount(
 			<MemoryRouter>
@@ -39,7 +41,7 @@ describe('ProfileInformation', () => {
 	});
 
 	it('loads updated user profile image', () => {
-
+		$.fn.tabs = jest.fn();
 		const profileData = {
 			userName: 'copa',
 			firstName: 'co',
@@ -59,6 +61,7 @@ describe('ProfileInformation', () => {
 	});
 
 	it('should handle change', () => {
+		$.fn.tabs = jest.fn();
 		const wrapper = shallow(<ProfileTest data={{profileInfo: {}}} match={{params: {username: 's'}}} dispatch={jest.fn} />);
 		wrapper.setProps({match: {params: {username: ''}}});
 		wrapper.setProps({match: {params: {username: 's'}}});
